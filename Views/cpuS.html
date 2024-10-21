@@ -247,6 +247,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <main class="col">
 
                 <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
+
                   <div class="col-md-3">
                     <label for="inputEmail4" class="form-label"><b> Codigo </b><b style="color: red;">*</b></label>
                     <div class="input-group mb-3">
@@ -394,16 +395,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                   
                   
-                  <div class="col-md-3">
-                    <hr class="hr hr-blurry" />
-                    <label for="inputAddress2" class="form-label"><b>Tarjeta RAM</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
+                 <div class="col-md-3">
+                  <hr class="hr hr-blurry" />
+                    <label for="inputEmail4" class="form-label"><b> Tarjeta RAM </b><b style="color: red;">*</b></label>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
+                      <button class="btn btn-danger" type="button" id="button-addon2" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" ><b>Añadir</b></button>
                     </div>
-                    <br>
+                    <div class="invalid-feedback">
+                      Porfavor Digite un Codigo
+                    </div>
                   </div>
+
+
+                  
 
 
                   <div class="col-md-3">
