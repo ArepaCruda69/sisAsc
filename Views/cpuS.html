@@ -393,23 +393,71 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <br>
                   </div>
-                  
-                  
-                 <div class="col-md-3">
-                  <hr class="hr hr-blurry" />
+                       
+
+                <!-- select RAM-->
+                 
+                  <div class="col-md-3">
+                    <hr class="hr hr-blurry" />
                     <label for="inputEmail4" class="form-label"><b> Tarjeta RAM </b><b style="color: red;">*</b></label>
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                      <button class="btn btn-danger" type="button" id="button-addon2" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop" ><b>Añadir</b></button>
+                      <select class="form-control">
+                        
+                        <option>opcion 1</option>
+                        <option>opcion 2</option>
+                        <option>opcion 3</option>
+                        <option>opcion 4</option>
+                        <option>opcion 5</option>
+                      </select>
+                       <button class="btn btn-danger" type="button" id="button-addon2" data-toggle="modal" data-target="#ramModal"><b>Añadir</b></button>
                     </div>
                     <div class="invalid-feedback">
-                      Porfavor Digite un Codigo
+                       Por favor, digite un código
                     </div>
-                  </div>
+                 </div>
+                 
+                 <!-- Modal -->
+                 <div class="modal fade" id="ramModal" tabindex="-1" role="dialog" aria-labelledby="ramModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                       <div class="modal-content">
+                          <div class="modal-header">
+                             <h5 class="modal-title" id="ramModalLabel">Registrar Tarjeta RAM</h5>
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                             </button>
+                          </div>
+                          <div class="modal-body">
+                             <form id="ramForm">
+                                <div class="form-group">
+                                   <label for="model" class="form-label">Modelo</label>
+                                   <input type="text" class="form-control" id="model" required>
+                                </div>
+                                <div class="form-group">
+                                   <label for="serial" class="form-label">Serial</label>
+                                   <input type="text" class="form-control" id="serial" required>
+                                </div>
+                                <div class="form-group">
+                                   <label for="brand" class="form-label">Marca</label>
+                                   <input type="text" class="form-control" id="brand" required>
+                                </div>
+                                <div class="form-group">
+                                   <label for="capacity" class="form-label">Capacidad</label>
+                                   <input type="text" class="form-control" id="capacity" required>
+                                </div>
+                                <div class="form-group">
+                                   <label for="type" class="form-label">Tipo</label>
+                                   <input type="text" class="form-control" id="type" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 
+          <!-- end select RAM -->
 
-
+             
                   
 
 
@@ -759,6 +807,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
   });
+</script>
+
+<script>
+  document.getElementById('ramForm').addEventListener('submit', function(event) {
+   event.preventDefault();
+   // Aquí puedes agregar la lógica para manejar el registro de la tarjeta RAM
+   alert('Tarjeta RAM registrada exitosamente');
+   // Cerrar el modal después de registrar
+   $('#ramModal').modal('hide');
+});
+
 </script>
 
 <style>
