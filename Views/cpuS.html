@@ -394,23 +394,44 @@
                               
 
                       <!-- Tarjeta RAM -->
-                        <div class="col-md-3">
-                          <hr class="hr hr-blurry" />
-                          <label for="inputEmail4" class="form-label"><b> Tarjeta RAM </b><b style="color: red;">*</b></label>
-                          <div class="input-group mb-3">
-                            <select class="form-control">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                            </select>
-                            <button class="btn btn-danger" type="button" id="button-addon2" data-toggle="modal" data-target="#ramModal"><b>Añadir</b></button>
-                          </div>
-                          <div class="invalid-feedback">
-                            Por favor, digite un código
+                      <div class="col-md-3">
+                        <hr class="hr hr-blurry" />
+                        <label for="inputEmail4" class="form-label"><b> Tarjeta RAM </b><b style="color: red;">*</b></label>
+                        <div class="input-group mb-3">
+                          <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                          <button class="btn btn-danger" type="button" id="button-addon2" onclick="openRamModal()" data-toggle="modal" data-target="#ramModal"><b>Añadir</b></button>
+                        </div>
+                        <div class="invalid-feedback">
+                          Por favor, digite un código
+                        </div>
+                      </div>
+                      <div class="modal fade" id="ramModal" tabindex="-1" role="dialog" aria-labelledby="ramModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="ramModalLabel"><b>Detalles de Tarjetas RAM</b></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body" id="ramModalBody">
+                              <!-- Aquí se añadirán los campos dinámicamente -->
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                              <button type="button" class="btn btn-primary">Guardar</button>
+                            </div>
                           </div>
                         </div>
+                      </div>
+                      
+                      
 
                         <!-- Modal al final del documento -->
                         <div class="modal fade" id="ramModal" tabindex="-1" role="dialog" aria-labelledby="ramModalLabel" aria-hidden="true">
@@ -599,6 +620,7 @@
 
 <script src="../Controller/agregar.js"></script>
 <script src="../Controller/cancelar.js"></script>
+<script src="../Controller/openRam.js"></script>
 
 
 <!-- Page specific script -->
