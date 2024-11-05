@@ -2,7 +2,7 @@
 $servername = "localhost";  // Normalmente es localhost
 $username = "root";         // Usuario de MySQL
 $password = "";             // Contraseña de MySQL
-$dbname = "db_sisasc"; // Nombre de tu base de datos
+$dbname = "bdd_sisasc"; // Nombre de tu base de datos
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
