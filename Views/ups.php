@@ -12,10 +12,11 @@
   <link rel="stylesheet" href="../Assests/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../Assests/dist/css/adminlte.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../Assests/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../Assests/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../Assests/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+   <!-- DataTables -->
+   <link rel="stylesheet" href="../Assests/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+   <link rel="stylesheet" href="../Assests/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+   <link rel="stylesheet" href="../Assests/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+ 
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -28,7 +29,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../index.php" class="nav-link">Inicio</a>
       </li>
     </ul>
 
@@ -62,7 +63,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-danger elevation-4" style="background-color: #959a9b;">
     <!-- Brand Logo -->
-    <a href="../index.html" class="brand-link">
+    <a href="../index.php" class="brand-link">
       <img src="../Assests/dist/img/images.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Sistemas</span>
     </a>
@@ -91,7 +92,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-close">
+          <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -102,7 +103,7 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../index.html" class="nav-link">
+                <a href="../index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inicio</p>
                 </a>
@@ -112,26 +113,26 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="./impS.html" class="nav-link active ">
+                <a href="./impS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./cpuS.html" class="nav-link">
+                <a href="./cpuS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./monT.html" class="nav-link ">
+                <a href="./monT.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./tecLado.html" class="nav-link ">
+                <a href="./tecLado.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Teclado</p>
                 </a>
@@ -145,18 +146,25 @@
               </li>
               
               <li class="nav-item">
-                <a href="./acceS.html" class="nav-link">
+                <a href="./acceS.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
               </li>
 
-              
+
+              <li class="nav-item">
+                <a href="../sisAsc/Views/ups.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
+                </a>
+              </li>
 
             </ul>
             
           </li>
 
+          
 
           <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
@@ -205,7 +213,6 @@
               </li>
 
             </ul>
-            
 
           </li>
          
@@ -236,211 +243,298 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <div class="col">
+        <div class="row">
+         
+<!-- Main content -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="col">
 
-          <div class="card text">
-            <div class="card-header">
-              <h2>Impresora</h2>
-            </div>
-            <div class="card-body">
+      <div class="card text">
+        <div class="card-header">
+          <h2>Ups</h2>
+        </div>
+        <div class="card-body">
 
-              <main class="col">
+          <main class="col">
 
+            <form class="row g-3 needs-validation" action="model/registrarUps.php" style="border-radius: 20px;" novalidate>
               
-    <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate onsubmit="return validarTodoFormulario()">
-      <div class="col-md-3">
-          <label for="txtcliente" class="form-label"><b>Codigo</b><b style="color: red;">*</b></label>
-          <div class="input-group mb-3">
-              <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username" aria-describedby="button-addon2">
-              <button class="btn btn-danger" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><b>Buscar</b></button>
-          </div>
-          <div class="invalid-feedback">
-              Por favor, digite un Código
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtdescripcion" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtdescripcion" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Marca</label>
-              <select class="form-control" id="marca">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtdescripcion2" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtdescripcion2" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Tipo</label>
-              <select class="form-control" id="tipo">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Estilo</label>
-              <select class="form-control" id="estilo">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <hr>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Puerto</label>
-              <select class="form-control" id="puerto">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtip" class="form-label"><b>IP</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtip" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <label for="txtancho" class="form-label"><b>Ancho</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtancho" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <label for="txtconsumibles" class="form-label"><b>Consumibles</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtconsumibles" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Estatus</label>
-              <select class="form-control" id="estatus">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Unidad</label>
-              <select class="form-control" id="unidad">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtasignado" class="form-label"><b>Asignado a</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtasignado" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>PC</label>
-              <select class="form-control" id="pc">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtfrecuencia" class="form-label"><b>Frecuencia de Mantenimiento</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtfrecuencia" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label>Ultimo Mantenimiento:</label>
-          <div class="input-group date" id="reservationdate" data-target-input="nearest">
-              <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" />
-          </div>
-      </div>
-      <div class="col-md-12">
-          <div class="form-group">
-              <label>Observaciones</label>
-              <textarea class="form-control" rows="3"></textarea>
-          </div>
-      </div>
-      
-      <div class="col-md-6">
-        <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-        <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-      </div>
-    
-            </form>
-           
+              
+              
+              
+              <div class="col-md-3">
+                <label for="inputAddress2" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
+                <input type="number" class="form-control" id="txtcantidad" required>
+                <div class="invalid-feedback">
+                  Porfavor seleccione una Modelo
+                </div>
+              </div>
 
+              <div class="col-md-3">
+                <label for="inputAddress2" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
+                <input type="number" class="form-control" id="txtcantidad" required>
+                <div class="invalid-feedback">
+                  Porfavor seleccione una Modelo
+                </div>
+              </div>
+
+              <div class="col-md-3">
+
+                <!-- select -->
+                <div class="form-group">
+                  <label>Unidad</label>
+                  <select class="form-control">
+                    
+                    <option>opcion 1</option>
+                    <option>opcion 2</option>
+                    <option>opcion 3</option>
+                    <option>opcion 4</option>
+                    <option>opcion 5</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+
+                <label>Fecha de instalación de la batería:</label>
+                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                  <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" />
+
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+              <hr class="hr hr-blurry" />
+                <label for="inputAddress2" class="form-label"><b>Cantidad de Bateria</b><b style="color: red;">*</b></label>
+                <input type="number" class="form-control" id="txtcantidad" required>
+                <div class="invalid-feedback">
+                  Porfavor seleccione una Serial
+                </div>
+              </div>
+
+             
           
 
-            <!-- /.card-header -->
+              <div class="col-md-3">
+                <hr class="hr hr-blurry" />
+                <label for="inputAddress2" class="form-label"><b>Modelo de la Bateria</b><b
+                    style="color: red;">*</b></label>
+                <input type="tel" class="form-control" id="txtdescripcion" required>
+                <div class="invalid-feedback">
+                  Porfavor seleccione una fecha
+                </div>
+                <br>
+              </div>
 
 
-            </main>
+              <div class="col-md-6">  
+              <hr class="hr hr-blurry" />
+                <!-- textarea -->
+                <div class="form-group">
+                  <label>Observaciones</label>
+                  <textarea class="form-control" rows="1"></textarea>
+                </div>
+              </div>
 
-            
+              <div class="col-md-6">
+
+                <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
+                <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
+              </div>
+
+        </div>  
 
 
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Serial</th>
+                <th>Unidad</th>
+                <th>Fecha.Inst.</th>
+                <th>Modelo Bateria</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Test</td>
+                <td>-----</td>
+                <td>-----</td>
+                <td> 4</td>
+                <td>----</td>
+              </tr>
+
+              <td>Test</td>
+                <td>----</td>
+                <td>-----</td>
+                <td> 5</td>
+                <td>----</td>
+              </tr>
+              <tr>
+
+                <td>Test</td>
+                <td>-----</td>
+                <td>-----</td>
+                <td> 7</td>
+                <td>----</td>
+              </tr>
+
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 6
+                </td>
+                <td>Win 98+</td>
+                <td>6</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Trident</td>
+                <td>Internet Explorer 7</td>
+                <td>Win XP SP2+</td>
+                <td>7</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Trident</td>
+                <td>AOL browser (AOL desktop)</td>
+                <td>Win XP</td>
+                <td>6</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Gecko</td>
+                <td>Firefox 1.0</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.7</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Get</td>
+                <td>------</td>
+                <td>----</td>
+                <td>1.8</td>
+                <td>--</td>
+              </tr>
+              <tr>
+                <td>Gecko</td>
+                <td>Firefox 2.0</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.8</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Gecko</td>
+                <td>Firefox 3.0</td>
+                <td>Win 2k+ / OSX.3+</td>
+                <td>1.9</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Gecko</td>
+                <td>Camino 1.0</td>
+                <td>OSX.2+</td>
+                <td>1.8</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Gecko</td>
+                <td>Camino 1.5</td>
+                <td>OSX.3+</td>
+                <td>1.8</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Gecko</td>
+                <td>Netscape 7.2</td>
+                <td>Win 95+ / Mac OS 8.6-9.2</td>
+                <td>1.7</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>Gecko</td>
+                <td>Netscape Browser 8</td>
+                <td>Win 98SE+</td>
+                <td>1.7</td>
+                <td>A</td>
+              </tr>
+             
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Codigo</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Tipo</th>
+                <th>Unidad</th>
+              </tr>
+            </tfoot>
+          </table>
+
+         
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-success" type="button" onclick="cargar();"><b>Editar</b></button>
+            <button class="btn btn-outline-danger" type="button" onclick="vaciar();"><b>Eliminar</b></button>
           </div>
+        </div>
+        <!-- /.card-body -->
+
+
+        <!-- /.card-header -->
+
+
+        </main>
+
+        
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content -->
 
 
         </div>
-      </div>
-      <!-- /.container-fluid -->
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Title</h5>
+      <p>Sidebar content</p>
+    </div>
+  </aside>
 
-  <footer class="main-footer">
+  <!-- /.control-sidebar -->
+   <footer class="main-footer">
     <strong>Copyright &copy; 2024 <a href="">Alfred</a>.</strong>
     <div class="float-right d-none d-sm-inline-block">
     </div>
@@ -457,6 +551,7 @@
 <!-- AdminLTE App -->
 <script src="../Assests/dist/js/adminlte.min.js"></script>
 
+
 <!-- DataTables  & Plugins -->
 <script src="../Assests/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../Assests/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -471,8 +566,13 @@
 <script src="../Assests/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+
 <script src="../Controller/agregar.js"></script>
 <script src="../Controller/cancelar.js"></script>
+
+
+
+
 
 <!-- Page specific script -->
 <script>
@@ -513,7 +613,8 @@
     border: none;
   }
 </style>
- <!-- Vincula tu archivo JavaScript -->
- <script src="/Assests/dist/js/validaciones/valCampotext.js"></script>
+
 </body>
 </html>
+
+
