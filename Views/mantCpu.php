@@ -28,7 +28,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../index.php" class="nav-link">Inicio</a>
       </li>
     </ul>
 
@@ -107,45 +107,52 @@
                 <ul class="nav nav-treeview">
     
                     <li class="nav-item">
-                      <a href="../Views/mantImp.html" class="nav-link ">
+                      <a href="../Views/mantImp.php" class="nav-link ">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Impresora</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="../Views/mantCpu.html" class="nav-link ">
+                      <a href="../Views/mantCpu.php" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
                         <p>CPUs</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="../Views/mantMont.html" class="nav-link active">
+                      <a href="../Views/mantMont.php" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Monitor</p>
                       </a>
                     </li>
                     
                     <li class="nav-item">
-                      <a href="../Views/mantTecl.html" class="nav-link">
+                      <a href="../Views/mantTecl.php" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p> Teclado</p>
                       </a>
                     </li>
       
                     <li class="nav-item">
-                      <a href="../Views/mantMou.html" class="nav-link">
+                      <a href="../Views/mantMou.php" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Mouse</p>
                       </a>
                     </li>
                     
                     <li class="nav-item">
-                      <a href="../Views/mantAcc.html" class="nav-link">
+                      <a href="../Views/mantAcc.php" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Accesorios</p>
                       </a>
                     </li>
                     
+                    <li class="nav-item">
+                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
+                </a>
+              </li>
+
       
                   </ul>
                 
@@ -234,230 +241,307 @@
 
           <div class="card text">
             <div class="card-header">
-              <h2>Monitor</h2>
+              <h2>CPUs</h2>
             </div>
+
             <div class="card-body">
 
               <main class="col">
 
-                <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
-                  <div class="col-md-3">
-                    <label for="inputEmail4" class="form-label"><b> Codigo </b><b style="color: red;">*</b></label>
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                      <button class="btn btn-danger" type="button" id="button-addon2" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop" ><b>Buscar</b></button>
-                    </div>
-                    <div class="invalid-feedback">
-                      Porfavor Digite un Codigo
-                    </div>
-                  </div>
+                    <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
 
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
-                    <input type="number" class="form-control" id="txtcantidad" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una Modelo
-                    </div>
-                  </div>
+                          <div class="col-md-3">
+                            <label for="inputEmail4" class="form-label"><b> Codigo </b><b style="color: red;">*</b></label>
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username"
+                                aria-describedby="button-addon2">
+                              <button class="btn btn-danger" type="button" id="button-addon2" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop" ><b>Buscar</b></button>
+                            </div>
+                            <div class="invalid-feedback">
+                              Porfavor Digite un Codigo
+                            </div>
+                          </div>
 
-                  <div class="col-md-3">
+                          <div class="col-md-3">
+                            <label for="inputAddress2" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
+                            <input type="number" class="form-control" id="txtcantidad" required>
+                            <div class="invalid-feedback">
+                              Porfavor seleccione una Modelo
+                            </div>
+                          </div>
 
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Marca</label>
-                      <select class="form-control">
+                          <div class="col-md-3">
+
+                            <!-- select -->
+                            <div class="form-group">
+                              <label>Marca</label>
+                              <select class="form-control">
+                                
+                                <option>opcion 1</option>
+                                <option>opcion 2</option>
+                                <option>opcion 3</option>
+                                <option>opcion 4</option>
+                                <option>opcion 5</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-3">
+                            <label for="inputAddress2" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
+                            <input type="number" class="form-control" id="txtcantidad" required>
+                            <div class="invalid-feedback">
+                              Porfavor seleccione una Serial
+                            </div>
+                          </div>
+
+                          <div class="col-md-3">
+
+                            <!-- select -->
+                            <div class="form-group">
+                              
+                            <hr class="hr hr-blurry" />
+                              <label>Procesador</label>
+                              <select class="form-control">
+                                
+                                <option>opcion 1</option>
+                                <option>opcion 2</option>
+                                <option>opcion 3</option>
+                                <option>opcion 4</option>
+                                <option>opcion 5</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-3">
+                            <hr class="hr hr-blurry" />
+                            <label for="inputAddress2" class="form-label"><b>Modelo</b><b
+                                style="color: red;">*</b></label>
+                            <input type="tel" class="form-control" id="txtdescripcion" required>
+                            <div class="invalid-feedback">
+                              Porfavor seleccione una fecha
+                            </div>
+                          </div>   
+
+
+                          <div class="col-md-3">
+                            <hr class="hr hr-blurry" />
+                            <label for="inputAddress2" class="form-label"><b>Serial</b><b
+                                style="color: red;">*</b></label>
+                            <input type="tel" class="form-control" id="txtdescripcion" required>
+                            <div class="invalid-feedback">
+                              Porfavor seleccione una fecha
+                            </div>
+                          </div>   
+
+                          <div class="col-md-3">
+                            <hr class="hr hr-blurry" />
+                            <label for="inputAddress2" class="form-label"><b>Frecuencia</b><b
+                                style="color: red;">*</b></label>
+                            <input type="tel" class="form-control" id="txtdescripcion" required>
+                            <div class="invalid-feedback">
+                              Porfavor seleccione una fecha
+                            </div>
+                            <br>
+                          </div>
+
+
+                          <div class="col-md-3">
+
+                            <!-- select -->
+                            <div class="form-group">
+                              
+                            <hr class="hr hr-blurry" />
+                              <label>Fuente de Poder</label>
+                              <select class="form-control">
+                                
+                                <option>opcion 1</option>
+                                <option>opcion 2</option>
+                                <option>opcion 3</option>
+                                <option>opcion 4</option>
+                                <option>opcion 5</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-md-3">
+                            <hr class="hr hr-blurry" />
+                            <label for="inputAddress2" class="form-label"><b>Modelo</b><b
+                                style="color: red;">*</b></label>
+                            <input type="tel" class="form-control" id="txtdescripcion" required>
+                            <div class="invalid-feedback">
+                              Porfavor seleccione una fecha
+                            </div>
+                          </div>   
+                          
+                          <div class="col-md-3">
+                            <hr class="hr hr-blurry" />
+                            <label for="inputAddress2" class="form-label"><b>Serial</b><b
+                                style="color: red;">*</b></label>
+                            <input type="tel" class="form-control" id="txtdescripcion" required>
+                            <div class="invalid-feedback">
+                              Porfavor seleccione una fecha
+                            </div>
+                          </div>   
+
+
+                          <div class="col-md-3">
+                            <hr class="hr hr-blurry" />
+                            <label for="inputAddress2" class="form-label"><b>ip</b><b
+                                style="color: red;">*</b></label>
+                            <input type="tel" class="form-control" id="txtdescripcion" required>
+                            <div class="invalid-feedback">
+                              Porfavor seleccione una fecha
+                            </div>
+                            <br>
+                          </div>
+                              
+
+                      <!-- Tarjeta RAM -->
+                      <div class="col-md-3">
+                        <hr class="hr hr-blurry" />
+                        <label for="inputEmail4" class="form-label"><b> Tarjeta RAM </b><b style="color: red;">*</b></label>
+                        <div class="input-group mb-3">
+                          <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                          <button class="btn btn-danger" type="button" id="button-addon2" onclick="openRamModal()" data-toggle="modal" data-target="#ramModal"><b>Añadir</b></button>
+                        </div>
+                        <div class="invalid-feedback">
+                          Por favor, digite un código
+                        </div>
+                      </div>
+                      <div class="modal fade" id="ramModal" tabindex="-1" role="dialog" aria-labelledby="ramModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="ramModalLabel"><b>Detalles de Tarjetas RAM</b></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body" id="ramModalBody">
+                              <!-- Aquí se añadirán los campos dinámicamente -->
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                              <button type="button" class="btn btn-primary">Guardar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      
+
+
+                        <!-- Fin Tarjeta RAM -->
+              
                         
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
 
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
-                    <input type="number" class="form-control" id="txtcantidad" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una Serial
-                    </div>
-                  </div>
+                     
 
-                  <div class="col-md-3">
 
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Tipo</label>
-                      <select class="form-control">
+                      <div class="col-md-3">
+                        <hr class="hr hr-blurry" />
+                        <label for="inputAddress2" class="form-label"><b>Asignado a</b><b
+                            style="color: red;">*</b></label>
+                        <input type="tel" class="form-control" id="txtdescripcion" required>
+                        <div class="invalid-feedback">
+                          Porfavor seleccione una fecha
+                        </div>
+                      </div>
+
+                      <div class="col-md-3">
                         
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
+                        <hr class="hr hr-blurry" />
+
+                        <div class="form-group">
+                          <label>PC</label>
+                          <select class="form-control">
+                            
+                            <option>opcion 1</option>
+                            <option>opcion 2</option>
+                            <option>opcion 3</option>
+                            <option>opcion 4</option>
+                            <option>opcion 5</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <hr class="hr hr-blurry" />
+
+                        <label for="inputAddress2" class="form-label"><b>Frecuencia de Mantenimiento</b><b
+                            style="color: red;">*</b></label>
+                        <input type="tel" class="form-control" id="txtmonto" required>
+                        <div class="invalid-feedback">
+                          Porfavor seleccione una fecha
+                        </div>
+                      </div>
+
+                <div class="col-md-3">
+                  <hr class="hr hr-blurry" />
+
+                  <!-- select -->
+                  <div class="form-group">
+                    <label>Estado</label>
+                    <select class="form-control">
+                      <option>opcion 1</option>
+                      <option>opcion 2</option>
+                      <option>opcion 3</option>
+                      <option>opcion 4</option>
+                      <option>opcion 5</option>
+                    </select>
                   </div>
+                </div>
 
-                  <div class="col-md-3">
+                <div class="col-md-3">
+                  <hr class="hr hr-blurry" />
 
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Estilo</label>
-                      <select class="form-control">
-                       
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
+                  <label>Ultimo Mantenimiento:</label>
+                  <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                    <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" />
+
                   </div>
+                </div>
 
-                  <hr>
-                  <div class="col-md-3">
+                
 
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Puerto</label>
-                      <select class="form-control">
-                       
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
+                <div class="col-md-12">
+                  <hr class="hr hr-blurry" />
+                  <!-- textarea -->
+                  <div class="form-group">
+                    <label>Observaciones</label>
+                    <textarea class="form-control" rows="3"></textarea>
                   </div>
+                </div>
 
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>IP</b><b style="color: red;"></b></label>
-                    <input type="number" class="form-control" id="txtcantidad" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una Serial
-                    </div>
-                  </div>
+            
 
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Ancho</b><b style="color: red;">*</b></label>
-                    <input type="number" class="form-control" id="txtcantidad" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una Serial
-                    </div>
-                  </div>
+            
 
+                <div class="col-md-6">
+                  <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
+                  <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
+                </div> 
 
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Consumibles</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                    <br>
-                  </div>
+                   
 
-                  <div class="col-md-3">
-
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Estatus</label>
-                      <select class="form-control">
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
+              </form>
+           
+                
 
 
+              </main>
 
-                  <div class="col-md-3">
+            
+            
 
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Unidad</label>
-                      <select class="form-control">
-                        
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-
-
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Asignado a</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-
-                    <div class="form-group">
-                      <label>PC</label>
-                      <select class="form-control">
-                        
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-
-                    <label for="inputAddress2" class="form-label"><b>Frecuencia de Mantenimiento</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtmonto" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                  </div>
-
-                  
-                  <div class="col-md-3">
-
-                    <label>Ultimo Mantenimiento:</label>
-                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                      <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" />
-
-                    </div>
-                  </div>
-
-                  <div class="col-md-12">
-                    <!-- textarea -->
-                    <div class="form-group">
-                      <label>Observaciones</label>
-                      <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-                    <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-                  </div>
-
-
-
-            </div>  
+          </div>  
             
            
 
@@ -590,8 +674,8 @@
               </table>
 
               <div class="d-grid gap-2">
-                <button class="btn btn-outline-success" type="button" onclick="cargar();"><b>Editar</b></button>
-                <button class="btn btn-outline-danger" type="button" onclick="vaciar();"><b>Eliminar</b></button>
+                <button class="btn btn-outline-success" type="button" onclick=";"><b>Editar</b></button>
+                <button class="btn btn-outline-danger" type="button" onclick=";"><b>Eliminar</b></button>
               </div>
             </div>
             <!-- /.card-body -->
@@ -650,6 +734,7 @@
 
 <script src="../Controller/agregar.js"></script>
 <script src="../Controller/cancelar.js"></script>
+<script src="../Controller/openRam.js"></script>
 
 <!-- Page specific script -->
 <script>

@@ -28,7 +28,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../index.php" class="nav-link">Inicio</a>
       </li>
     </ul>
 
@@ -102,7 +102,7 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../index.html" class="nav-link">
+                <a href="../index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inicio</p>
                 </a>
@@ -112,44 +112,52 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="./impS.html" class="nav-link">
+                <a href="./impS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./cpuS.html" class="nav-link">
+                <a href="./cpuS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./monT.html" class="nav-link ">
+                <a href="./monT.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="./tecLado.html" class="nav-link">
+                <a href="./tecLado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Teclado</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./mouSe.html" class="nav-link ">
+                <a href="./mouSe.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mouse</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./acceS.html" class="nav-link">
+                <a href="./acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
+                </a>
+              </li>
+
 
               
 
@@ -170,7 +178,7 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./catMarcas.html " class="nav-link">
+                <a href="./catMarcas.html " class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
@@ -180,13 +188,13 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="./catTipoImp.html" class="nav-link active">
+                <a href="./catTipoImp.html" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tipos de Impresoras</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./catEstiloImp.html" class="nav-link">
+                <a href="./catEstiloImp.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Estilos de Impresoras</p>
                 </a>
@@ -239,7 +247,7 @@
 
           <div class="card text">
             <div class="card-header">
-              <h2>Tipo de Impresora</h2> 
+              <h2>Estilos Impresoras</h2> 
             </div>
             <div class="card-body">
 
@@ -265,7 +273,7 @@
                  
                   
                   <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Tipo</b><b
+                    <label for="inputAddress2" class="form-label"><b>Estilo</b><b
                         style="color: red;">*</b></label>
                     <input type="tel" class="form-control" id="txtdescripcion" required>
                     <div class="invalid-feedback">
@@ -276,7 +284,15 @@
 
 
                   
-                 
+                  <div class="col-md-3">
+
+                    <label for="inputAddress2" class="form-label"><b>Detalles</b><b
+                        style="color: red;"></b></label>
+                    <input type="tel" class="form-control" id="txtmonto" required>
+                    <div class="invalid-feedback">
+                      Porfavor seleccione una fecha
+                    </div>
+                  </div>
 
                   
 
@@ -310,6 +326,8 @@
 
 
           </div>
+
+
 
 
         </div>

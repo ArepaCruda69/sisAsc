@@ -28,7 +28,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../index.php" class="nav-link">Inicio</a>
       </li>
     </ul>
 
@@ -105,58 +105,56 @@
     
                 <ul class="nav nav-treeview">
     
-                 
-                <ul class="nav nav-treeview">
-    
-                    <li class="nav-item">
-                      <a href="../Views/mantImp.html" class="nav-link ">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Impresora</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="../Views/mantCpu.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>CPUs</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="../Views/mantMont.html" class="nav-link ">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Monitor</p>
-                      </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                      <a href="../Views/mantTecl.html" class="nav-link active ">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p> Teclado</p>
-                      </a>
-                    </li>
-      
-                    <li class="nav-item">
-                      <a href="../Views/mantMou.html" class="nav-link ">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Mouse</p>
-                      </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                      <a href="../Views/mantAcc.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Accesorios</p>
-                      </a>
-                    </li>
-                    
-      
-                  </ul>
+                  <li class="nav-item">
+                    <a href="../Views/mantImp.php" class="nav-link active">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Impresora</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../Views/mantCpu.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>CPUs</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../Views/mantMont.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Monitor</p>
+                    </a>
+                  </li>
                   
+                  <li class="nav-item">
+                    <a href="../Views/mantTecl.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p> Teclado</p>
+                    </a>
+                  </li>
     
-    
-    
+                  <li class="nav-item">
+                    <a href="../Views/mantMou.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Mouse</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="../Views/mantAcc.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Accesorios</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
+                </a>
+              </li>
+
+
                 </ul>
-                
-                
+
               </li>
 
 
@@ -242,7 +240,7 @@
 
           <div class="card text">
             <div class="card-header">
-              <h2>Teclado</h2>
+              <h2>Impresora</h2>
             </div>
             <div class="card-body">
 
@@ -598,8 +596,8 @@
               </table>
 
               <div class="d-grid gap-2">
-                <button class="btn btn-outline-success" type="button" onclick="cargar();"><b>Editar</b></button>
-                <button class="btn btn-outline-danger" type="button" onclick="vaciar();"><b>Eliminar</b></button>
+                <button class="btn btn-outline-success" type="button" onclick=";"><b>Editar</b></button>
+                <button class="btn btn-outline-danger" type="button" onclick=";"><b>Eliminar</b></button>
               </div>
             </div>
             <!-- /.card-body -->
@@ -614,6 +612,7 @@
 
 
           </div>
+
 
         </div>
       </div>

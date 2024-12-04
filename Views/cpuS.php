@@ -145,7 +145,7 @@
               </li>
               
               <li class="nav-item">
-                <a href="./acceS.html" class="nav-link">
+                <a href="./acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
