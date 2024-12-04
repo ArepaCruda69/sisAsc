@@ -146,7 +146,7 @@
               </li>
               
               <li class="nav-item">
-                <a href="./acceS.html" class="nav-link active">
+                <a href="./acceS.html" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
@@ -154,7 +154,7 @@
 
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/ups.php" class="nav-link">
+                <a href="../sisAsc/Views/ups.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ups</p>
                 </a>
