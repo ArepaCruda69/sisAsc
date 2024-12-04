@@ -102,7 +102,7 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../index.html" class="nav-link">
+                <a href="../index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inicio</p>
                 </a>
@@ -112,42 +112,49 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="./impS.html" class="nav-link">
+                <a href="./impS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./cpuS.html" class="nav-link">
+                <a href="./cpuS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./monT.html" class="nav-link ">
+                <a href="./monT.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="./tecLado.html" class="nav-link">
+                <a href="./tecLado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Teclado</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./mouSe.html" class="nav-link active">
+                <a href="./mouSe.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mouse</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./acceS.html" class="nav-link">
+                <a href="./acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
                 </a>
               </li>
 
@@ -232,6 +239,9 @@
     </div>
     <!-- /.content-header -->
 
+
+
+
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
@@ -239,7 +249,7 @@
 
           <div class="card text">
             <div class="card-header">
-              <h2>Mouse</h2> 
+              <h2>Monitores</h2> 
             </div>
             <div class="card-body">
 
@@ -305,17 +315,6 @@
                     </div>
                   </div>
 
-                  
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Tipo</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                  </div>
-
-
                   <div class="col-md-3">
 
                     <!-- select -->
@@ -348,6 +347,9 @@
                   </div>
 
                  
+
+                  
+              
 
 
 
@@ -564,6 +566,14 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+
+
+
+
+
+
+
+    
   </div>
   <!-- /.content-wrapper -->
 
@@ -642,7 +652,6 @@
 
   });
 </script>
-
 
 <style>
   hr {

@@ -103,7 +103,7 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../index.html" class="nav-link">
+                <a href="../index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inicio</p>
                 </a>
@@ -113,42 +113,49 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="./impS.html" class="nav-link">
+                <a href="./impS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./cpuS.html" class="nav-link">
+                <a href="./cpuS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./monT.html" class="nav-link">
+                <a href="./monT.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./tecLado.html" class="nav-link">
+                <a href="./tecLado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Teclado</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./mouSe.html" class="nav-link">
+                <a href="./mouSe.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mouse</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="./acceS.html" class="nav-link active">
+                <a href="./acceS.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
                 </a>
               </li>
 

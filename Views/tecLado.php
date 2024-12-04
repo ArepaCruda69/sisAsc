@@ -102,7 +102,7 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../index.html" class="nav-link">
+                <a href="../index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inicio</p>
                 </a>
@@ -112,46 +112,51 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="./impS.html" class="nav-link">
+                <a href="./impS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./cpuS.html" class="nav-link">
+                <a href="./cpuS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./monT.html" class="nav-link active">
+                <a href="./monT.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="./tecLado.html" class="nav-link">
+                <a href="./tecLado.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Teclado</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./mouSe.html" class="nav-link">
+                <a href="./mouSe.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mouse</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./acceS.html" class="nav-link">
+                <a href="./acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
               </li>
 
-              
+              <li class="nav-item">
+                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
+                </a>
+              </li>
 
             </ul>
             
@@ -215,6 +220,7 @@
     <!-- /.sidebar -->
   </aside>
 
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -232,9 +238,6 @@
     </div>
     <!-- /.content-header -->
 
-
-
-
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
@@ -242,7 +245,7 @@
 
           <div class="card text">
             <div class="card-header">
-              <h2>Monitores</h2> 
+              <h2>Teclados</h2> 
             </div>
             <div class="card-body">
 
@@ -308,6 +311,17 @@
                     </div>
                   </div>
 
+                  
+                  <div class="col-md-3">
+                    <label for="inputAddress2" class="form-label"><b>Tipo</b><b
+                        style="color: red;">*</b></label>
+                    <input type="tel" class="form-control" id="txtdescripcion" required>
+                    <div class="invalid-feedback">
+                      Porfavor seleccione una fecha
+                    </div>
+                  </div>
+
+
                   <div class="col-md-3">
 
                     <!-- select -->
@@ -340,9 +354,6 @@
                   </div>
 
                  
-
-                  
-              
 
 
 
@@ -381,7 +392,7 @@
 
                   <div class="col-md-3">
 
-                    <label>Ultimo Mantenimiento:</label>
+                    <label>Fecha Mantenimiento:</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                       <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" />
 
@@ -544,29 +555,12 @@
             </div> -->
             <!-- /.card-body -->
 
-
-            <!-- /.card-header -->
-
-
             </main>
-
-            
-
-
           </div>
-
         </div>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-
-
-
-
-
-
-
-    
   </div>
   <!-- /.content-wrapper -->
 
@@ -645,6 +639,7 @@
 
   });
 </script>
+
 
 <style>
   hr {
