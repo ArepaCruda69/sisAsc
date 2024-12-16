@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include '../Model/conexion.php';
 
 class upsModel {
     public $conn;
@@ -8,8 +8,8 @@ class upsModel {
         $this->conn = conectarDB();
     }
 
-    public function registrarUPS($nombre, $modelo, $serial, $unidad, $fecha_instalacion, $cantidad_bateria, $modelo_bateria) {
-        $sql = "INSERT INTO ups (nombre, modelo, serial, unidad, fecha_instalacion, cantidad_bateria, modelo_bateria) 
+    public function registrarUPS($modelo, $serial, $unidad, $fecha_instalacion, $cantidad_bateria, $modelo_bateria, $observaciones) {
+        $sql = "INSERT INTO ups (modelo, serial, unidad, fecha_instalacion, cantidad_bateria, modelo_bateria, observaciones) 
                 VALUES (?, ?, ?, ?, ?, ?, ?)";
         
         $stmt = $this->conn->prepare($sql);
@@ -18,7 +18,7 @@ class upsModel {
             return false;
         }
 
-        $stmt->bind_param("sssssis", $nombre, $modelo, $serial, $unidad, $fecha_instalacion, $cantidad_bateria, $modelo_bateria);
+        $stmt->bind_param("sssssss", $modelo, $serial, $unidad, $fecha_instalacion, $cantidad_bateria, $modelo_bateria, $observaciones);
         if ($stmt->execute() === false) {
             error_log("Error en la ejecución de la declaración: " . $stmt->error);
             return false;
@@ -31,3 +31,4 @@ class upsModel {
         $this->conn->close();
     }
 }
+?>

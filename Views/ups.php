@@ -258,91 +258,60 @@
 
           <main class="col">
 
-            <form class="row g-3 needs-validation" action="model/registrarUps.php" style="border-radius: 20px;" novalidate>
-              
-              
-              
-              
-              <div class="col-md-3">
-                <label for="inputAddress2" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
-                <input type="number" class="form-control" id="txtcantidad" required>
-                <div class="invalid-feedback">
-                  Porfavor seleccione una Modelo
-                </div>
-              </div>
+          <form class="row g-3 needs-validation" action="../model/registrarUps.php" method="POST" style="border-radius: 20px;" novalidate>
 
-              <div class="col-md-3">
-                <label for="inputAddress2" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
-                <input type="number" class="form-control" id="txtcantidad" required>
-                <div class="invalid-feedback">
-                  Porfavor seleccione una Modelo
-                </div>
-              </div>
+    <div class="col-md-3">
 
-              <div class="col-md-3">
+        <label for="modelo" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
+        <input type="text" class="form-control" id="modelo" name="modelo" required>
+        <div class="invalid-feedback">Por favor ingrese el modelo</div>
+    </div>
+    <div class="col-md-3">
+        <label for="serial" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
+        <input type="text" class="form-control" id="serial" name="serial" required>
+        <div class="invalid-feedback">Por favor ingrese el serial</div>
+    </div>
+    <div class="col-md-3">
+        <label for="unidad" class="form-label">Unidad</label>
+        <select class="form-control" id="unidad" name="unidad">
+            <option>opcion 1</option>
+            <option>opcion 2</option>
+            <option>opcion 3</option>
+            <option>opcion 4</option>
+            <option>opcion 5</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label for="fecha_instalacion" class="form-label">Fecha de instalación de la batería:</label>
+        <input type="date" class="form-control" id="fecha_instalacion" name="fecha_instalacion">
+    </div>
+    <div class="col-md-3">
+        <hr class="hr hr-blurry" />
+        <label for="cantidad_bateria" class="form-label"><b>Cantidad de Batería</b><b style="color: red;">*</b></label>
+        <input type="number" class="form-control" id="cantidad_bateria" name="cantidad_bateria" required>
+        <div class="invalid-feedback">Por favor ingrese la cantidad de batería</div>
+    </div>
+    <div class="col-md-3">
+        <hr class="hr hr-blurry" />
+        <label for="modelo_bateria" class="form-label"><b>Modelo de la Batería</b><b style="color: red;">*</b></label>
+        <input type="text" class="form-control" id="modelo_bateria" name="modelo_bateria" required>
+        <div class="invalid-feedback">Por favor ingrese el modelo de la batería</div>
+        <br>
+    </div>
+    <div class="col-md-6">
+        <hr class="hr hr-blurry" />
+        <div class="form-group">
+            <label for="observaciones">Observaciones</label>
+            <textarea class="form-control" id="observaciones" name="observaciones" rows="1"></textarea>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-outline-success" type="submit"><b>Registrar</b></button>
+        <button class="btn btn-outline-danger" type="reset"><b>Cancelar</b></button>
+    </div>
 
-                <!-- select -->
-                <div class="form-group">
-                  <label>Unidad</label>
-                  <select class="form-control">
-                    
-                    <option>opcion 1</option>
-                    <option>opcion 2</option>
-                    <option>opcion 3</option>
-                    <option>opcion 4</option>
-                    <option>opcion 5</option>
-                  </select>
-                </div>
-              </div>
+</form>
 
-              <div class="col-md-3">
-
-                <label>Fecha de instalación de la batería:</label>
-                <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                  <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" />
-
-                </div>
-              </div>
-
-
-              <div class="col-md-3">
-              <hr class="hr hr-blurry" />
-                <label for="inputAddress2" class="form-label"><b>Cantidad de Bateria</b><b style="color: red;">*</b></label>
-                <input type="number" class="form-control" id="txtcantidad" required>
-                <div class="invalid-feedback">
-                  Porfavor seleccione una Serial
-                </div>
-              </div>
-
-             
-          
-
-              <div class="col-md-3">
-                <hr class="hr hr-blurry" />
-                <label for="inputAddress2" class="form-label"><b>Modelo de la Bateria</b><b
-                    style="color: red;">*</b></label>
-                <input type="tel" class="form-control" id="txtdescripcion" required>
-                <div class="invalid-feedback">
-                  Porfavor seleccione una fecha
-                </div>
-                <br>
-              </div>
-
-
-              <div class="col-md-6">  
-              <hr class="hr hr-blurry" />
-                <!-- textarea -->
-                <div class="form-group">
-                  <label>Observaciones</label>
-                  <textarea class="form-control" rows="1"></textarea>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-
-                <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-                <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-              </div>
 
         </div>  
 
@@ -615,6 +584,17 @@
 </style>
 
 </body>
+
+<?php
+if (isset($_GET['status'])) {
+    if ($_GET['status'] == 'success') {
+        echo "<div class='alert alert-success' role='alert'>Registro guardado exitosamente.</div>";
+    } elseif ($_GET['status'] == 'error') {
+        echo "<div class='alert alert-danger' role='alert'>Hubo un error al guardar el registro.</div>";
+    }
+}
+?>
+
 </html>
 
 

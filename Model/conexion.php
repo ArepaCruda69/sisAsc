@@ -4,8 +4,8 @@
 function conectarDB() {
     $servername = "localhost";
     $username = "root";
-    $password = "123456789";
-    $dbname = "bd_sisasc";
+    $password = "12345678";
+    $dbname = "bdd_sisasc";
 
     // Crear conexión
     $conn = new mysqli($servername, $username, $password, $dbname);
