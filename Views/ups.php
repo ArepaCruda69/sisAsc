@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistemas Ascardio</title>
 
- 
-  <?php
+ <?php
 include '../Model/conexion.php'; // Asegúrate de que la ruta es correcta
 $conn = conectarDB();
 $sql = "SELECT modelo, serial, unidad, fecha_instalacion, modelo_bateria FROM ups";
@@ -58,8 +57,8 @@ if (isset($_GET['status'])) {
    <link rel="stylesheet" href="../Assests/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
    <link rel="stylesheet" href="../Assests/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
  
-</head>
-<body class="hold-transition sidebar-mini">
+    </head>
+  <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -286,27 +285,28 @@ if (isset($_GET['status'])) {
       <div class="container-fluid">
         <div class="row">
          
-<!-- Main content -->
-<div class="content">
-  <div class="container-fluid">
-    <div class="col">
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="col">
 
-      <div class="card text">
-        <div class="card-header">
-          <h2>Ups</h2>
-        </div>
-        <div class="card-body">
+        <div class="card text">
+          <div class="card-header">
+            <h2>Ups</h2>
+          </div>
+          <div class="card-body">
 
           <main class="col">
 
           <form class="row g-3 needs-validation" action="../model/registrarUps.php" method="POST" style="border-radius: 20px;" novalidate>
 
-    <div class="col-md-3">
+     <div class="col-md-3">
 
         <label for="modelo" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
         <input type="text" class="form-control" id="modelo" name="modelo" required>
         <div class="invalid-feedback">Por favor ingrese el modelo</div>
     </div>
+    
     <div class="col-md-3">
         <label for="serial" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
         <input type="text" class="form-control" id="serial" name="serial" required>
@@ -355,7 +355,7 @@ if (isset($_GET['status'])) {
         </div>
     </div>
     <div class="col-md-6">
-        <button class="btn btn-outline-success" type="submit"><b>Registrar</b></button>
+        <button class="btn btn-outline-success" type="submit"><b>Agregar</b></button>
         <button class="btn btn-outline-danger" type="reset"><b>Cancelar</b></button>
     </div>
 
@@ -419,31 +419,31 @@ if (isset($_GET['status'])) {
         
 
 
-      </div>
+            </div>
 
-    </div>
-  </div>
-  <!-- /.container-fluid -->
-</div>
-<!-- /.content -->
-
-
+          </div>
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+        <!-- /.container-fluid -->
+      </div>
+      <!-- /.content -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
+
+            </div>
+            <!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+        <div class="p-3">
+          <h5>Title</h5>
+          <p>Sidebar content</p>
+        </div>
+      </aside>
 
   <!-- /.control-sidebar -->
    <footer class="main-footer">
@@ -486,77 +486,77 @@ if (isset($_GET['status'])) {
 
 
 
-<!-- Page specific script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-      language: {
-        processing: "Busqueda en curso...",
-        search: "Buscar&nbsp;:",
-        lengthMenu: "Agrupar de MENU Solicitudes",
-        infoEmpty: "No existen datos.",
-        infoFiltered: "(filtrado de MAX elementos en total)",
-        infoPostFix: "",
-        loadingRecords: "Cargando...",
-        zeroRecords: "No se encontraron datos con tu busqueda",
-        emptyTable: "No hay datos disponibles en la tabla.",
-        paginate: {
-            first: "Primero",
-            previous: "Anterior",
-            next: "Siguiente",
-            last: "Ultimo"
-        },
-        aria: {
-            sortAscending: ": active para ordenar la columna en orden ascendente",
-            sortDescending: ": active para ordenar la columna en orden descendente"
-        }
-    },
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-  });
-</script>
-
-<script>
-  // JavaScript para mejorar la validación de HTML5
-  (function() {
-    'use strict';
-    window.addEventListener('load', function() {
-      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
-      var forms = document.getElementsByClassName('needs-validation');
-      // Bucle sobre los formularios y prevenir el envío
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+  <!-- Page specific script -->
+  <script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        language: {
+          processing: "Busqueda en curso...",
+          search: "Buscar&nbsp;:",
+          lengthMenu: "Agrupar de MENU Solicitudes",
+          infoEmpty: "No existen datos.",
+          infoFiltered: "(filtrado de MAX elementos en total)",
+          infoPostFix: "",
+          loadingRecords: "Cargando...",
+          zeroRecords: "No se encontraron datos con tu busqueda",
+          emptyTable: "No hay datos disponibles en la tabla.",
+          paginate: {
+              first: "Primero",
+              previous: "Anterior",
+              next: "Siguiente",
+              last: "Ultimo"
+          },
+          aria: {
+              sortAscending: ": active para ordenar la columna en orden ascendente",
+              sortDescending: ": active para ordenar la columna en orden descendente"
           }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
-</script>
+      },
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+  </script>
 
-<script>
-  // JavaScript para ocultar el mensaje de éxito/error después de 2 segundos
-  setTimeout(function() {
-    var popup = document.getElementById('popup-message');
-    if (popup) {
-      popup.style.display = 'none';
+  <script>
+    // JavaScript para mejorar la validación de HTML5
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+        var forms = document.getElementsByClassName('needs-validation');
+        // Bucle sobre los formularios y prevenir el envío
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+
+  <script>
+    // JavaScript para ocultar el mensaje de éxito/error después de 2 segundos
+    setTimeout(function() {
+      var popup = document.getElementById('popup-message');
+      if (popup) {
+        popup.style.display = 'none';
+      }
+    }, 2000);
+  </script>
+
+
+
+  <style>
+    hr {
+      height: 4px;
+      background-color: #cac3c3;
+      border: none;
     }
-  }, 2000);
-</script>
-
-
-
-<style>
-  hr {
-    height: 4px;
-    background-color: #cac3c3;
-    border: none;
-  }
-</style>
+  </style>
 
 </body>
 
