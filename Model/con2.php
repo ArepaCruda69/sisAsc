@@ -1,11 +1,10 @@
 
 <?php
-
-function conectarDB() {
+function conectarSegundaDB() {
     $servername = "localhost";
     $username = "root";
     $password = "12345678";
-    $dbname = "bdd_sisasc";
+    $dbname = "bd_globales";
 
     // Crear conexión
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,7 +16,4 @@ function conectarDB() {
 
     return $conn;
 }
-
-
 ?>
-

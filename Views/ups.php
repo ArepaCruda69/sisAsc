@@ -14,6 +14,38 @@ $sql = "SELECT modelo, serial, unidad, fecha_instalacion, modelo_bateria FROM up
 $result = $conn->query($sql);
 ?>
 
+<?php
+// Incluir el archivo de conexión
+include '../Model/con2.php';
+
+
+// Conectar a la segunda base de datos (bd_globales)
+$connGlobales = conectarSegundaDB();
+if ($connGlobales->connect_error) {
+    die("La conexión a la base de datos bd_globales falló: " . $connGlobales->connect_error);
+}
+
+// Consulta a la tabla glo_1unidad en bd_globales
+$sqlGlobales = "SELECT nom_unidad FROM glo_1unidad";
+$resultGlobales = $connGlobales->query($sqlGlobales);
+if ($resultGlobales === false) {
+    die("Error en la consulta a bd_globales: " . $connGlobales->error);
+}
+
+// Mensajes de estado (éxito/error)
+
+if (isset($_GET['status'])) {
+    if ($_GET['status'] == 'success') {
+        echo "<div id='popup-message' class='alert alert-success' role='alert'>Registro guardado exitosamente.</div>";
+    } elseif ($_GET['status'] == 'error') {
+        echo "<div id='popup-message' class='alert alert-danger' role='alert'>Hubo un error al guardar el registro.</div>";
+    }
+}
+
+
+?>
+
+
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -280,19 +312,27 @@ $result = $conn->query($sql);
         <input type="text" class="form-control" id="serial" name="serial" required>
         <div class="invalid-feedback">Por favor ingrese el serial</div>
     </div>
+
+
     <div class="col-md-3">
         <label for="unidad" class="form-label">Unidad</label>
-        <select class="form-control" id="unidad" name="unidad">
-            <option>opcion 1</option>
-            <option>opcion 2</option>
-            <option>opcion 3</option>
-            <option>opcion 4</option>
-            <option>opcion 5</option>
+        <select class="form-control" id="unidad" name="unidad" required>
+        <?php
+            if ($resultGlobales->num_rows > 0) {
+                while ($row = $resultGlobales->fetch_assoc()) {
+                    echo "<option value='" . htmlspecialchars($row['nom_unidad']) . "'>" . htmlspecialchars($row['nom_unidad']) . "</option>";
+                }
+            } else {
+                echo "<option>No hay unidades disponibles</option>";
+            }
+            ?>
         </select>
     </div>
+    
+
     <div class="col-md-3">
         <label for="fecha_instalacion" class="form-label">Fecha de instalación de la batería:</label>
-        <input type="date" class="form-control" id="fecha_instalacion" name="fecha_instalacion">
+        <input type="date" class="form-control" id="fecha_instalacion" name="fecha_instalacion" required>
     </div>
     <div class="col-md-3">
         <hr class="hr hr-blurry" />
@@ -474,9 +514,41 @@ $result = $conn->query($sql);
         }
     },
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
   });
 </script>
+
+<script>
+  // JavaScript para mejorar la validación de HTML5
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+      var forms = document.getElementsByClassName('needs-validation');
+      // Bucle sobre los formularios y prevenir el envío
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
+
+<script>
+  // JavaScript para ocultar el mensaje de éxito/error después de 2 segundos
+  setTimeout(function() {
+    var popup = document.getElementById('popup-message');
+    if (popup) {
+      popup.style.display = 'none';
+    }
+  }, 2000);
+</script>
+
+
 
 <style>
   hr {
