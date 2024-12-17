@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistemas Ascardio</title>
 
+ 
+  <?php
+include '../Model/conexion.php'; // Asegúrate de que la ruta es correcta
+$conn = conectarDB();
+$sql = "SELECT modelo, serial, unidad, fecha_instalacion, modelo_bateria FROM ups";
+$result = $conn->query($sql);
+?>
+
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
@@ -317,153 +326,47 @@
 
 
 
+              <!-- /.card-header -->
+              <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Serial</th>
+              <th>Unidad</th>
+              <th>Fecha.Inst.</th>
+              <th>Modelo Bateria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row['modelo']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['serial']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['unidad']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['fecha_instalacion']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['modelo_bateria']) . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>No se encontraron registros</td></tr>";
+            }
+            ?>
+          </tbody>
+         
+        </table>
 
-
-
-
-
-
-
-
-
-
-        
-        
-
-        <!-- /.card-header -->
-        <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Modelo</th>
-                <th>Serial</th>
-                <th>Unidad</th>
-                <th>Fecha.Inst.</th>
-                <th>Modelo Bateria</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Test</td>
-                <td>-----</td>
-                <td>-----</td>
-                <td> 4</td>
-                <td>----</td>
-              </tr>
-
-              <td>Test</td>
-                <td>----</td>
-                <td>-----</td>
-                <td> 5</td>
-                <td>----</td>
-              </tr>
-              <tr>
-
-                <td>Test</td>
-                <td>-----</td>
-                <td>-----</td>
-                <td> 7</td>
-                <td>----</td>
-              </tr>
-
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 6
-                </td>
-                <td>Win 98+</td>
-                <td>6</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 7</td>
-                <td>Win XP SP2+</td>
-                <td>7</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>AOL browser (AOL desktop)</td>
-                <td>Win XP</td>
-                <td>6</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Gecko</td>
-                <td>Firefox 1.0</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>1.7</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Get</td>
-                <td>------</td>
-                <td>----</td>
-                <td>1.8</td>
-                <td>--</td>
-              </tr>
-              <tr>
-                <td>Gecko</td>
-                <td>Firefox 2.0</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Gecko</td>
-                <td>Firefox 3.0</td>
-                <td>Win 2k+ / OSX.3+</td>
-                <td>1.9</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Gecko</td>
-                <td>Camino 1.0</td>
-                <td>OSX.2+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Gecko</td>
-                <td>Camino 1.5</td>
-                <td>OSX.3+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Gecko</td>
-                <td>Netscape 7.2</td>
-                <td>Win 95+ / Mac OS 8.6-9.2</td>
-                <td>1.7</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>Gecko</td>
-                <td>Netscape Browser 8</td>
-                <td>Win 98SE+</td>
-                <td>1.7</td>
-                <td>A</td>
-              </tr>
-             
-            </tbody>
-            <tfoot>
-              <tr>
-                <th>Codigo</th>
-                <th>Modelo</th>
-                <th>Marca</th>
-                <th>Tipo</th>
-                <th>Unidad</th>
-              </tr>
-            </tfoot>
-          </table>
 
          
 
-          <div class="d-grid gap-2">
+         <!--  <div class="d-grid gap-2">
             <button class="btn btn-outline-success" type="button" onclick="cargar();"><b>Editar</b></button>
             <button class="btn btn-outline-danger" type="button" onclick="vaciar();"><b>Eliminar</b></button>
-          </div>
+          </div> -->
+
+          
         </div>
         <!-- /.card-body -->
 
@@ -585,15 +488,6 @@
 
 </body>
 
-<?php
-if (isset($_GET['status'])) {
-    if ($_GET['status'] == 'success') {
-        echo "<div class='alert alert-success' role='alert'>Registro guardado exitosamente.</div>";
-    } elseif ($_GET['status'] == 'error') {
-        echo "<div class='alert alert-danger' role='alert'>Hubo un error al guardar el registro.</div>";
-    }
-}
-?>
 
 </html>
 
