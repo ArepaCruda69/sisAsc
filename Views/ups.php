@@ -6,43 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistemas Ascardio</title>
 
- <?php
-include '../Model/conexion.php'; // Asegúrate de que la ruta es correcta
-$conn = conectarDB();
-$sql = "SELECT modelo, serial, unidad, fecha_instalacion, modelo_bateria FROM ups";
-$result = $conn->query($sql);
-?>
+    <?php
+  include '../Model/con2.php';
+  include '../Model/conexion.php';  // Este archivo se necesita para las consultas principales
+  $conn = conectarDB();
+  $sql = "SELECT modelo, serial, unidad, fecha_instalacion, modelo_bateria FROM ups";
+  $result = $conn->query($sql);
 
-<?php
-// Incluir el archivo de conexión
-include '../Model/con2.php';
+  // Conectar a la segunda base de datos (bd_globales)
+  $connGlobales = conectarSegundaDB();
+  if ($connGlobales->connect_error) {
+      die("La conexión a la base de datos bd_globales falló: " . $connGlobales->connect_error);
+  }
+
+  $sqlGlobales = "SELECT nom_unidad FROM glo_1unidad";
+  $resultGlobales = $connGlobales->query($sqlGlobales);
+  if ($resultGlobales === false) {
+      die("Error en la consulta a bd_globales: " . $connGlobales->error);
+  }
+
+  // Mensajes de estado (éxito/error)
+  if (isset($_GET['status'])) {
+      if ($_GET['status'] == 'success') {
+          echo "<div id='popup-message' class='alert alert-success' role='alert'>Registro guardado exitosamente.</div>";
+      } elseif ($_GET['status'] == 'error') {
+          echo "<div id='popup-message' class='alert alert-danger' role='alert'>Hubo un error al guardar el registro.</div>";
+      }
+  }
+
+  if (isset($_GET['delete_status'])) {
+      if ($_GET['delete_status'] == 'success') {
+          echo "<div id='popup-message' class='alert alert-success' role='alert'>Registro eliminado exitosamente.</div>";
+      } elseif ($_GET['delete_status'] == 'error') {
+          echo "<div id='popup-message' class='alert alert-danger' role='alert'>Hubo un error al eliminar el registro.</div>";
+      }
+  }
+  ?>
 
 
-// Conectar a la segunda base de datos (bd_globales)
-$connGlobales = conectarSegundaDB();
-if ($connGlobales->connect_error) {
-    die("La conexión a la base de datos bd_globales falló: " . $connGlobales->connect_error);
-}
 
-// Consulta a la tabla glo_1unidad en bd_globales
-$sqlGlobales = "SELECT nom_unidad FROM glo_1unidad";
-$resultGlobales = $connGlobales->query($sqlGlobales);
-if ($resultGlobales === false) {
-    die("Error en la consulta a bd_globales: " . $connGlobales->error);
-}
-
-// Mensajes de estado (éxito/error)
-
-if (isset($_GET['status'])) {
-    if ($_GET['status'] == 'success') {
-        echo "<div id='popup-message' class='alert alert-success' role='alert'>Registro guardado exitosamente.</div>";
-    } elseif ($_GET['status'] == 'error') {
-        echo "<div id='popup-message' class='alert alert-danger' role='alert'>Hubo un error al guardar el registro.</div>";
-    }
-}
-
-
-?>
 
 
 
@@ -58,6 +60,7 @@ if (isset($_GET['status'])) {
    <link rel="stylesheet" href="../Assests/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
  
     </head>
+
   <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
@@ -388,7 +391,11 @@ if (isset($_GET['status'])) {
                     echo "<td>" . htmlspecialchars($row['unidad']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['fecha_instalacion']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['modelo_bateria']) . "</td>";
-                    echo "</tr>";
+                    echo "<td>
+                   <button type='button' class='btn btn-warning btn-sm' onclick='editRecord(" . $row['id'] . ")'>Editar</button>
+                  <a href='../Model/delete.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+                  </td>";
+              echo "</tr>";
                 }
             } else {
                 echo "<tr><td colspan='5'>No se encontraron registros</td></tr>";
@@ -548,6 +555,33 @@ if (isset($_GET['status'])) {
     }, 2000);
   </script>
 
+
+
+
+
+
+<script>
+function editRecord(id) {
+  $.ajax({
+    url: 'edit.php',
+    type: 'GET',
+    data: { id: id },
+    success: function(response) {
+      const record = JSON.parse(response);
+      $('#editId').val(record.id);
+      $('#editModelo').val(record.modelo);
+      $('#editSerial').val(record.serial);
+      $('#editUnidad').val(record.unidad);
+      $('#editFechaInstalacion').val(record.fecha_instalacion);
+      $('#editCantidadBateria').val(record.cantidad_bateria);
+      $('#editModeloBateria').val(record.modelo_bateria);
+      $('#editObservaciones').val(record.observaciones);
+      $('#editModal').modal('show');
+    }
+  });
+}
+
+</script>
 
 
   <style>
