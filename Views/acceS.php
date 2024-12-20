@@ -153,7 +153,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                <a href="./ups.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ups</p>
                 </a>
