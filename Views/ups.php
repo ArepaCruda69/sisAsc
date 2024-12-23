@@ -314,7 +314,8 @@
 
     <div class="col-md-3">
         <label for="unidad" class="form-label">Unidad</label>
-        <select class="form-control" id="unidad" name="unidad" required>
+        <select class="form-control" id="unidad" name="unidad" required>   
+        <option value="">Seleccione...</option>
         <?php
             if ($resultGlobales->num_rows > 0) {
                 while ($row = $resultGlobales->fetch_assoc()) {

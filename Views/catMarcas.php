@@ -62,7 +62,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-danger elevation-4" style="background-color: #959a9b;">
     <!-- Brand Logo -->
-    <a href="../index.html" class="brand-link">
+    <a href="../index.php" class="brand-link">
       <img src="../Assests/dist/img/images.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Sistemas</span>
     </a>
@@ -249,84 +249,56 @@
             <div class="card-header">
               <h2>Marcas</h2> 
             </div>
-            <div class="card-body">
 
-              <main class="col">
+         <div class="card-body">
+  <main class="col">
+  <form id="marcaForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
+      <div class="col-md-3">
+        <label for="codigo" class="form-label"><b>Codigo</b><b style="color: red;">*</b></label>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="codigo" name="codigo" aria-label="Código" aria-describedby="button-addon2" required>
+        </div>
+        <div class="invalid-feedback">
+          Por favor, ingrese un código.
+        </div>
+      </div>
 
-                <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
-                  <div class="col-md-3">
-                    <label for="inputEmail4" class="form-label"><b> Codigo </b><b style="color: red;">*</b></label>
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                      <button class="btn btn-danger" type="button" id="button-addon2" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop"><b>Buscar</b></button>
-                    </div>
-                    <div class="invalid-feedback">
-                      Porfavor Digite un Codigo
-                    </div>
-                  </div>
+      <div class="col-md-3">
+        <label for="marca" class="form-label"><b>Marca</b><b style="color: red;">*</b></label>
+        <input type="text" class="form-control" id="marca" name="marca" required>
+        <div class="invalid-feedback">
+          Por favor, ingrese una marca.
+        </div>
+      </div>
 
-                 
-                  
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="equipo" class="form-label"><b>Equipo</b><b style="color: red;">*</b></label>
+          <select class="form-control" id="equipo" name="equipo" required>
+            <option value="">Seleccione...</option>
+            <option>Impresora</option>
+            <option>Cpu</option>
+            <option>Monitor</option>
+            <option>Teclado</option>
+            <option>Mouse</option>
+            <option>Accesorios</option>
+            <option>Ups</option>
+          </select>
+        </div>
+        <div class="invalid-feedback">
+          Por favor, seleccione un equipo.
+        </div>
+      </div>
 
-                 
-                  
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Marca</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                  </div>
-
-
-
-                  
-                  <div class="col-md-3">
-
-                    <label for="inputAddress2" class="form-label"><b>Detalles</b><b
-                        style="color: red;"></b></label>
-                    <input type="tel" class="form-control" id="txtmonto" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                  </div>
-
-                  
-
-                  
-
-                  <div class="col-md-12">
-                    <!-- textarea -->
-                    <div class="form-group">
-                      <label>Observacion</label>
-                      <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-                    <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-                  </div>
-
-
-
-            </div>  
-            
-            
-
-           
-
-            </main>
-
-            
-
-
-          </div>
-
+      <div class="col-md-6">
+        <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
+        <button class="btn btn-outline-danger" type="reset"><b>Cancelar</b></button>
+      </div>
+      <div id="message" style="display: none;" class="alert alert-success">
+         ¡Registro agregado exitosamente! </div>
+    </form>
+  </main>
+</div>
 
         </div>
       </div><!-- /.container-fluid -->
@@ -376,40 +348,30 @@
 <script src="../Assests/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-<script src="../Controller/agregar.js"></script>
+
 <script src="../Controller/cancelar.js"></script>
+<script src="../Controller/agregarMarca.js"></script>
 
 
-<!-- Page specific script -->
+
+
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-      language: {
-        processing: "Busqueda en curso...",
-        search: "Buscar&nbsp;:",
-        lengthMenu: "Agrupar de MENU Solicitudes",
-        infoEmpty: "No existen datos.",
-        infoFiltered: "(filtrado de MAX elementos en total)",
-        infoPostFix: "",
-        loadingRecords: "Cargando...",
-        zeroRecords: "No se encontraron datos con tu busqueda",
-        emptyTable: "No hay datos disponibles en la tabla.",
-        paginate: {
-            first: "Primero",
-            previous: "Anterior",
-            next: "Siguiente",
-            last: "Ultimo"
-        },
-        aria: {
-            sortAscending: ": active para ordenar la columna en orden ascendente",
-            sortDescending: ": active para ordenar la columna en orden descendente"
-        }
-    },
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
-  });
+  // Código JavaScript adicional para validación del formulario
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      var forms = document.getElementsByClassName('needs-validation');
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
 </script>
 
 

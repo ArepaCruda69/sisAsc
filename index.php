@@ -120,28 +120,28 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../sisAsc/Views/monT.html" class="nav-link">
+                <a href="../sisAsc/Views/monT.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="../sisAsc/Views/tecLado.html" class="nav-link">
+                <a href="../sisAsc/Views/tecLado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Teclado</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/mouSe.html" class="nav-link">
+                <a href="../sisAsc/Views/mouSe.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mouse</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="../sisAsc/Views/acceS.html" class="nav-link">
+                <a href="../sisAsc/Views/acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
@@ -175,40 +175,40 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/mantImp.html" class="nav-link">
+                <a href="../sisAsc/Views/mantImp.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../sisAsc/Views/mantCpu.html" class="nav-link">
+                <a href="../sisAsc/Views/mantCpu.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../sisAsc/Views/mantMont.html" class="nav-link">
+                <a href="../sisAsc/Views/mantMont.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="../sisAsc/Views/mantTecl.html" class="nav-link">
+                <a href="../sisAsc/Views/mantTecl.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> Teclado</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/mantMou.html" class="nav-link">
+                <a href="../sisAsc/Views/mantMou.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mouse</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="../sisAsc/Views/mantAcc.html" class="nav-link">
+                <a href="../sisAsc/Views/mantAcc.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
@@ -234,7 +234,7 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" ../sisAsc/Views/catMarcas.html" class="nav-link">
+                <a href=" ../sisAsc/Views/catMarcas.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
@@ -244,25 +244,25 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/catTipoImp.html" class="nav-link">
+                <a href="../sisAsc/Views/catTipoImp.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tipos de Impresoras</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../sisAsc/Views/catEstiloImp.html" class="nav-link">
+                <a href="../sisAsc/Views/catEstiloImp.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Estilos de Impresoras</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../sisAsc/Views/catPuertos.html" class="nav-link">
+                <a href="../sisAsc/Views/catPuertos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../sisAsc/Views/catAcc.html" class="nav-link">
+                <a href="../sisAsc/Views/catAcc.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
