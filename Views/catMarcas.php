@@ -253,17 +253,17 @@
          <div class="card-body">
   <main class="col">
   <form id="marcaForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <label for="codigo" class="form-label"><b>Codigo</b><b style="color: red;">*</b></label>
         <div class="input-group mb-3">
-          <input type="number" class="form-control" id="codigo" name="codigo" aria-label="Código" aria-describedby="button-addon2" required>
+          <input type="number" class="form-control" id="codigo" name="codigo" aria-label="Código" aria-describedby="button-addon2" required disabled>
         </div>
         <div class="invalid-feedback">
           Por favor, ingrese un código.
         </div>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <label for="marca" class="form-label"><b>Marca</b><b style="color: red;">*</b></label>
         <input type="text" class="form-control" id="marca" name="marca" required>
         <div class="invalid-feedback">
@@ -271,7 +271,7 @@
         </div>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group">
           <label for="equipo" class="form-label"><b>Equipo</b><b style="color: red;">*</b></label>
           <select class="form-control" id="equipo" name="equipo" required>

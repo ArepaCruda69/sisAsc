@@ -4,7 +4,7 @@
 function conectarDB() {
     $servername = "localhost";
     $username = "root";
-    $password = "12345678";
+    $password = "123456";
     $dbname = "bdd_sisasc";
 
     // Crear conexión

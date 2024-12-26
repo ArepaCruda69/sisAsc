@@ -7,19 +7,18 @@
   <title>Sistemas Ascardio</title>
 
     <?php
-  include '../Model/con2.php';
   include '../Model/conexion.php';  // Este archivo se necesita para las consultas principales
   $conn = conectarDB();
   $sql = "SELECT modelo, serial, unidad, fecha_instalacion, modelo_bateria FROM ups";
   $result = $conn->query($sql);
 
   // Conectar a la segunda base de datos (bd_globales)
-  $connGlobales = conectarSegundaDB();
+  $connGlobales = conectarDB();
   if ($connGlobales->connect_error) {
       die("La conexión a la base de datos bd_globales falló: " . $connGlobales->connect_error);
   }
 
-  $sqlGlobales = "SELECT nom_unidad FROM glo_1unidad";
+  $sqlGlobales = "SELECT nom_unidad FROM bd_globales.glo_1unidad";
   $resultGlobales = $connGlobales->query($sqlGlobales);
   if ($resultGlobales === false) {
       die("Error en la consulta a bd_globales: " . $connGlobales->error);

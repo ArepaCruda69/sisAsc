@@ -3,7 +3,7 @@
 function conectarSegundaDB() {
     $servername = "localhost";
     $username = "root";
-    $password = "12345678";
+    $password = "123456";
     $dbname = "bd_globales";
 
     // Crear conexión
