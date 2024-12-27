@@ -405,7 +405,7 @@
                           </div>
                               
 
-                      <!-- Tarjeta RAM -->
+                      <!-- Tarjeta R-->
                       <div class="col-md-3">
                         <hr class="hr hr-blurry" />
                         <label for="inputEmail4" class="form-label"><b> Tarjeta RAM </b><b style="color: red;">*</b></label>
