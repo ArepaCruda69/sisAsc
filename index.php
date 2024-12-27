@@ -119,7 +119,8 @@
                   <p>CPUs</p>
                 </a>
               </li>
-              <li class="nav-item">
+
+              <!-- <li class="nav-item">
                 <a href="../sisAsc/Views/monT.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
@@ -139,7 +140,7 @@
                   <p>Mouse</p>
                 </a>
               </li>
-              
+               -->
               <li class="nav-item">
                 <a href="../sisAsc/Views/acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -186,6 +187,8 @@
                   <p>CPUs</p>
                 </a>
               </li>
+
+<!--               
               <li class="nav-item">
                 <a href="../sisAsc/Views/mantMont.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -206,7 +209,7 @@
                   <p>Mouse</p>
                 </a>
               </li>
-              
+               -->
               <li class="nav-item">
                 <a href="../sisAsc/Views/mantAcc.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

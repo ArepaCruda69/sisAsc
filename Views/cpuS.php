@@ -123,7 +123,8 @@
                   <p>CPUs</p>
                 </a>
               </li>
-              <li class="nav-item">
+
+              <!-- <li class="nav-item">
                 <a href="./monT.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Monitor</p>
@@ -142,7 +143,7 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mouse</p>
                 </a>
-              </li>
+              </li> -->
               
               <li class="nav-item">
                 <a href="./acceS.php" class="nav-link">
@@ -415,6 +416,7 @@
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
+                            <option>6</option>
                           </select>
                           <button class="btn btn-danger" type="button" id="button-addon2" onclick="openRamModal()" data-toggle="modal" data-target="#ramModal"><b>Añadir</b></button>
                         </div>
