@@ -30,9 +30,8 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          
+          <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -59,12 +58,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./cpuS.php" class="nav-link">
+                <a href="./cpuS.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
-              
+
               <!-- <li class="nav-item">
                 <a href="./monT.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -84,17 +83,17 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mouse</p>
                 </a>
-              </li>
-               -->
+              </li> -->
+              
               <li class="nav-item">
-                <a href="./acceS.php" class="nav-link active">
+                <a href="./acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="./ups.php" class="nav-link ">
+                <a href="./ups.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ups</p>
                 </a>
@@ -103,12 +102,7 @@
             </ul>
             
           </li>
-
-
-
-
-          
-
+         
           <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-file"></i>
@@ -148,6 +142,7 @@
                   <p>Puertos</p>
                 </a>
               </li>
+              
               <li class="nav-item">
                 <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -156,12 +151,14 @@
               </li>
 
             </ul>
+            
 
           </li>
-         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
+
+  
