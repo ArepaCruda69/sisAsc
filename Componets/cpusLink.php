@@ -17,3 +17,8 @@
   <link rel="stylesheet" href="../Assests/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 
+  <link rel="stylesheet" href="../Assests/dist/css/index.css">
+
+
+
+

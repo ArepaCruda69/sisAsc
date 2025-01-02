@@ -21,6 +21,12 @@ $form2 = "
 <script src='../Assests/plugins/datatables-buttons/js/buttons.print.min.js'></script>
 <script src='../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js'></script>
 
+
+<!-- SweetAlert2 -->
+<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>
+
+
+
 <script src='../Controller/agregar.js'></script>
 <script src='../Controller/cancelar.js'></script>
 <script src='../Controller/openRam.js'></script>

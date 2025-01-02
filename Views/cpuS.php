@@ -62,6 +62,10 @@
 
 
 <?php echo $form2?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src='../Assests/dist/js/tablaRam.js'></script>
+<script src='../Assests/dist/js/tablaDisco.js'></script>
+<script src='../Assests/plugins/jquery/jquery.min.js'></script>
 
 <style>
   hr {
