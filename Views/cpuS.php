@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php include '../Componets/cpusLink.php'; ?>
+<?php include '../Componets/head.php'; ?>
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -63,8 +63,7 @@
 
 <?php echo $form2?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src='../Assests/dist/js/tablaRam.js'></script>
-<script src='../Assests/dist/js/tablaDisco.js'></script>
+<script src='../Assests/dist/js/formCpu.js'></script>
 <script src='../Assests/plugins/jquery/jquery.min.js'></script>
 
 <style>

@@ -447,7 +447,7 @@
 
 
           <div class="form-row">
-        <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
+        <button class="btn btn-outline-success" type="button" id = "btCpu"onclick="agregar();"><b>Agregar</b></button>
         <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
           </div>
 
