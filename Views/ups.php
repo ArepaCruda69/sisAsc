@@ -154,27 +154,6 @@
               </li>
 
 
-              <!-- <li class="nav-item">
-                <a href="./monT.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Monitor</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="./tecLado.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Teclado</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="./mouSe.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mouse</p>
-                </a>
-              </li> -->
-
               
               
               <li class="nav-item">

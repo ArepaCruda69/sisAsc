@@ -197,3 +197,72 @@ document.getElementById("guardarCpus").addEventListener("click", () => {
     }
 });
 
+
+document.getElementById("btCpu").addEventListener("click", () => {
+    var action = "btCpus";
+    var dataCpu = [];
+
+
+    var txtnombrecpu = document.getElementById("txtNombreCpu").value;
+    var txtunidadcpu = document.getElementById("txtUnidadCpu").value;
+    var txtmarcacpu = document.getElementById("txtMarcaCpu").value;
+    var txtmodelcpu = document.getElementById("txtModeloCpu").value;
+    
+    dataCpu.push({
+        "nombrecpu": txtnombrecpu,
+        "unidadcpu": txtunidadcpu,
+        "marcacpu": txtmarcacpu,
+        "modelocpu": txtmodelcpu,
+    });
+
+    if (datasintomas == "") {
+        Swal.fire({
+            icon: "warning",
+            title: "Campos Vacios",
+            text: "El registro de sintomas esta vacio, debe seleccionar almenos un item para guardar",
+        });
+    } else if (!datasintomas == "") {
+        Swal.fire({
+            title: "Atención",
+            text: "¿Esta seguro de guardar esta información?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, Guardar",
+            cancelButtonText: "Cancelar",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var json = JSON.stringify(datasintomas);
+                $.ajax({
+                    url: '../PHP/Controllers/inserts.php',
+                    type: 'POST',
+                    async: true,
+                    data: { action: action, json: json },
+                    success: function (respo) {
+                        if (respo == 0) {
+                            Swal.fire({
+                                title: 'Correcto',
+                                text: "Registrado Correctamente",
+                                icon: 'success',
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'Ok'
+                            })
+                        }
+                        else {
+                            Swal.fire('Error no se activo el registro' + respo, '', 'error')
+                        }
+                    },
+                    error: function (respo) {
+                        Swal.fire('Error no se activo el registro' + respo, '', 'error')
+                    }
+                });
+            }
+        });
+    }
+});
+
+
+
+
+

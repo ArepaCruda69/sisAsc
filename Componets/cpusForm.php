@@ -18,12 +18,12 @@
           <div class="form-row">
             <div class="form-group col-3">
               <label for="">Nombre</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtNombreCpu">
             </div>
             
             <div class="form-group col-3">
                <label>Unidad</label>
-                   <select class="form-control">
+                   <select class="form-control" id="txtUnidadCpu">
                             
                    <option>opcion 1</option>
                    <option>opcion 2</option>
@@ -33,9 +33,9 @@
                 </select>
             </div>
 
-            <div class="form-group col-3">
+            <div class="form-group col-3" >
             <label>Marca</label>
-                   <select class="form-control">
+                   <select class="form-control" id="txtMarcaCpu">
                             
                    <option>opcion 1</option>
                    <option>opcion 2</option>
@@ -48,7 +48,7 @@
 
           <div class="form-group col-3">
               <label for="">Modelo</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtModeloCpu">
             </div>
           </div>
 
@@ -447,7 +447,7 @@
 
 
           <div class="form-row">
-        <button class="btn btn-outline-success" type="button" id = "btCpu"onclick="agregar();"><b>Agregar</b></button>
+        <button class="btn btn-outline-success" type="button" id = "btCpu" onclick="agregar();"><b>Agregar</b></button>
         <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
           </div>
 
