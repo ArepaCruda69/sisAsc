@@ -25,11 +25,11 @@
                <label>Unidad</label>
                    <select class="form-control" id="txtUnidadCpu">
                             
-                   <option>opcion 1</option>
-                   <option>opcion 2</option>
-                   <option>opcion 3</option>
-                   <option>opcion 4</option>
-                   <option>opcion 5</option>
+                   <option value="1">opcion 1</option>
+                   <option value="2">opcion 2</option>
+                   <option value="3">opcion 3</option>
+                   <option value="4">opcion 4</option>
+                   <option value="5">opcion 5</option>
                 </select>
             </div>
 
@@ -37,11 +37,11 @@
             <label>Marca</label>
                    <select class="form-control" id="txtMarcaCpu">
                             
-                   <option>opcion 1</option>
-                   <option>opcion 2</option>
-                   <option>opcion 3</option>
-                   <option>opcion 4</option>
-                   <option>opcion 5</option>
+                   <option value="1">opcion 1</option>
+                   <option value="2">opcion 2</option>
+                   <option value="3">opcion 3</option>
+                   <option value="4">opcion 4</option>
+                   <option value="5">opcion 5</option>
                 </select>
             </div>
           
@@ -298,39 +298,38 @@
           <div><h2>Fuente de Poder</h2></div>
 
           <div class="form-row">
-            <div class="form-group col-3">
-            <label>Marca</label>
-                   <select class="form-control">
-                            
-                   <option>opcion 1</option>
-                   <option>opcion 2</option>
-                   <option>opcion 3</option>
-                   <option>opcion 4</option>
-                   <option>opcion 5</option>
-                </select>
-          </div>
+          <div class="form-group col-3">
+              <label for="txtModeloPoder">Marca</label>
+              <select class="form-control" id="txtModeloPoder" name="txtModeloPoder">  
+                <option>opcion 1</option>
+                <option>opcion 2</option>
+                <option>opcion 3</option>
+                <option>opcion 4</option>
+                <option>opcion 5</option>
+              </select>
+            </div>
 
           <div class="form-group col-2">
               <label for="">Modelo</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtModeloPoder">
             
           </div>
 
           <div class="form-group col-3">
               <label for="">Serial</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtSerialPoder">
             
           </div>
 
           <div class="form-group col-2">
               <label for="">Voltaje</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtVoltajePoder">
             
           </div>
 
           <div class="form-group col-2">
               <label for="">Tipo</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtTipoPoder">
             </div>
           </div>
 
@@ -345,38 +344,37 @@
 
           <div class="form-row">
             <div class="form-group col-3">
-            <label>Marca</label>
-                   <select class="form-control">
-                            
-                   <option>opcion 1</option>
-                   <option>opcion 2</option>
-                   <option>opcion 3</option>
-                   <option>opcion 4</option>
-                   <option>opcion 5</option>
-                </select>
-          </div>
+              <label for="txtMarcaDisco">Marca</label>
+              <select class="form-control" id="txtMarcaDisco" name="txtMarcaDisco">  
+                <option>opcion 1</option>
+                <option>opcion 2</option>
+                <option>opcion 3</option>
+                <option>opcion 4</option>
+                <option>opcion 5</option>
+              </select>
+            </div>
 
           <div class="form-group col-2">
               <label for="">Modelo</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtModeloDisco">
             
           </div>
 
           <div class="form-group col-3">
               <label for="">Serial</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtSerialDisco">
             
           </div>
 
           <div class="form-group col-2">
               <label for="">Tipo</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtTipoDisco">
             
           </div>
 
           <div class="form-group col-2">
               <label for="">Puerto</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtPuertoDisco">
             </div>
           </div>
         
@@ -390,40 +388,38 @@
           <div><h2>Tarjeta Grafica</h2></div>
 
           <div class="form-row">
-            <div class="form-group col-3">
-                    <label>Marca</label>
-                   <select class="form-control">
-                            
-                   <option>opcion 1</option>
-                   <option>opcion 2</option>
-                   <option>opcion 3</option>
-                   <option>opcion 4</option>
-                   <option>opcion 5</option>
-                </select>
-            
-          </div>
+          <div class="form-group col-3">
+              <label for="txtMarcaGrafica">Marca</label>
+              <select class="form-control" id="txtMarcaGrafica" name="txtMarcaGrafica">  
+                <option>opcion 1</option>
+                <option>opcion 2</option>
+                <option>opcion 3</option>
+                <option>opcion 4</option>
+                <option>opcion 5</option>
+              </select>
+            </div>
 
           <div class="form-group col-2">
               <label for="">Modelo</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtModeloGrafica">
             
           </div>
 
           <div class="form-group col-3">
               <label for="">Serial</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtSerialGrafica">
             
           </div>
 
           <div class="form-group col-2">
               <label for="">Capacidad</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtCapacidadGrafica">
             
           </div>
 
           <div class="form-group col-2">
               <label for="">Velocidad</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtVelocidadGrafica">
             </div>
           </div>
         
@@ -447,7 +443,7 @@
 
 
           <div class="form-row">
-        <button class="btn btn-outline-success" type="button" id = "btCpu" onclick="agregar();"><b>Agregar</b></button>
+        <button class="btn btn-outline-success" type="button" id = "btCpu" ><b>Agregar</b></button>
         <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
           </div>
 

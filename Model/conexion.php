@@ -32,14 +32,14 @@ function conectarSegundaDB() {
     $dbname = "bd_globales";
 
     // Crear conexión
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn1 = new mysqli($servername, $username, $password, $dbname);
 
     // Verificar conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
+    if ($conn1->connect_error) {
+        die("Conexión fallida: " . $conn1->connect_error);
     }
 
-    return $conn;
+    return $conn1;
 }
 ?>
 

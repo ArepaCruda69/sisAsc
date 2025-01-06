@@ -147,55 +147,7 @@ function EliminarDisco(row) {
 
 
 
-document.getElementById("guardarCpus").addEventListener("click", () => {
-    var action = "guardarCpu";
 
-    if (datasintomas == "") {
-        Swal.fire({
-            icon: "warning",
-            title: "Campos Vacios",
-            text: "El registro de sintomas esta vacio, debe seleccionar almenos un item para guardar",
-        });
-    } else if (!datasintomas == "") {
-        Swal.fire({
-            title: "Atención",
-            text: "¿Esta seguro de guardar esta información?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, Guardar",
-            cancelButtonText: "Cancelar",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                var json = JSON.stringify(datasintomas);
-                $.ajax({
-                    url: '/Controller/inserts.php',
-                    type: 'POST',
-                    async: true,
-                    data: { action: action, json: json },
-                    success: function (respo) {
-                        if (respo == 0) {
-                            Swal.fire({
-                                title: 'Correcto',
-                                text: "Registrado Correctamente",
-                                icon: 'success',
-                                confirmButtonColor: '#3085d6',
-                                confirmButtonText: 'Ok'
-                            })
-                        }
-                        else {
-                            Swal.fire('Error no se activo el registro' + respo, '', 'error')
-                        }
-                    },
-                    error: function (respo) {
-                        Swal.fire('Error no se activo el registro' + respo, '', 'error')
-                    }
-                });
-            }
-        });
-    }
-});
 
 
 document.getElementById("btCpu").addEventListener("click", () => {
@@ -215,13 +167,13 @@ document.getElementById("btCpu").addEventListener("click", () => {
         "modelocpu": txtmodelcpu,
     });
 
-    if (datasintomas == "") {
+    if (dataCpu == "") {
         Swal.fire({
             icon: "warning",
             title: "Campos Vacios",
             text: "El registro de sintomas esta vacio, debe seleccionar almenos un item para guardar",
         });
-    } else if (!datasintomas == "") {
+    } else if (!dataCpu == "") {
         Swal.fire({
             title: "Atención",
             text: "¿Esta seguro de guardar esta información?",
@@ -233,9 +185,10 @@ document.getElementById("btCpu").addEventListener("click", () => {
             cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
-                var json = JSON.stringify(datasintomas);
+                var json = JSON.stringify(dataCpu); 
+                
                 $.ajax({
-                    url: '../PHP/Controllers/inserts.php',
+                    url: '../Controller/insert.php',
                     type: 'POST',
                     async: true,
                     data: { action: action, json: json },
@@ -250,11 +203,11 @@ document.getElementById("btCpu").addEventListener("click", () => {
                             })
                         }
                         else {
-                            Swal.fire('Error no se activo el registro' + respo, '', 'error')
+                            Swal.fire('Error no se activo el registro por valor' + respo, '', 'error')
                         }
                     },
                     error: function (respo) {
-                        Swal.fire('Error no se activo el registro' + respo, '', 'error')
+                        Swal.fire('Error no se activo el registro por funcion' + respo, '', 'error')
                     }
                 });
             }
