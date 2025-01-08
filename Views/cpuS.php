@@ -49,8 +49,6 @@
 
 
 
-<a href="../Controller/insert.php"></a>
-
 
 
 

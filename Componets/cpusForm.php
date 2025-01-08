@@ -62,27 +62,27 @@
           <div><h3>Tarjeta Madre</h3></div>
 
           <div class="form-row">
-            <div class="form-group col-4">
-              <label>Marca</label>
-                   <select class="form-control">
+          <div class="form-group col-4" >
+            <label>Marca</label>
+                   <select class="form-control" id="txtMarcaMadre">
                             
-                   <option>opcion 1</option>
-                   <option>opcion 2</option>
-                   <option>opcion 3</option>
-                   <option>opcion 4</option>
-                   <option>opcion 5</option>
+                   <option value="1">opcion 1</option>
+                   <option value="2">opcion 2</option>
+                   <option value="3">opcion 3</option>
+                   <option value="4">opcion 4</option>
+                   <option value="5">opcion 5</option>
                 </select>
             </div>
 
             <div class="form-group col-4">
               <label for="">Modelo</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtModeloMadre">
             </div>
           
 
           <div class="form-group col-4">
               <label for="">Serial</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtSerialMadre">
             </div>
             </div>
 
@@ -98,7 +98,7 @@
           <div class="form-row">
             <div class="form-group col-3">
             <label>Marca</label>
-                   <select class="form-control">
+                   <select class="form-control" id="txtMarcaProcesador">
                             
                    <option>opcion 1</option>
                    <option>opcion 2</option>
@@ -111,25 +111,25 @@
 
           <div class="form-group col-3">
               <label for="">Modelo</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtModeloProcesador">
             </div>
           
 
           <div class="form-group col-3">
               <label for="">Generacion</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtGeneracionProcesador">
             </div>
           
 
           <div class="form-group col-2">
               <label for="">Serial</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtSerialProcesador">
             
           </div>
 
           <div class="form-group col-1">
               <label for="">Hercios</label>
-              <input type="" class="form-control" id="">
+              <input type="" class="form-control" id="txtHerciosProcesador">
             
           </div>
         </div>
@@ -295,12 +295,12 @@
           <div class="card-body">
           <form>
 
-          <div><h2>Fuente de Poder</h2></div>
+          <div><h3>Fuente de Poder</h3></div>
 
           <div class="form-row">
           <div class="form-group col-3">
-              <label for="txtModeloPoder">Marca</label>
-              <select class="form-control" id="txtModeloPoder" name="txtModeloPoder">  
+              <label for="txtMarcaPoder">Marca</label>
+              <select class="form-control" id="txtMarcaPoder" name="txtMarcaPoder">  
                 <option>opcion 1</option>
                 <option>opcion 2</option>
                 <option>opcion 3</option>
@@ -344,8 +344,8 @@
 
           <div class="form-row">
             <div class="form-group col-3">
-              <label for="txtMarcaDisco">Marca</label>
-              <select class="form-control" id="txtMarcaDisco" name="txtMarcaDisco">  
+              <label for="txtMarcaLector">Marca</label>
+              <select class="form-control" id="txtMarcaLector" name="txtMarcaLector">  
                 <option>opcion 1</option>
                 <option>opcion 2</option>
                 <option>opcion 3</option>
@@ -356,25 +356,25 @@
 
           <div class="form-group col-2">
               <label for="">Modelo</label>
-              <input type="" class="form-control" id="txtModeloDisco">
+              <input type="" class="form-control" id="txtModeloLector">
             
           </div>
 
           <div class="form-group col-3">
               <label for="">Serial</label>
-              <input type="" class="form-control" id="txtSerialDisco">
+              <input type="" class="form-control" id="txtSerialLector">
             
           </div>
 
           <div class="form-group col-2">
               <label for="">Tipo</label>
-              <input type="" class="form-control" id="txtTipoDisco">
+              <input type="" class="form-control" id="txtTipoLector">
             
           </div>
 
           <div class="form-group col-2">
               <label for="">Puerto</label>
-              <input type="" class="form-control" id="txtPuertoDisco">
+              <input type="" class="form-control" id="txtPuertoLector">
             </div>
           </div>
         
@@ -385,7 +385,7 @@
           <div class="card-body">
           <form>
 
-          <div><h2>Tarjeta Grafica</h2></div>
+          <div><h3>Tarjeta Grafica</h3></div>
 
           <div class="form-row">
           <div class="form-group col-3">
@@ -432,7 +432,7 @@
           <div class="card-body">
           <form>
 
-          <div><h2>Otros Componentes</h2></div>
+          <div><h3>Otros Componentes</h3></div>
 
           <div class="form-row">
             <div class="form-group col-12">
