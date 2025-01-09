@@ -12,6 +12,17 @@ if ($_POST['action'] == "btCpus") {
     $data5 = json_decode($_POST['json5'], true);
     $data6 = json_decode($_POST['json6'], true);
 
+    $response1='';
+    $response11='';
+    $response22='';
+    $response33='';
+    $response44='';
+    $response77='';
+    $response444='';
+    $response555='';
+    $respuestaFinal = '';
+
+
 
     foreach ($data as $datos) {
         $nombrecpu = $datos["nombrecpu"];
@@ -23,14 +34,14 @@ if ($_POST['action'] == "btCpus") {
         $insertcli1->bind_param("siis", $nombrecpu, $unidadcpu, $marcacpu, $modelocpu);
         $insertcli1->execute();
 
-        $response1='';
+       
 
         if (!$insertcli1) {
             $response1 = 1;
-            echo json_encode($response1, JSON_UNESCAPED_UNICODE);
+           
         } else if ($insertcli1) {
             $response1 = 0;
-            echo json_encode($response1, JSON_UNESCAPED_UNICODE);
+           
         }
     }
 
@@ -43,15 +54,13 @@ if ($_POST['action'] == "btCpus") {
         $insertcli11->bind_param("iss", $marcamadre, $modelomadre, $serialmadre);
         $insertcli11->execute();
 
-        $response11='';
-
         if (!$insertcli11 ) {
             $response11= 1;
 
-            echo json_encode($response11, JSON_UNESCAPED_UNICODE);
+           
         } else if ( $insertcli11) {
             $response11 = 0;
-            echo json_encode($response11, JSON_UNESCAPED_UNICODE);
+           
         }
     }
 
@@ -66,15 +75,15 @@ if ($_POST['action'] == "btCpus") {
         $insertcli22->bind_param("sssss", $marcaprocesador, $modeloprocesador, $generacionprocesador,$serialprocesador,$herciosprocesador);
         $insertcli22->execute();
 
-        $response22='';
+      
 
         if (!$insertcli22 ) {
             $response22= 1;
 
-            echo json_encode($response22, JSON_UNESCAPED_UNICODE);
+           
         } else if ( $insertcli22) {
             $response22 = 0;
-            echo json_encode($response22, JSON_UNESCAPED_UNICODE);
+           
         }
     }
 
@@ -92,15 +101,15 @@ if ($_POST['action'] == "btCpus") {
         $insertcli33->bind_param("ssssss", $modeloram, $marcaram, $serialram,$tiporam,$capacidadram,$velocidadram);
         $insertcli33->execute();
 
-        $response33='';
+        
 
         if (!$insertcli33 ) {
             $response33= 1;
 
-            echo json_encode($response33, JSON_UNESCAPED_UNICODE);
+           
         } else if ( $insertcli33) {
             $response33 = 0;
-            echo json_encode($response33, JSON_UNESCAPED_UNICODE);
+            
         }
     }
 
@@ -117,15 +126,15 @@ if ($_POST['action'] == "btCpus") {
         $insertcli44->bind_param("ssssss", $modelodisco, $marcadisco, $serialdisco,$tipodisco,$capacidaddisco,$puertodisco);
         $insertcli44->execute();
 
-        $response44='';
+        
 
         if (!$insertcli44 ) {
             $response44= 1;
 
-            echo json_encode($response44, JSON_UNESCAPED_UNICODE);
+            
         } else if ( $insertcli44) {
             $response44 = 0;
-            echo json_encode($response44, JSON_UNESCAPED_UNICODE);
+           
         }
     }
 
@@ -137,19 +146,19 @@ if ($_POST['action'] == "btCpus") {
         $voltajepoder = $datos77["voltajepoder"];
         $tipopoder = $datos77["tipopoder"];
 
-        $insertcli77 = $conexion->prepare("INSERT INTO funete_de_poder (marca_poder,modelo_poder,serial_poder,voltaje_poder,tipo_poder) VALUES (?,?,?,?,?)");
+        $insertcli77 = $conexion->prepare("INSERT INTO fuente_de_poder (marca_poder,modelo_poder,serial_poder,voltaje_poder,tipo_poder) VALUES (?,?,?,?,?)");
         $insertcli77->bind_param("sssss", $marcapoder, $modelopoder, $serialpoder,$voltajepoder,$tipopoder);
         $insertcli77->execute();
 
-        $response77='';
+        
 
         if (!$insertcli77 ) {
             $response77= 1;
 
-            echo json_encode($response77, JSON_UNESCAPED_UNICODE);
+           
         } else if ( $insertcli77) {
             $response77 = 0;
-            echo json_encode($response77, JSON_UNESCAPED_UNICODE);
+            
         }
     }
 
@@ -161,19 +170,19 @@ if ($_POST['action'] == "btCpus") {
         $tipolector = $datos55["tipolector"];
         $puertolector = $datos55["puertolector"];
 
-        $insertcli44 = $conexion->prepare("INSERT INTO lector_de_disco (marca_disco,modelo_disco,serial_disco,tipo_disco,puerto_disco) VALUES (?,?,?,?,?)");
-        $insertcli44->bind_param("sssss", $marcalector, $modelolector, $seriallector,$tipolector,$puertolector);
-        $insertcli44->execute();
+        $insertcli444 = $conexion->prepare("INSERT INTO lector_de_disco (marca_disco,modelo_disco,serial_disco,tipo_disco,puerto_disco) VALUES (?,?,?,?,?)");
+        $insertcli444->bind_param("sssss", $marcalector, $modelolector, $seriallector,$tipolector,$puertolector);
+        $insertcli444->execute();
 
-        $response44='';
+      
 
-        if (!$insertcli44 ) {
-            $response44= 1;
+        if (!$insertcli444 ) {
+            $response444= 1;
 
-            echo json_encode($response44, JSON_UNESCAPED_UNICODE);
-        } else if ( $insertcli44) {
-            $response44 = 0;
-            echo json_encode($response44, JSON_UNESCAPED_UNICODE);
+           
+        } else if ( $insertcli444) {
+            $response444 = 0;
+           
         }
     }
 
@@ -189,16 +198,28 @@ if ($_POST['action'] == "btCpus") {
         $insertcli55->bind_param("sssss", $marcagrafica, $modelografica, $serialgrafica,$capacidadgrafica,$velocidadgrafica);
         $insertcli55->execute();
 
-        $response55='';
+        
 
         if (!$insertcli55 ) {
-            $response55= 1;
+            $response555= 1;
 
-            echo json_encode($response55, JSON_UNESCAPED_UNICODE);
+           
         } else if ( $insertcli55) {
-            $response55 = 0;
-            echo json_encode($response55, JSON_UNESCAPED_UNICODE);
+            $response555 = 0;
+          
         }
+    }
+
+    
+
+    if($response1 == 1 || $response11 == 1 || $response22 == 1 ||  $response33 == 1 ||  $response44 == 1 || $response77 == 1 ||  $response444 == 1 || $response555 == 1  ){
+        $respuestaFinal = $response1.''.$response11.''.$response22.''.$response33.''.$response44.''.$response77.''.$response444.''.$response555;
+        echo json_encode($respuestaFinal, JSON_UNESCAPED_UNICODE);
+
+
+    }else if($response1 == 0 && $response11 == 0 && $response22 == 0 &&  $response33 == 0 &&  $response44 == 0 && $response77 == 0 &&  $response444 == 0 && $response555 == 0 ){
+        $respuestaFinal = 0;
+        echo json_encode($respuestaFinal, JSON_UNESCAPED_UNICODE);
     }
 
 

@@ -248,7 +248,7 @@ document.getElementById("btCpu").addEventListener("click", () => {
 
 
 
-    if (dataCpu == "" || dataMadre == "" || dataProcesador == ""   || dataRam == "" || dataDisco == "" || dataFuentePoder == ""|| dataLecturaDisco == "" || dataTarjetaGrafica == "" ) {
+    if (dataCpu == "" || dataMadre == "" || dataProcesador == ""   || dataRam == "" || dataDisco == "" || dataFuentePoder == "" || dataLecturaDisco == "" || dataTarjetaGrafica == "" ) {
         Swal.fire({
             icon: "warning",
             title: "Campos Vacios",
