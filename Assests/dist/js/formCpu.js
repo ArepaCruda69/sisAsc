@@ -158,6 +158,7 @@ document.getElementById("btCpu").addEventListener("click", () => {
     var dataFuentePoder = [];
     var dataLecturaDisco = [];
     var dataTarjetaGrafica = [];
+    var dataObsComponentes = [];
     
 
 
@@ -246,15 +247,21 @@ document.getElementById("btCpu").addEventListener("click", () => {
         "velocidadgrafica": txtvelocidadgrafica,
     });
 
+    var txtobscomponentes = document.getElementById("txtObsComponentes").value;
+
+    dataObsComponentes.push({
+        "obscomponentes": txtobscomponentes,
+    });
 
 
-    if (dataCpu == "" || dataMadre == "" || dataProcesador == ""   || dataRam == "" || dataDisco == "" || dataFuentePoder == "" || dataLecturaDisco == "" || dataTarjetaGrafica == "" ) {
+
+    if (dataCpu == "" || dataMadre == "" || dataProcesador == ""   || dataRam == "" || dataDisco == "" || dataFuentePoder == "" || dataLecturaDisco == "" || dataTarjetaGrafica == "" || dataObsComponentes == "") {
         Swal.fire({
             icon: "warning",
             title: "Campos Vacios",
             text: "El registro de los campos esta vacio, debe seleccionar almenos un item para guardar",
         });
-    } else if (!dataCpu == "" || !dataMadre == "" || !dataProcesador == "" || !dataRam == "" || !dataDisco == "" || !dataFuentePoder == "" || !dataLecturaDisco == "" || !dataTarjetaGrafica == "") {
+    } else if (!dataCpu == "" || !dataMadre == "" || !dataProcesador == "" || !dataRam == "" || !dataDisco == "" || !dataFuentePoder == "" || !dataLecturaDisco == "" || !dataTarjetaGrafica == "" || !dataObsComponentes == "") {
         Swal.fire({
             title: "Atención",
             text: "¿Esta seguro de guardar esta información?",
@@ -274,12 +281,13 @@ document.getElementById("btCpu").addEventListener("click", () => {
                 var json7= JSON.stringify(dataFuentePoder);
                 var json5 = JSON.stringify(dataLecturaDisco);
                 var json6 = JSON.stringify(dataTarjetaGrafica);
+                var json8 = JSON.stringify(dataObsComponentes);
                 
                 $.ajax({
                     url: '../Controller/insert.php',
                     type: 'POST',
                     async: true,
-                    data: { action: action, json: json, json1: json1, json2: json2, json3: json3,json4: json4, json7: json7, json5: json5, json6: json6 },
+                    data: { action: action, json: json, json1: json1, json2: json2, json3: json3,json4: json4, json7: json7, json5: json5, json6: json6, json8: json8 },
                     success: function (respo) {
                         if (respo == 0) {
                             Swal.fire({

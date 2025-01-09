@@ -11,6 +11,7 @@ if ($_POST['action'] == "btCpus") {
     $data7 = json_decode($_POST['json7'], true);
     $data5 = json_decode($_POST['json5'], true);
     $data6 = json_decode($_POST['json6'], true);
+    $data8 = json_decode($_POST['json8'], true);
 
     $response1='';
     $response11='';
@@ -20,6 +21,7 @@ if ($_POST['action'] == "btCpus") {
     $response77='';
     $response444='';
     $response555='';
+    $response8='';
     $respuestaFinal = '';
 
 
@@ -210,14 +212,33 @@ if ($_POST['action'] == "btCpus") {
         }
     }
 
+    foreach ($data8 as $datos88) {
+        $obscomponentes = $datos88["obscomponentes"];
+        
+        $insertcli8 = $conexion->prepare("INSERT INTO otros_componentes (observaciones_com) VALUES (?)");
+        $insertcli8->bind_param("s", $obscomponentes);
+        $insertcli8->execute();
+
+        
+
+        if (!$insertcli8 ) {
+            $response8= 1;
+
+           
+        } else if ( $insertcli8) {
+            $response8 = 0;
+          
+        }
+    }
+
     
 
-    if($response1 == 1 || $response11 == 1 || $response22 == 1 ||  $response33 == 1 ||  $response44 == 1 || $response77 == 1 ||  $response444 == 1 || $response555 == 1  ){
-        $respuestaFinal = $response1.''.$response11.''.$response22.''.$response33.''.$response44.''.$response77.''.$response444.''.$response555;
+    if($response1 == 1 || $response11 == 1 || $response22 == 1 ||  $response33 == 1 ||  $response44 == 1 || $response77 == 1 ||  $response444 == 1 || $response555 == 1 || $response8 == 1  ){
+        $respuestaFinal = $response1.''.$response11.''.$response22.''.$response33.''.$response44.''.$response77.''.$response444.''.$response555. ''.$response8. '' ;
         echo json_encode($respuestaFinal, JSON_UNESCAPED_UNICODE);
 
 
-    }else if($response1 == 0 && $response11 == 0 && $response22 == 0 &&  $response33 == 0 &&  $response44 == 0 && $response77 == 0 &&  $response444 == 0 && $response555 == 0 ){
+    }else if($response1 == 0 && $response11 == 0 && $response22 == 0 &&  $response33 == 0 &&  $response44 == 0 && $response77 == 0 &&  $response444 == 0 && $response555 == 0 && $response8 == 0 ){
         $respuestaFinal = 0;
         echo json_encode($respuestaFinal, JSON_UNESCAPED_UNICODE);
     }

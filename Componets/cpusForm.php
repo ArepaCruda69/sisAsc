@@ -437,7 +437,7 @@
           <div class="form-row">
             <div class="form-group col-12">
             <label>Observaciones</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="3" id="txtObsComponentes"></textarea>
             </div>
           </div>
 
