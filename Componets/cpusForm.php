@@ -6,13 +6,15 @@
 
               <div class="card ">
                   <div class="card-header">
-                    <H2><u>Registro de CPU</u></H2>
+                    <H2>Registro de CPU</H2>
                   </div>
 
 
           <div class="card-body">
           <form>
-
+            
+          
+          <hr class="hr hr-blurry"></hr>
           <div><h3>CPU</h3></div>
 
           <div class="form-row">
@@ -59,6 +61,8 @@
           <div class="card-body">
           <form>
 
+          
+          <hr class="hr hr-blurry"></hr>
           <div><h3>Tarjeta Madre</h3></div>
 
           <div class="form-row">
@@ -93,6 +97,7 @@
           <div class="card-body">
           <form>
 
+          <hr class="hr hr-blurry"></hr>
           <div><h3>Procesador</h3></div>
 
           <div class="form-row">
@@ -142,6 +147,8 @@
       <div class="card-body">
         <form>
 
+        
+        <hr class="hr hr-blurry"></hr>
           <div><h3>Tarjeta RAM</h3></div>
 
           <div class="form-row">
@@ -216,6 +223,7 @@
           <div class="card-body">
             <form>
 
+            <hr class="hr hr-blurry"></hr>
           <div><h3>Disco Duro</h3></div>
 
           <div class="form-row">
@@ -295,6 +303,7 @@
           <div class="card-body">
           <form>
 
+          <hr class="hr hr-blurry"></hr>
           <div><h3>Fuente de Poder</h3></div>
 
           <div class="form-row">
@@ -340,6 +349,7 @@
           <div class="card-body">
           <form>
 
+          <hr class="hr hr-blurry"></hr>
           <div><h3>Lector de Disco</h3></div>
 
           <div class="form-row">
@@ -385,6 +395,7 @@
           <div class="card-body">
           <form>
 
+          <hr class="hr hr-blurry"></hr>
           <div><h3>Tarjeta Grafica</h3></div>
 
           <div class="form-row">
@@ -432,6 +443,7 @@
           <div class="card-body">
           <form>
 
+          <hr class="hr hr-blurry"></hr>
           <div><h3>Otros Componentes</h3></div>
 
           <div class="form-row">
@@ -463,10 +475,12 @@
 
 
 
-<style>
- 
-</style>
-
-
+    <style>
+    hr {
+      height: 4px;
+      background-color: #cac3c3;
+      border: none;
+    }
+  </style>
                           
                           

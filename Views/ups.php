@@ -1,47 +1,12 @@
 <!DOCTYPE html>
 
-<?php include '../Componets/cpusForm.php'; ?>
+<?php include '../Componets/head.php'; ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistemas Ascardio</title>
 
-    <?php
-  include '../Model/conexion.php';  // Este archivo se necesita para las consultas principales
-  $conn = conectarDB();
-  $sql = "SELECT modelo, serial, unidad, fecha_instalacion, modelo_bateria FROM ups";
-  $result = $conn->query($sql);
-
-  // Conectar a la segunda base de datos (bd_globales)
-  $connGlobales = conectarDB();
-  if ($connGlobales->connect_error) {
-      die("La conexión a la base de datos bd_globales falló: " . $connGlobales->connect_error);
-  }
-
-  $sqlGlobales = "SELECT nom_unidad FROM bd_globales.glo_1unidad";
-  $resultGlobales = $connGlobales->query($sqlGlobales);
-  if ($resultGlobales === false) {
-      die("Error en la consulta a bd_globales: " . $connGlobales->error);
-  }
-
-  // Mensajes de estado (éxito/error)
-  if (isset($_GET['status'])) {
-      if ($_GET['status'] == 'success') {
-          echo "<div id='popup-message' class='alert alert-success' role='alert'>Registro guardado exitosamente.</div>";
-      } elseif ($_GET['status'] == 'error') {
-          echo "<div id='popup-message' class='alert alert-danger' role='alert'>Hubo un error al guardar el registro.</div>";
-      }
-  }
-
-  if (isset($_GET['delete_status'])) {
-      if ($_GET['delete_status'] == 'success') {
-          echo "<div id='popup-message' class='alert alert-success' role='alert'>Registro eliminado exitosamente.</div>";
-      } elseif ($_GET['delete_status'] == 'error') {
-          echo "<div id='popup-message' class='alert alert-danger' role='alert'>Hubo un error al eliminar el registro.</div>";
-      }
-  }
-  ?>
-
+   
 
  
     </head>
@@ -307,20 +272,17 @@
         <input type="date" class="form-control" id="fecha_instalacion" name="fecha_instalacion" required>
     </div>
     <div class="col-md-3">
-        <hr class="hr hr-blurry" />
         <label for="cantidad_bateria" class="form-label"><b>Cantidad de Batería</b><b style="color: red;">*</b></label>
         <input type="number" class="form-control" id="cantidad_bateria" name="cantidad_bateria" required>
         <div class="invalid-feedback">Por favor ingrese la cantidad de batería</div>
     </div>
     <div class="col-md-3">
-        <hr class="hr hr-blurry" />
         <label for="modelo_bateria" class="form-label"><b>Modelo de la Batería</b><b style="color: red;">*</b></label>
         <input type="text" class="form-control" id="modelo_bateria" name="modelo_bateria" required>
         <div class="invalid-feedback">Por favor ingrese el modelo de la batería</div>
         <br>
     </div>
     <div class="col-md-6">
-        <hr class="hr hr-blurry" />
         <div class="form-group">
             <label for="observaciones">Observaciones</label>
             <textarea class="form-control" id="observaciones" name="observaciones" rows="1"></textarea>
@@ -419,7 +381,7 @@
 
   <!-- /.control-sidebar -->
    <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="">Alfred</a>.</strong>
+    <strong>Copyright &copy; 2025 <a href="">Alfred</a>.</strong>
     <div class="float-right d-none d-sm-inline-block">
     </div>
   </footer>

@@ -6,7 +6,7 @@
 function conectarSegundaDB() {
     $servername = "localhost";
     $username = "root";
-    $password = "123456";
+    $password = "123456789";
     $dbname = "bd_globales";
 
     $conn1 = new mysqli($servername, $username, $password, $dbname);
