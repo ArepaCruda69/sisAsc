@@ -23,7 +23,7 @@
             
             <div class="form-group col-3">
                <label>Unidad</label>
-                   <select class="form-control" id="txtUnidadCpu">
+                   <select class="form-control select2" id="txtUnidadCpu">
                             
                    <option value="1">opcion 1</option>
                    <option value="2">opcion 2</option>
@@ -35,7 +35,7 @@
 
             <div class="form-group col-3" >
             <label>Marca</label>
-                   <select class="form-control" id="txtMarcaCpu">
+                   <select class="form-control select2" id="txtMarcaCpu">
                             
                    <option value="1">opcion 1</option>
                    <option value="2">opcion 2</option>
@@ -64,7 +64,7 @@
           <div class="form-row">
           <div class="form-group col-4" >
             <label>Marca</label>
-                   <select class="form-control" id="txtMarcaMadre">
+                   <select class="form-control select2" id="txtMarcaMadre">
                             
                    <option value="1">opcion 1</option>
                    <option value="2">opcion 2</option>
@@ -98,7 +98,7 @@
           <div class="form-row">
             <div class="form-group col-3">
             <label>Marca</label>
-                   <select class="form-control" id="txtMarcaProcesador">
+                   <select class="form-control select2" id="txtMarcaProcesador">
                             
                    <option>opcion 1</option>
                    <option>opcion 2</option>
@@ -148,7 +148,7 @@
 
           <div class="form-group col-2">
               <label for="txtMarcaRam">Marca</label>
-              <select class="form-control" id="txtMarcaRam" name="txtMarcaRam">  
+              <select class="form-control select2" id="txtMarcaRam" name="txtMarcaRam">  
                 <option>opcion 1</option>
                 <option>opcion 2</option>
                 <option>opcion 3</option>
@@ -222,7 +222,7 @@
 
           <div class="form-group col-2">
               <label for="txtMarcaDisco">Marca</label>
-              <select class="form-control" id="txtMarcaDisco" name="txtMarcaDisco">  
+              <select class="form-control select2" id="txtMarcaDisco" name="txtMarcaDisco">  
                 <option>opcion 1</option>
                 <option>opcion 2</option>
                 <option>opcion 3</option>
@@ -300,7 +300,7 @@
           <div class="form-row">
           <div class="form-group col-3">
               <label for="txtMarcaPoder">Marca</label>
-              <select class="form-control" id="txtMarcaPoder" name="txtMarcaPoder">  
+              <select class="form-control select2" id="txtMarcaPoder" name="txtMarcaPoder">  
                 <option>opcion 1</option>
                 <option>opcion 2</option>
                 <option>opcion 3</option>
@@ -345,7 +345,7 @@
           <div class="form-row">
             <div class="form-group col-3">
               <label for="txtMarcaLector">Marca</label>
-              <select class="form-control" id="txtMarcaLector" name="txtMarcaLector">  
+              <select class="form-control select2" id="txtMarcaLector" name="txtMarcaLector">  
                 <option>opcion 1</option>
                 <option>opcion 2</option>
                 <option>opcion 3</option>
@@ -390,7 +390,7 @@
           <div class="form-row">
           <div class="form-group col-3">
               <label for="txtMarcaGrafica">Marca</label>
-              <select class="form-control" id="txtMarcaGrafica" name="txtMarcaGrafica">  
+              <select class="form-control select2" id="txtMarcaGrafica" name="txtMarcaGrafica">  
                 <option>opcion 1</option>
                 <option>opcion 2</option>
                 <option>opcion 3</option>
@@ -444,7 +444,6 @@
 
           <div class="form-row">
         <button class="btn btn-outline-success" type="button" id = "btCpu" ><b>Agregar</b></button>
-        <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
           </div>
 
 
@@ -464,7 +463,9 @@
 
 
 
-
+<style>
+ 
+</style>
 
 
                           

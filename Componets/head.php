@@ -18,6 +18,9 @@
 
 
   <link rel="stylesheet" href="../Assests/dist/css/index.css">
+  <link rel="stylesheet" href="../Assests/dist/css/select2.css">
+  <link rel="stylesheet" href="../Assests/dist/css/select2-bootstrap4.min.css">
+  <link rel="stylesheet" href="../Assests/dist/css/select2.min.css">
 
 
 
