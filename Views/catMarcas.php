@@ -1,3 +1,6 @@
+<?php include '../Model/consultas.php'?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -240,6 +243,8 @@
     </div>
     <!-- /.content-header -->
 
+
+
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
@@ -253,49 +258,63 @@
          <div class="card-body">
   <main class="col">
   <form id="marcaForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
-      <div class="col-md-4">
-        <label for="codigo" class="form-label"><b>Codigo</b><b style="color: red;">*</b></label>
-        <div class="input-group mb-3">
-          <input type="number" class="form-control" id="codigo" name="codigo" aria-label="Código" aria-describedby="button-addon2" required disabled>
-        </div>
-        <div class="invalid-feedback">
-          Por favor, ingrese un código.
-        </div>
-      </div>
+   
+          <div class="form-group col-6" >
+              <label for=""> ID</label>
+              <input type="" class="form-control" id="txtModeloDisco" name="" disabled>
+            
+          </div>
 
-      <div class="col-md-4">
-        <label for="marca" class="form-label"><b>Marca</b><b style="color: red;">*</b></label>
-        <input type="text" class="form-control" id="marca" name="marca" required>
-        <div class="invalid-feedback">
-          Por favor, ingrese una marca.
-        </div>
-      </div>
+         <div class="form-group col-6">
+              <label for=""> Nombre</label>
+              <input type="" class="form-control" id="txtNombreMarca" >
+            
+          </div>
 
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="equipo" class="form-label"><b>Equipo</b><b style="color: red;">*</b></label>
-          <select class="form-control" id="equipo" name="equipo" required>
-            <option value="">Seleccione...</option>
-            <option>Impresora</option>
-            <option>Cpu</option>
-            <option>Monitor</option>
-            <option>Teclado</option>
-            <option>Mouse</option>
-            <option>Accesorios</option>
-            <option>Ups</option>
-          </select>
-        </div>
-        <div class="invalid-feedback">
-          Por favor, seleccione un equipo.
-        </div>
-      </div>
+          <button  class="btn btn-outline-success  btn-sm btn-block" type="button" id = "btMarca"><b>Agregar</b></button>
+  
 
-      <div class="col-md-6">
-        <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-        <button class="btn btn-outline-danger" type="reset"><b>Cancelar</b></button>
-      </div>
-      <div id="message" style="display: none;" class="alert alert-success">
-         ¡Registro agregado exitosamente! </div>
+
+           <!-- /.card-header -->
+           <div class="card-body">
+              <table id="tablaMarca" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Codigo</th>
+                    <th>Marca</th>
+                    <th>Accion</th>
+                  </tr>
+                </thead>
+                <tbody>
+            
+              <?php while ($columna = mysqli_fetch_assoc($resultados)) { ?>
+                 <tr>
+                 <td ><?php echo $columna['id_marca']; ?></td>
+                 <td ><?php echo $columna['marca_marca']; ?></td>
+                 <td ><?php if ($columna['status_marca']== 1 ) {?>
+                  <button class="btn btn-danger">Desactivar</button>
+                 <?php  }else if($columna['status_marca']== 0 ){ ?>
+                  <button class="btn btn-success"> Activar</button>
+                  <?php   }  ?>
+                </td>
+                                                            
+                </tr>
+                 <?php } ?>
+
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Codigo</th>
+                    <th>Marca</th>
+                    <th>Accion</th>
+                  </tr>
+                </tfoot>
+              </table>
+
+             
+
+            </div>
+
     </form>
   </main>
 </div>
@@ -310,18 +329,11 @@
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
+    
   </aside>
   <!-- /.control-sidebar -->
 
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="">Alfred</a>.</strong>
-    <div class="float-right d-none d-sm-inline-block">
-    </div>
-  </footer>
+  
 </div>
 <!-- ./wrapper -->
 
@@ -349,39 +361,51 @@
 <script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 
-<script src="../Controller/cancelar.js"></script>
-<script src="../Controller/agregarMarca.js"></script>
+<script src="../Assests/dist/js/formMarca.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+;
+
+  
+</script>
+
 
 
 
 
 <script>
-  // Código JavaScript adicional para validación del formulario
-  (function () {
-    'use strict';
-    window.addEventListener('load', function () {
-      var forms = document.getElementsByClassName('needs-validation');
-      var validation = Array.prototype.filter.call(forms, function (form) {
-        form.addEventListener('submit', function (event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
+  
+$(function () {
+    $("#tablaMarca").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      language: {
+        processing: "Busqueda en curso...",
+        search: "Buscar&nbsp;:",
+        lengthMenu: "Agrupar de MENU Solicitudes",
+        infoEmpty: "No existen datos.",
+        infoFiltered: "(filtrado de MAX elementos en total)",
+        infoPostFix: "",
+        loadingRecords: "Cargando...",
+        zeroRecords: "No se encontraron datos con tu busqueda",
+        emptyTable: "No hay datos disponibles en la tabla.",
+        paginate: {
+            first: "Primero",
+            previous: "Anterior",
+            next: "Siguiente",
+            last: "Ultimo"
+        },
+        aria: {
+            sortAscending: ": active para ordenar la columna en orden ascendente",
+            sortDescending: ": active para ordenar la columna en orden descendente"
+        }
+    },
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+  });
 </script>
 
 
-<style>
-  hr {
-    height: 4px;
-    background-color: #cac3c3;
-    border: none;
-  }
-</style>
+
 
 </body>
 </html>

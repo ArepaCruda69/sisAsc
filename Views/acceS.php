@@ -4,7 +4,7 @@ include '../Componets/scripts.php';
 <!DOCTYPE html>
 
 
-<?php include '../Componets/cpusLink.php'; ?>
+<?php include '../Componets/head.php'; ?>
 
 
 <body class="hold-transition sidebar-mini">

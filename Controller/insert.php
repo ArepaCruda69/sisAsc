@@ -247,4 +247,48 @@ if ($_POST['action'] == "btCpus") {
 }
 
 
+
+
+ 
+if ($_POST['actionn'] == "btMarca") {
+   $txtnombremarca = $_POST['txtnombremarca'];
+
+    $respons='';
+    $respuestaFina = '';
+
+
+
+   
+        
+
+        $insertcl = $conexion->prepare("INSERT INTO marca (marca_marca) VALUES (?)");
+        $insertcl->bind_param("s", $txtnombremarca);
+        $insertcl->execute();
+
+       
+
+        if (!$insertcl) {
+            $respons = 1;
+           
+        } else if ($insertcl) {
+            $respons = 0;
+           
+        }
+    
+
+    
+
+    if($respons == 1   ){
+        $respuestaFina = $respons.'' ;
+        echo json_encode($respuestaFina, JSON_UNESCAPED_UNICODE);
+
+
+    }else if($respons == 0  ){
+        $respuestaFina = 0;
+        echo json_encode($respuestaFina, JSON_UNESCAPED_UNICODE);
+    }
+
+
+}
+
 ?>

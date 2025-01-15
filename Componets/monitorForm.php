@@ -102,8 +102,7 @@
                   </div>
                   
                   <div class="col-md-6">
-                <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-                <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
+                  <button class="btn btn-outline-success" type="button" id = "btAcc" ><b>Agregar</b></button>
                 </div>
 
 
