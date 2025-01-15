@@ -359,40 +359,6 @@
 <script src="../Assests/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-<script src="../Controller/agregar.js"></script>
-<script src="../Controller/cancelar.js"></script>
-
-<!-- Page specific script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-      language: {
-        processing: "Busqueda en curso...",
-        search: "Buscar&nbsp;:",
-        lengthMenu: "Agrupar de MENU Solicitudes",
-        infoEmpty: "No existen datos.",
-        infoFiltered: "(filtrado de MAX elementos en total)",
-        infoPostFix: "",
-        loadingRecords: "Cargando...",
-        zeroRecords: "No se encontraron datos con tu busqueda",
-        emptyTable: "No hay datos disponibles en la tabla.",
-        paginate: {
-            first: "Primero",
-            previous: "Anterior",
-            next: "Siguiente",
-            last: "Ultimo"
-        },
-        aria: {
-            sortAscending: ": active para ordenar la columna en orden ascendente",
-            sortDescending: ": active para ordenar la columna en orden descendente"
-        }
-    },
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
-  });
-</script>
 
 
 <style>

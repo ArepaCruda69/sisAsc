@@ -186,6 +186,12 @@
                   <p>Marcas</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="./catPuertos.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Puertos</p>
+                </a>
+              </li>
             </ul>
 
             <ul class="nav nav-treeview">
@@ -202,12 +208,7 @@
                   <p>Estilos de Impresoras</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./catPuertos.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Puertos</p>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a href="./catAcc.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

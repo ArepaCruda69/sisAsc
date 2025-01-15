@@ -6,10 +6,6 @@ document.getElementById("btMarca").addEventListener("click", () => {
 
     var txtnombremarca = document.getElementById("txtNombreMarca").value;
 
-   
-
- 
-
 
     if (txtnombremarca == "" ) {
         Swal.fire({

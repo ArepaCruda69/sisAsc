@@ -120,27 +120,6 @@
                 </a>
               </li>
 
-              <!-- <li class="nav-item">
-                <a href="../sisAsc/Views/monT.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Monitor</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="../sisAsc/Views/tecLado.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Teclado</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mouSe.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mouse</p>
-                </a>
-              </li>
-               -->
               <li class="nav-item">
                 <a href="../sisAsc/Views/acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -188,28 +167,7 @@
                 </a>
               </li>
 
-<!--               
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantMont.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Monitor</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantTecl.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Teclado</p>
-                </a>
-              </li>
 
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantMou.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mouse</p>
-                </a>
-              </li>
-               -->
               <li class="nav-item">
                 <a href="../sisAsc/Views/mantAcc.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -217,9 +175,6 @@
                 </a>
               </li>
               
-
-
-
             </ul>
             
             
@@ -242,6 +197,13 @@
                   <p>Marcas</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="../sisAsc/Views/catPuertos.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Puertos</p>
+                </a>
+              </li>
             </ul>
 
             <ul class="nav nav-treeview">
@@ -258,12 +220,9 @@
                   <p>Estilos de Impresoras</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="../sisAsc/Views/catPuertos.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Puertos</p>
-                </a>
-              </li>
+
+             
+
               <li class="nav-item">
                 <a href="../sisAsc/Views/catAcc.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
