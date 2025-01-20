@@ -25,19 +25,17 @@
                     </div>
                   </div>
 
-                  <div class="col-md-4">
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Marca</label>
-                      <select class="form-control" required>
-                      <option value="">Seleccione...</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
-                      </select>
-                    </div>
-                  </div>
+                  
+          <div class="form-group col-4">
+              <label for="txtMarcaGrafica">Marca</label>
+              <select class="form-control select2" id="txtMarcaGrafica" name="txtMarcaGrafica">  
+                <option>opcion 1</option>
+                <option>opcion 2</option>
+                <option>opcion 3</option>
+                <option>opcion 4</option>
+                <option>opcion 5</option>
+              </select>
+            </div>
 
                   <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Serial</b><b
@@ -103,6 +101,7 @@
                   
                   <div class="col-md-6">
                   <button class="btn btn-outline-success" type="button" id = "btAcc" ><b>Agregar</b></button>
+                  <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
                 </div>
 
 

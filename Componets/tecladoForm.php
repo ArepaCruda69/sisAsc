@@ -76,6 +76,8 @@
                     </div>
                   </div>
 
+                  
+
 
                   <div class="col-md-6">
                 <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>

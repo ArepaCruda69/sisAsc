@@ -24,7 +24,7 @@
 
 .select2-container--bootstrap4 .select2-selection{
     width:100%;
-    background-color:#fff;
+    background-color:#9e9999;
     border:1px solid #ced4da;
     border-radius:.25rem;
     -webkit-transition:border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
@@ -108,8 +108,8 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection,form.was-val
 
 .select2-container--bootstrap4 .select2-results__option--highlighted,.select2-container--bootstrap4 .select2-results__option--highlighted.select2-results__option[aria-selected="true"]{
     
-    color:#fff;
-    background-color:#007bff
+    color:#fffcfc;
+    background-color:#ff0022
 
 }
 

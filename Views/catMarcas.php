@@ -187,7 +187,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./catPuertos.html" class="nav-link">
+                <a href="../Views/catPuertos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
                 </a>
@@ -256,24 +256,24 @@
               <h2>Marcas</h2> 
             </div>
 
-         <div class="card-body">
-  <main class="col">
-  <form id="marcaForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
-   
-          <div class="form-group col-6" >
-              <label for=""> ID</label>
-              <input type="" class="form-control" id="txtModeloDisco" name="" disabled>
-            
-          </div>
+              <div class="card-body">
+              <main class="col">
+              <form id="marcaForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
+              
+                    <div class="form-group col-6" >
+                        <label for=""> ID</label>
+                        <input type="" class="form-control" id="txtModeloDisco" name="" disabled>
+                      
+                    </div>
 
-         <div class="form-group col-6">
-              <label for=""> Nombre</label>
-              <input type="" class="form-control" id="txtNombreMarca" >
-            
-          </div>
+                  <div class="form-group col-6">
+                        <label for=""> Nombre</label>
+                        <input type="" class="form-control" id="txtNombreMarca" >
+                      
+                    </div>
 
-          <button  class="btn btn-outline-success  btn-sm btn-block" type="button" id = "btMarca"><b>Agregar</b></button>
-  
+                    <button  class="btn btn-outline-success  btn-sm btn-block" type="button" id = "btMarca"><b>Agregar</b></button>
+            
 
 
            <!-- /.card-header -->
@@ -327,13 +327,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    
-  </aside>
-  <!-- /.control-sidebar -->
-
+  
   
 </div>
 <!-- ./wrapper -->
@@ -365,45 +359,13 @@
 <script src="../Assests/dist/js/formMarca.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-;
-
-  
-</script>
 
 
 
 
 
-<script>
-  
-$(function () {
-    $("#tablaMarca").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      language: {
-        processing: "Busqueda en curso...",
-        search: "Buscar&nbsp;:",
-        lengthMenu: "Agrupar de MENU Solicitudes",
-        infoEmpty: "No existen datos.",
-        infoFiltered: "(filtrado de MAX elementos en total)",
-        infoPostFix: "",
-        loadingRecords: "Cargando...",
-        zeroRecords: "No se encontraron datos con tu busqueda",
-        emptyTable: "No hay datos disponibles en la tabla.",
-        paginate: {
-            first: "Primero",
-            previous: "Anterior",
-            next: "Siguiente",
-            last: "Ultimo"
-        },
-        aria: {
-            sortAscending: ": active para ordenar la columna en orden ascendente",
-            sortDescending: ": active para ordenar la columna en orden descendente"
-        }
-    },
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-  });
-</script>
+
 
 
 

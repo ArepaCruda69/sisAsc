@@ -18,7 +18,7 @@
   
   .select2-container--bootstrap4 .select2-selection {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #a5a2a2;
     -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -48,7 +48,7 @@
   
   .select2-container--bootstrap4.select2-container--disabled .select2-selection, .select2-container--bootstrap4.select2-container--disabled.select2-container--focus .select2-selection {
     cursor: not-allowed;
-    background-color: #efe9e9;
+    background-color: #a39d9d;
     border-color: #ffffff;
     -webkit-box-shadow: none;
             box-shadow: none; }
@@ -136,7 +136,7 @@
         height: 0;
         margin-top: -2px;
         margin-left: -4px;
-        border-color: #ffffff transparent transparent transparent;
+        border-color: #050303 transparent transparent transparent;
         border-style: solid;
         border-width: 5px 4px 0; }
     .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {

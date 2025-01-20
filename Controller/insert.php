@@ -291,4 +291,48 @@ if ($_POST['actionn'] == "btMarca") {
 
 }
 
+
+
+if ($_POST['actiooon'] == "btPuertos") {
+    $txtnombrepuertos = $_POST['txtnombrepuertos'];
+ 
+     $responss='';
+     $respuestaFinaa = '';
+ 
+ 
+ 
+    
+         
+ 
+         $insertclll = $conexion->prepare("INSERT INTO puertos (nombre_puerto) VALUES (?)");
+         $insertclll->bind_param("s", $txtnombrepuertos);
+         $insertclll->execute();
+ 
+        
+ 
+         if (!$insertclll) {
+             $responss = 1;
+            
+         } else if ($insertclll) {
+             $responss = 0;
+            
+         }
+     
+ 
+     
+ 
+     if($responss == 1   ){
+         $respuestaFinaa = $responss.'' ;
+         echo json_encode($respuestaFinaa, JSON_UNESCAPED_UNICODE);
+ 
+ 
+     }else if($responss == 0  ){
+         $respuestaFinaa = 0;
+         echo json_encode($respuestaFinaa, JSON_UNESCAPED_UNICODE);
+     }
+ 
+ 
+ }
+ 
+
 ?>
