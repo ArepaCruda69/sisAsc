@@ -54,6 +54,30 @@ include '../Componets/scripts.php';
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src='../Assests/plugins/jquery/jquery.min.js'></script>
 <script src='../Assests/dist/js/select2.min.js'></script>
+
+
+<script>
+  $(function () {
+    $('.select2').each(function () {
+        $(this).select2({
+            theme: 'bootstrap4',
+            placeholder: $(this).data('placeholder'),
+            allowClear: Boolean($(this).data('allow-clear')),
+            language: {
+                noResults: function () {
+                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoSintoma()">Agregar Nuevo Sintoma <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
+                },
+            },
+            escapeMarkup: function (markup) {
+                return markup;
+            }
+        });
+    });
+});
+
+
+
+</script>
          
 
   </body>

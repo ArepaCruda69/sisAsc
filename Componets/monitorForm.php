@@ -27,8 +27,9 @@
 
                   
           <div class="form-group col-4">
-              <label for="txtMarcaGrafica">Marca</label>
-              <select class="form-control select2" id="txtMarcaGrafica" name="txtMarcaGrafica">  
+              <label for="txtMarcaMonitor">Marca</label>
+              <select class="form-control select2" id="txtMarcaMonitor" name="txtMarcaMonitor">
+              <option value="">Seleccione...</option>  
                 <option>opcion 1</option>
                 <option>opcion 2</option>
                 <option>opcion 3</option>
@@ -46,8 +47,8 @@
                     </div>
                   </div>
 
-                    <div class="col-md-4">
-                    <!-- select -->
+                    <!-- <div class="col-md-4">
+                    
                     <div class="form-group">
                       <label>Puerto</label>
                       <select class="form-control" required>
@@ -61,43 +62,51 @@
                         <option>Otro</option>   
                       </select>
                     </div>
-                  </div>
+                  </div> -->
+
+                  <div class="form-group col-4">
+              <label for="txtPuertoMonitor">Puertos</label>
+              <select class="form-control select2" id="txtPuertoMonitor" name="txtPuertoMonitor"> 
+              <option value="">Seleccione...</option> 
+                <option>opcion 1</option>
+                <option>opcion 2</option>
+                <option>opcion 3</option>
+                <option>opcion 4</option>
+                <option>opcion 5</option>
+              </select>
+            </div>
+
+            <div class="form-group col-4">
+              <label for="txtPanelMonitor">Panel</label>
+              <select class="form-control select2" id="txtPanelMonitor" name="txtPanelMonitor">  
+              <option value="">Seleccione...</option>
+                <option>TN </option>
+                <option>IPS </option>
+                <option>VA </option>
+                <option>OLED </option>
+                <option>QLED </option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group col-4">
+              <label for="txtHerciosMonitor">Hercios</label>
+              <select class="form-control select2" id="txtHerciosMonitor" name="txtHerciosMonitor">  
+              <option value="">Seleccione...</option>
+                <option>60 Hz </option>
+                <option>75 Hz </option>
+                <option>120 Hz </option>
+                <option>144 Hz </option>
+                <option>165 Hz </option>
+                <option>240 Hz</option>
+                <option>240 Hz</option>
+                <option>360 Hz</option>
+                <option>Otro</option>
+                
+              </select>
+            </div>
 
                   
-                  <div class="col-md-4">
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Panel</label>
-                      <select class="form-control" required> 
-                        <option value="">Seleccione...</option>
-                        <option>TN</option>
-                        <option>IPS</option>
-                        <option>VA</option>
-                        <option>OLED</option>
-                        <option>QLED</option>
-                        <option>Otro</option>
-                      </select>
-                    </div>
-                  </div>   
-
-
-                  <div class="col-md-4">
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Hercios</label>
-                      <select class="form-control" required> 
-                        <option value="">Seleccione...</option>
-                        <option>60 Hz</option>
-                        <option>75 Hz</option>
-                        <option>120 Hz</option>
-                        <option>144 Hz</option>
-                        <option>165 Hz</option>
-                        <option>240 Hz</option>
-                        <option>360 Hz</option>
-                        <option>Otro</option>
-                      </select>
-                    </div>
-                  </div>
                   
                   <div class="col-md-6">
                   <button class="btn btn-outline-success" type="button" id = "btAcc" ><b>Agregar</b></button>

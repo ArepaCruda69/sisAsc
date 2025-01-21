@@ -25,19 +25,20 @@
                     </div>
                   </div>
 
-                  <div class="col-md-4">
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Marca</label>
-                      <select class="form-control" required>
-                      <option value="">Seleccione...</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                 
+
+                          
+                  <div class="form-group col-4">
+                      <label for="txtMarcaMonitor">Marca</label><br>
+                      <select class="form-control select2" id="txtMarcaMonitor" name="txtMarcaMonitor">
+                      <option value="">Seleccione...</option>  
+                        <option>opcion 1</option>
+                        <option>opcion 2</option>
+                        <option>opcion 3</option>
+                        <option>opcion 4</option>
+                        <option>opcion 5</option>
                       </select>
                     </div>
-                  </div>
 
                   <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Serial</b><b
@@ -48,34 +49,30 @@
                     </div>
                   </div>
 
-                    <div class="col-md-4">
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Puerto</label>
-                      <select class="form-control" required>
-                      <option value="">Seleccione...</option>
-                        <option>USB</option>
-                        <option>USB-C</option>
-                        <option>PS/2</option>
-                        <option>Lightning</option>
-                      </select>
-                    </div>
+                  <div class="form-group col-4">
+                    <label for="txtPuertoMouse">Puertos</label>
+                    <select class="form-control select2" id="txtPuertoMouse" name="txtPuertoMouse"> 
+                    <option value="">Seleccione...</option> 
+                      <option>USB</option>
+                      <option>USB-C</option>
+                      <option>PS/2</option>
+                      <option>Lightning</option>
+                    </select>
+                  </div>
+                 
+
+                  <div class="form-group col-4">
+                    <label for="txtTipoMouse">Tipo</label>
+                    <select class="form-control select2" id="txtTipoMouse" name="txtTipoMouse"> 
+                    <option value="">Seleccione...</option> 
+                      <option>Óptico</option>
+                      <option>Láser</option>
+                      <option>Inalámbrico</option>
+                      <option>Mecánico</option>
+                      <option>Otro</option>
+                    </select>
                   </div>
 
-                  
-                  <div class="col-md-4">
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Tipo</label>
-                      <select class="form-control" required> 
-                        <option value="">Seleccione...</option>
-                        <option>Óptico</option>
-                        <option>Láser</option>
-                        <option>Inalámbrico</option>
-                        <option>Mecánico</option>
-                      </select>
-                    </div>
-                  </div>
 
                   <div class="col-md-6">
                 <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>

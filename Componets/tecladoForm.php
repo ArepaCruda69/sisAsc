@@ -25,18 +25,18 @@
                     </div>
                   </div>
 
-                  <div class="col-md-4">
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Marca</label>
-                      <select class="form-control" required>
-                      <option value="">Seleccione...</option>
+
+                  
+                  <div class="form-group col-4">
+                    <label for="txtMarcaTeclado">Marca</label>
+                    <br>
+                    <select class="form-control select2" id="txtMarcaTeclado" name="txtMarcaTeclado">  
+                    <option value="">Seleccione...</option>
                         <option>option 2</option>
                         <option>option 3</option>
                         <option>option 4</option>
                         <option>option 5</option>
-                      </select>
-                    </div>
+                    </select>
                   </div>
 
                   <div class="col-md-4">
@@ -47,9 +47,9 @@
                       Porfavor seleccione una fecha
                     </div>
                   </div>
-
+<!-- 
                     <div class="col-md-4">
-                    <!-- select -->
+
                     <div class="form-group">
                       <label>Puerto</label>
                       <select class="form-control" required>
@@ -60,21 +60,30 @@
                         <option>Lightning</option>
                       </select>
                     </div>
-                  </div>
+                  </div> -->
 
-                  
-                  <div class="col-md-4">
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Tipo</label>
-                      <select class="form-control" required> 
-                        <option value="">Seleccione...</option>
-                        <option>Membrana</option>
-                        <option>Mecanico</option>
-                        <option>Otro</option>
-                      </select>
-                    </div>
-                  </div>
+                  <div class="form-group col-4">
+              <label for="txtPuertoTeclado">Puertos</label>
+              <select class="form-control select2" id="txtPuertoTeclado" name="txtPuertoTeclado"> 
+              <option value="">Seleccione...</option> 
+                <option>USB</option>
+                <option>USB-C</option>
+                <option>PS/2</option>
+                <option>Lightning</option>
+              </select>
+            </div>
+
+            <div class="form-group col-4">
+              <label for="txtTipoMonitor">Tipo</label>
+              <select class="form-control select2" id="txtTipoMonitor" name="txtTipoMonitor"> 
+              <option value="">Seleccione...</option> 
+                <option>Membrana</option>
+                <option>Mecanico</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+
 
                   
 
