@@ -1,5 +1,4 @@
 
-
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-danger elevation-4" style="background-color: #959a9b;">
     <!-- Brand Logo -->
@@ -30,7 +29,8 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
-          
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
           <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-table"></i>
@@ -52,13 +52,13 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="../Views/impS.php" class="nav-link">
+                <a href="../Views/impS.php" class="nav-link active ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../Views/cpuS.php" class="nav-link active">
+                <a href="../Views/cpuS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
@@ -72,17 +72,21 @@
                 </a>
               </li>
 
+
+
               <li class="nav-item">
                 <a href="../Views/ups.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ups</p>
                 </a>
               </li>
+              
 
             </ul>
             
           </li>
-         
+
+
           <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-file"></i>
@@ -95,38 +99,22 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" " class="nav-link">
+                <a href="../Views/catMarcas.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
               </li>
             </ul>
 
+            
+
             <ul class="nav nav-treeview">
 
-              <li class="nav-item">
-                <a href="" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tipos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estilos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
+          
+            <li class="nav-item">
+                <a href="../Views/catPuertos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Accesorios</p>
                 </a>
               </li>
 
@@ -134,11 +122,10 @@
             
 
           </li>
+         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
-
-  

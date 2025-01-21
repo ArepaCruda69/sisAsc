@@ -208,18 +208,8 @@
 
             <ul class="nav nav-treeview">
 
-              <li class="nav-item">
-                <a href="../sisAsc/Views/catTipoImp.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tipos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../sisAsc/Views/catEstiloImp.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estilos de Impresoras</p>
-                </a>
-              </li>
+             
+             
 
              
 

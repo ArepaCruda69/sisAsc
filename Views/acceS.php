@@ -65,7 +65,7 @@ include '../Componets/scripts.php';
             allowClear: Boolean($(this).data('allow-clear')),
             language: {
                 noResults: function () {
-                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoSintoma()">Agregar Nuevo Sintoma <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
+                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoAccesorios()">Agregar Nuevo Accesorios <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
                 },
             },
             escapeMarkup: function (markup) {

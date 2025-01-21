@@ -3,26 +3,11 @@
 <?php include '../Componets/head.php'; ?>
 
 <body class="hold-transition sidebar-mini">
+  
 <div class="wrapper">
-<!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index.php" class="nav-link">Inicio</a>
-      </li>
-    </ul>
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-     
-
-  </nav>
-  <!-- /.navbar -->
+  
+<?php include '../Componets/navbar.php'; ?>
 <?php include '../Componets/sidebarCpus.php'; ?>
   
 
@@ -61,9 +46,9 @@
 
 <?php echo $form2?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src='../Assests/dist/js/formCpu.js'></script>
 <script src='../Assests/plugins/jquery/jquery.min.js'></script>
 <script src='../Assests/dist/js/select2.min.js'></script>
+<script src='../Assests/dist/js/formCpu.js'></script>
 
 <script>
   $(function () {
@@ -74,7 +59,7 @@
             allowClear: Boolean($(this).data('allow-clear')),
             language: {
                 noResults: function () {
-                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoSintoma()">Agregar Nuevo Sintoma <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
+                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoCPU()">Agregar Nuevo CPU <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
                 },
             },
             escapeMarkup: function (markup) {
@@ -88,13 +73,5 @@
 
 </script>
 
-
-<style>
-  hr {
-    height: 4px;
-    background-color: #cac3c3;
-    border: none;
-  }
-</style>
 </body>
 </html>
