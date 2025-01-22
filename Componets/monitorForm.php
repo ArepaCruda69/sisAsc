@@ -19,7 +19,7 @@
                       <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Modelo</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
+                    <input type="tel" class="form-control" id="txtModeloMonitor" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -41,7 +41,7 @@
                   <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Serial</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
+                    <input type="tel" class="form-control" id="txtSerialMonitor" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -85,7 +85,7 @@
                 <option>VA </option>
                 <option>OLED </option>
                 <option>QLED </option>
-                <option>Otro</option>
+                <option>Otros</option>
               </select>
             </div>
 
@@ -101,7 +101,7 @@
                 <option>240 Hz</option>
                 <option>240 Hz</option>
                 <option>360 Hz</option>
-                <option>Otro</option>
+                <option>Otros</option>
                 
               </select>
             </div>
@@ -109,9 +109,8 @@
                   
                   
                   <div class="col-md-6">
-                  <button class="btn btn-outline-success" type="button" id = "btAcc" ><b>Agregar</b></button>
-                  <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-                </div>
+                  <button class="btn btn-outline-success" type="button" id = "btMonitor" ><b>Agregar</b></button>
+                 </div>
 
 
                       
