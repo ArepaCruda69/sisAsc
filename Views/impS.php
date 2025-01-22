@@ -9,7 +9,6 @@
 
   
 <?php include '../Componets/navbar.php'; ?>
-
 <?php include '../Componets/sidebarImp.php'; ?>
 
 
@@ -29,223 +28,17 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+     
 
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="col">
-
-          <div class="card text">
-            <div class="card-header">
-              <h2>Impresora</h2>
-            </div>
-            <div class="card-body">
-
-              <main class="col">
-
-              
-    <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate onsubmit="return validarTodoFormulario()">
-      <div class="col-md-3">
-          <label for="txtcliente" class="form-label"><b>Codigo</b><b style="color: red;">*</b></label>
-          <div class="input-group mb-3">
-              <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username" aria-describedby="button-addon2">
-              <button class="btn btn-danger" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><b>Buscar</b></button>
-          </div>
-          <div class="invalid-feedback">
-              Por favor, digite un Código
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtdescripcion" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtdescripcion" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Marca</label>
-              <select class="form-control" id="marca">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtdescripcion2" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtdescripcion2" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Tipo</label>
-              <select class="form-control" id="tipo">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Estilo</label>
-              <select class="form-control" id="estilo">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <hr>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Puerto</label>
-              <select class="form-control" id="puerto">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtip" class="form-label"><b>IP</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtip" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <label for="txtancho" class="form-label"><b>Ancho</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtancho" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <label for="txtconsumibles" class="form-label"><b>Consumibles</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtconsumibles" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-          <br>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Estatus</label>
-              <select class="form-control" id="estatus">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>Unidad</label>
-              <select class="form-control" id="unidad">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtasignado" class="form-label"><b>Asignado a</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtasignado" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="form-group">
-              <label>PC</label>
-              <select class="form-control" id="pc">
-                  <option>opcion 1</option>
-                  <option>opcion 2</option>
-                  <option>opcion 3</option>
-                  <option>opcion 4</option>
-                  <option>opcion 5</option>
-              </select>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label for="txtfrecuencia" class="form-label"><b>Frecuencia de Mantenimiento</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtfrecuencia" required>
-          <div class="invalid-feedback">
-              Por favor, seleccione una fecha
-          </div>
-      </div>
-      <div class="col-md-3">
-          <label>Ultimo Mantenimiento:</label>
-          <div class="input-group date" id="reservationdate" data-target-input="nearest">
-              <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" />
-          </div>
-      </div>
-      <div class="col-md-12">
-          <div class="form-group">
-              <label>Observaciones</label>
-              <textarea class="form-control" rows="3"></textarea>
-          </div>
-      </div>
-      
-      <div class="col-md-6">
-        <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-        <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-      </div>
-    
-            </form>
-           
-
-          
-
-            <!-- /.card-header -->
+                
+    <?php include '../Componets/impresoraForm.php'; ?>
 
 
-            </main>
-
-            
-
-
-          </div>
-
-
-        </div>
-      </div>
-      <!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
 
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="">Alfred</a>.</strong>
-    <div class="float-right d-none d-sm-inline-block">
-    </div>
-  </footer>
-</div>
-<!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
 <script src="../Assests/plugins/jquery/jquery.min.js"></script>
@@ -254,63 +47,35 @@
 <!-- AdminLTE App -->
 <script src="../Assests/dist/js/adminlte.min.js"></script>
 
-<!-- DataTables  & Plugins -->
-<script src="../Assests/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../Assests/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../Assests/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../Assests/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../Assests/plugins/jszip/jszip.min.js"></script>
-<script src="../Assests/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../Assests/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-<script src="../Controller/agregar.js"></script>
-<script src="../Controller/cancelar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src='../Assests/plugins/jquery/jquery.min.js'></script>
+<script src='../Assests/dist/js/select2.min.js'></script>
+<script src='../Assests/dist/js/formImpresora.js'></script>
 
-<!-- Page specific script -->
 <script>
   $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-      language: {
-        processing: "Busqueda en curso...",
-        search: "Buscar&nbsp;:",
-        lengthMenu: "Agrupar de MENU Solicitudes",
-        infoEmpty: "No existen datos.",
-        infoFiltered: "(filtrado de MAX elementos en total)",
-        infoPostFix: "",
-        loadingRecords: "Cargando...",
-        zeroRecords: "No se encontraron datos con tu busqueda",
-        emptyTable: "No hay datos disponibles en la tabla.",
-        paginate: {
-            first: "Primero",
-            previous: "Anterior",
-            next: "Siguiente",
-            last: "Ultimo"
-        },
-        aria: {
-            sortAscending: ": active para ordenar la columna en orden ascendente",
-            sortDescending: ": active para ordenar la columna en orden descendente"
-        }
-    },
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('.select2').each(function () {
+        $(this).select2({
+            theme: 'bootstrap4',
+            placeholder: $(this).data('placeholder'),
+            allowClear: Boolean($(this).data('allow-clear')),
+            language: {
+                noResults: function () {
+                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoImpresora()">Agregar Nuevo Impresora <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
+                },
+            },
+            escapeMarkup: function (markup) {
+                return markup;
+            }
+        });
+    });
+});
 
-  });
+
+
 </script>
 
-<style>
-  hr {
-    height: 4px;
-    background-color: #cac3c3;
-    border: none;
-  }
-</style>
- <!-- Vincula tu archivo JavaScript -->
- <script src="/Assests/dist/js/validaciones/valCampotext.js"></script>
+
 </body>
 </html>

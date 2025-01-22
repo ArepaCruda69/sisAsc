@@ -454,8 +454,8 @@
           </div>
 
 
-          <div class="form-row">
-        <button class="btn btn-outline-success" type="button" id = "btCpu" ><b>Agregar</b></button>
+        <div class="form-row">
+          <button class="btn btn-outline-success" type="button" id = "btCpu" ><b>Agregar</b></button>
           </div>
 
 

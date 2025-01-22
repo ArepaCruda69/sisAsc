@@ -3,7 +3,6 @@
 <?php include '../Componets/head.php'; ?>
 
 <body class="hold-transition sidebar-mini">
-  
 <div class="wrapper">
 
   
@@ -33,12 +32,6 @@
     <?php include '../Componets/cpusForm.php'; ?>
 
 
-
-
-
-
-
-    
   </div>
   <!-- /.content-wrapper -->
 
