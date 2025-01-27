@@ -1,25 +1,22 @@
-
 <?php
 
-
-
-function conectarSegundaDB() {
-    $servername = "localhost";
-    $username = "root";
-    $password = "123456789";
-    $dbname = "bd_globales";
-
-    $conn1 = new mysqli($servername, $username, $password, $dbname);
-
-
-    if ($conn1->connect_error) {
-        die("Conexión fallida: " . $conn1->connect_error);
+if (!function_exists('conectarDB')) {
+    function conectarDB($dbname) {
+        $conn = new mysqli("localhost", "root", "123456789", $dbname);
+        if ($conn->connect_error) {
+            die("Conexión fallida a $dbname: " . $conn->connect_error);
+        }
+        return $conn;
     }
-
-    return $conn1;
 }
- $conexion = mysqli_connect("localhost","root","123456789","bdd_sisasc")
 
+if (!function_exists('conectarSegundaDB')) {
+    function conectarSegundaDB() {
+        return conectarDB("bd_globales");
+    }
+}
+
+$conexion = mysqli_connect("localhost", "root", "123456789", "bdd_sisasc");
 ?>
 
 

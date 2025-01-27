@@ -1,24 +1,37 @@
-
-
-
-
 <?php
-// ups.php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require '../Model/conexion.php';
 
-// Conectar a la base de datos
-$conn1 = conectarSegundaDB();
+function conectarDB($dbname) {
+    $conn = new mysqli("localhost", "root", "123456789", $dbname);
+    if ($conn->connect_error) {
+        die("Conexión fallida a $dbname: " . $conn->connect_error);
+    }
+    return $conn;
+}
 
-// Obtener datos de la tabla
-$query = $conn1->prepare("SELECT nom_unidad FROM glo_1unidad");
-$query->execute();
-$result = $query->get_result();
-$unidades = $result->fetch_all(MYSQLI_ASSOC);
+function obtenerDatos($conn, $query) {
+    $stmt = $conn->prepare($query);
+    if ($stmt === false) {
+        die("Error en la consulta: " . $conn->error);
+    }
+    $stmt->execute();
+    return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+}
 
-// Cerrar la conexión
+// Conectar y obtener datos
+$conn1 = conectarDB("bd_globales");
+$unidades = obtenerDatos($conn1, "SELECT nom_unidad FROM glo_1unidad");
 $conn1->close();
 
+$conn2 = conectarDB("bdd_sisasc");
+$datosTabla = obtenerDatos($conn2, "SELECT id_ups, modelo_ups, serial_ups, unidad, fecha_instalacion, modelo_bateria FROM ups");
+$conn2->close();
 ?>
+
 
 
 
@@ -244,147 +257,7 @@ $conn1->close();
       <div class="container-fluid">
         <div class="row">
          
-  <!-- Main content -->
-  <div class="content">
-    <div class="container-fluid">
-      <div class="col">
-
-        <div class="card text">
-          <div class="card-header">
-            <h2>Ups</h2>
-          </div>
-          <div class="card-body">
-
-          <main class="col">
-
-          <form class="row g-3 needs-validation" action="../model/registrarUps.php" method="POST" style="border-radius: 20px;" novalidate>
-
-     <div class="col-md-3">
-
-        <label for="modelo" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
-        <input type="text" class="form-control" id="txtModeloUps" name="modelo" required>
-        <div class="invalid-feedback">Por favor ingrese el modelo</div>
-    </div>
-    
-    <div class="col-md-3">
-        <label for="serial" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
-        <input type="text" class="form-control" id="txtSerialUps" name="serial" required>
-        <div class="invalid-feedback">Por favor ingrese el serial</div>
-    </div>
-
-
-    <div class="col-md-3">
-        <label for="unidad" class="form-label">Unidad</label>
-        <select class="form-control" id="txtUnidadUps" name="unidad" required>   
-        <option value="">Seleccione...</option>
-        <?php
-            if (!empty($unidades)) {
-                foreach ($unidades as $unidad) {
-                    echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>";
-                }
-            } else {
-                echo "<option>No hay unidades disponibles</option>";
-            }
-        ?>
-        
-        </select>
-    </div>
-    
-
-    <div class="col-md-3">
-        <label for="fecha_instalacion" class="form-label">Fecha de instalación de la batería:</label>
-        <input type="date" class="form-control" id="txtfechaUps" name="fecha_instalacion" required>
-    </div>
-    <div class="col-md-3">
-        <label for="cantidad_bateria" class="form-label"><b>Cantidad de Batería</b><b style="color: red;">*</b></label>
-        <input type="number" class="form-control" id="txtCantidadUps" name="cantidad_bateria" required>
-        <div class="invalid-feedback">Por favor ingrese la cantidad de batería</div>
-    </div>
-    <div class="col-md-3">
-        <label for="modelo_bateria" class="form-label"><b>Modelo de la Batería</b><b style="color: red;">*</b></label>
-        <input type="text" class="form-control" id="txtModeloBateriaUps" name="modelo_bateria" required>
-        <div class="invalid-feedback">Por favor ingrese el modelo de la batería</div>
-        <br>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="observaciones">Observaciones</label>
-            <textarea class="form-control" id="txtObserUps" name="observaciones" rows="1"></textarea>
-        </div>
-    </div>
-    <div class="col-md-6">
-                  <button class="btn btn-outline-success" type="button" id = "btUps" ><b>Agregar</b></button>
-                
-                </div>
-
-</form>
-   </div>  
-
-              <!-- /.card-header -->
-              <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>Modelo</th>
-              <th>Serial</th>
-              <th>Unidad</th>
-              <th>Fecha.Inst.</th>
-              <th>Modelo Bateria</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['modelo']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['serial']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['unidad']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['fecha_instalacion']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['modelo_bateria']) . "</td>";
-                    echo "<td>
-                   <button type='button' class='btn btn-warning btn-sm' onclick='editRecord(" . $row['id'] . ")'>Editar</button>
-                  <a href='../Model/delete.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
-                  </td>";
-              echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='5'>No se encontraron registros</td></tr>";
-            }
-            ?>
-          </tbody>
-         
-        </table>
-
-          
-        </div>
-        <!-- /.card-body -->
-
-
-        <!-- /.card-header -->
-
-
-        </main>
-
-        
-
-
-            </div>
-
-          </div>
-        </div>
-        <!-- /.container-fluid -->
-      </div>
-      <!-- /.content -->
-
-
-            </div>
-            <!-- /.row -->
-          </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content -->
-      </div>
-      <!-- /.content-wrapper -->
+    <?php include '../Componets/upsForm.php'; ?>
 
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">
@@ -395,6 +268,11 @@ $conn1->close();
         </div>
       </aside>
 
+
+
+
+
+
   <!-- /.control-sidebar -->
    <footer class="main-footer">
     <strong>Copyright &copy; 2025 <a href="">Alfred</a>.</strong>
@@ -402,18 +280,16 @@ $conn1->close();
     </div>
   </footer>
 </div>
+
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 
-<!-- jQuery -->
-<script src="../Assests/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../Assests/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../Assests/dist/js/adminlte.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src='../Assests/plugins/jquery/jquery.min.js'></script>
 
-<script src="../Assests/dist/js/formCpu.js"></script>
+<script src='../Assests/dist/js/select2.min.js'></script>
+<script src="../Assests/dist/js/formUps.js"></script>
 
 
 
@@ -450,36 +326,8 @@ $conn1->close();
     });
   </script>
 
-  <script>
-    // JavaScript para mejorar la validación de HTML5
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
-        var forms = document.getElementsByClassName('needs-validation');
-        // Bucle sobre los formularios y prevenir el envío
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-  </script>
 
-  <script>
-    // JavaScript para ocultar el mensaje de éxito/error después de 2 segundos
-    setTimeout(function() {
-      var popup = document.getElementById('popup-message');
-      if (popup) {
-        popup.style.display = 'none';
-      }
-    }, 2000);
-  </script>
+
 
 
 
@@ -518,6 +366,28 @@ function editRecord(id) {
       border: none;
     }
   </style>
+
+<script>
+
+  $(function () {
+    $('.select2').each(function () {
+        $(this).select2({
+            theme: 'bootstrap4',
+            placeholder: $(this).data('placeholder'),
+            allowClear: Boolean($(this).data('allow-clear')),
+            language: {
+                noResults: function () {
+                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoCPU()">Agregar Nuevo CPU <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
+                },
+            },
+            escapeMarkup: function (markup) {
+                return markup;
+            }
+        });
+    });
+});
+
+</script>
 
 </body>
 
