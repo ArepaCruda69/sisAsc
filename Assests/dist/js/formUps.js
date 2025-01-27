@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    let editing = false;
+    let editingId = null;
+
     document.getElementById("btUps").addEventListener("click", () => {
-        var actionUps = "btUpss";
+        var actionUps = editing ? "updateUps" : "btUpss";
         var dataUps = [];
-        
+
         var txtmodeloups = document.getElementById("txtModeloUps").value;
         var txtserialups = document.getElementById("txtSerialUps").value;
         var txtunidadups = document.getElementById("txtUnidadUps").value;
@@ -10,8 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var txtcantidadups = document.getElementById("txtCantidadUps").value;
         var txtmodelobateriaups = document.getElementById("txtModeloBateriaUps").value;
         var txtobserups = document.getElementById("txtObserUps").value;
-        
+
         dataUps.push({
+            "id": editingId,
             "modeloups": txtmodeloups,
             "serialups": txtserialups,
             "unidadups": txtunidadups,
@@ -39,15 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 cancelButtonText: "Cancelar",
             }).then((result) => {
                 if (result.isConfirmed) {
-                    var jsonUps = JSON.stringify(dataUps); 
-                    
+                    var jsonUps = JSON.stringify(dataUps);
+
                     $.ajax({
-                        url: '../Controller/insertUps.php',
+                        url: editing ? '../Controller/updateUps.php' : '../Controller/insertUps.php',
                         type: 'POST',
                         async: true,
                         data: { actionUps: actionUps, jsonUps: jsonUps },
                         success: function (respo) {
-                            // Interpretar la respuesta JSON correctamente
                             var response = JSON.parse(respo);
                             if (response.response === 0) {
                                 Swal.fire({
@@ -59,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 }).then(() => {
                                     document.getElementById("upsForm").reset(); // Limpiar el formulario
                                     actualizarTabla(); // Actualizar la tabla
+                                    editing = false;
+                                    editingId = null;
+                                    document.getElementById("btUps").textContent = "Agregar"; // Cambiar el texto del botón
                                 });
                             } else {
                                 Swal.fire('Error no se activó el registro: ' + response.response, '', 'error');
@@ -80,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             success: function (html) {
                 document.querySelector('#example1 tbody').innerHTML = html;
                 agregarEventosEliminar(); // Añadir eventos de eliminación
+                agregarEventosEditar(); // Añadir eventos de edición
             },
             error: function () {
                 Swal.fire('Error al actualizar la tabla', '', 'error');
@@ -122,6 +129,41 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             });
+        });
+    }
+
+    function agregarEventosEditar() {
+        document.querySelectorAll('.btn-warning').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                var id = this.getAttribute('onclick').split('(')[1].split(')')[0];
+                editarRegistro(id);
+            });
+        });
+    }
+
+    function editarRegistro(id) {
+        $.ajax({
+            url: '../Controller/getUpsById.php',
+            type: 'GET',
+            data: { id: id },
+            success: function (respo) {
+                var data = JSON.parse(respo);
+                document.getElementById("txtModeloUps").value = data.modelo_ups;
+                document.getElementById("txtSerialUps").value = data.serial_ups;
+                document.getElementById("txtUnidadUps").value = data.unidad;
+                document.getElementById("txtfechaUps").value = data.fecha_instalacion;
+                document.getElementById("txtCantidadUps").value = data.cantidad_bateria;
+                document.getElementById("txtModeloBateriaUps").value = data.modelo_bateria;
+                document.getElementById("txtObserUps").value = data.observaciones_ups;
+
+                editing = true;
+                editingId = id;
+                document.getElementById("btUps").textContent = "Actualizar"; // Cambiar el texto del botón
+            },
+            error: function () {
+                Swal.fire('Error', 'No se pudo cargar el registro.', 'error');
+            }
         });
     }
 
