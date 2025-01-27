@@ -1,5 +1,28 @@
-<!DOCTYPE html>
 
+
+
+
+<?php
+// ups.php
+require '../Model/conexion.php';
+
+// Conectar a la base de datos
+$conn1 = conectarSegundaDB();
+
+// Obtener datos de la tabla
+$query = $conn1->prepare("SELECT nom_unidad FROM glo_1unidad");
+$query->execute();
+$result = $query->get_result();
+$unidades = $result->fetch_all(MYSQLI_ASSOC);
+
+// Cerrar la conexión
+$conn1->close();
+
+?>
+
+
+
+<!DOCTYPE html>
 <?php include '../Componets/head.php'; ?>
 <head>
   <meta charset="utf-8">
@@ -239,59 +262,60 @@
      <div class="col-md-3">
 
         <label for="modelo" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
-        <input type="text" class="form-control" id="modelo" name="modelo" required>
+        <input type="text" class="form-control" id="txtModeloUps" name="modelo" required>
         <div class="invalid-feedback">Por favor ingrese el modelo</div>
     </div>
     
     <div class="col-md-3">
         <label for="serial" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
-        <input type="text" class="form-control" id="serial" name="serial" required>
+        <input type="text" class="form-control" id="txtSerialUps" name="serial" required>
         <div class="invalid-feedback">Por favor ingrese el serial</div>
     </div>
 
 
     <div class="col-md-3">
         <label for="unidad" class="form-label">Unidad</label>
-        <select class="form-control" id="unidad" name="unidad" required>   
+        <select class="form-control" id="txtUnidadUps" name="unidad" required>   
         <option value="">Seleccione...</option>
         <?php
-            if ($resultGlobales->num_rows > 0) {
-                while ($row = $resultGlobales->fetch_assoc()) {
-                    echo "<option value='" . htmlspecialchars($row['nom_unidad']) . "'>" . htmlspecialchars($row['nom_unidad']) . "</option>";
+            if (!empty($unidades)) {
+                foreach ($unidades as $unidad) {
+                    echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>";
                 }
             } else {
                 echo "<option>No hay unidades disponibles</option>";
             }
-            ?>
+        ?>
+        
         </select>
     </div>
     
 
     <div class="col-md-3">
         <label for="fecha_instalacion" class="form-label">Fecha de instalación de la batería:</label>
-        <input type="date" class="form-control" id="fecha_instalacion" name="fecha_instalacion" required>
+        <input type="date" class="form-control" id="txtfechaUps" name="fecha_instalacion" required>
     </div>
     <div class="col-md-3">
         <label for="cantidad_bateria" class="form-label"><b>Cantidad de Batería</b><b style="color: red;">*</b></label>
-        <input type="number" class="form-control" id="cantidad_bateria" name="cantidad_bateria" required>
+        <input type="number" class="form-control" id="txtCantidadUps" name="cantidad_bateria" required>
         <div class="invalid-feedback">Por favor ingrese la cantidad de batería</div>
     </div>
     <div class="col-md-3">
         <label for="modelo_bateria" class="form-label"><b>Modelo de la Batería</b><b style="color: red;">*</b></label>
-        <input type="text" class="form-control" id="modelo_bateria" name="modelo_bateria" required>
+        <input type="text" class="form-control" id="txtModeloBateriaUps" name="modelo_bateria" required>
         <div class="invalid-feedback">Por favor ingrese el modelo de la batería</div>
         <br>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="observaciones">Observaciones</label>
-            <textarea class="form-control" id="observaciones" name="observaciones" rows="1"></textarea>
+            <textarea class="form-control" id="txtObserUps" name="observaciones" rows="1"></textarea>
         </div>
     </div>
     <div class="col-md-6">
-        <button class="btn btn-outline-success" type="submit"><b>Agregar</b></button>
-        <button class="btn btn-outline-danger" type="reset"><b>Cancelar</b></button>
-    </div>
+                  <button class="btn btn-outline-success" type="button" id = "btUps" ><b>Agregar</b></button>
+                
+                </div>
 
 </form>
    </div>  
@@ -331,14 +355,6 @@
           </tbody>
          
         </table>
-
-
-         
-
-         <!--  <div class="d-grid gap-2">
-            <button class="btn btn-outline-success" type="button" onclick="cargar();"><b>Editar</b></button>
-            <button class="btn btn-outline-danger" type="button" onclick="vaciar();"><b>Eliminar</b></button>
-          </div> -->
 
           
         </div>
@@ -397,24 +413,7 @@
 <!-- AdminLTE App -->
 <script src="../Assests/dist/js/adminlte.min.js"></script>
 
-
-<!-- DataTables  & Plugins -->
-<script src="../Assests/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../Assests/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../Assests/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../Assests/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../Assests/plugins/jszip/jszip.min.js"></script>
-<script src="../Assests/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../Assests/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-
-
-<script src="../Controller/agregar.js"></script>
-<script src="../Controller/cancelar.js"></script>
+<script src="../Assests/dist/js/formCpu.js"></script>
 
 
 

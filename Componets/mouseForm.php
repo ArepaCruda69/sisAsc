@@ -19,7 +19,7 @@
                       <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Modelo</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
+                    <input type="tel" class="form-control" id="txtModeloMouse" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -29,8 +29,8 @@
 
                           
                   <div class="form-group col-4">
-                      <label for="txtMarcaMonitor">Marca</label><br>
-                      <select class="form-control select2" id="txtMarcaMonitor" name="txtMarcaMonitor">
+                      <label for="txtMarcaMouse">Marca</label><br>
+                      <select class="form-control select2" id="txtMarcaMouse" name="txtMarcaMouse">
                       <option value="">Seleccione...</option>  
                         <option>opcion 1</option>
                         <option>opcion 2</option>
@@ -43,7 +43,7 @@
                   <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Serial</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
+                    <input type="tel" class="form-control" id="txtSerialMouse" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -73,11 +73,9 @@
                     </select>
                   </div>
 
-
                   <div class="col-md-6">
-                <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-                <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-                </div>                  
+                  <button class="btn btn-outline-success" type="button" id = "btMouse" ><b>Agregar</b></button>
+                 </div>                
 
                                     
 

@@ -55,6 +55,8 @@ include '../Componets/scripts.php';
 <script src='../Assests/plugins/jquery/jquery.min.js'></script>
 <script src='../Assests/dist/js/select2.min.js'></script>
 <script src='../Assests/dist/js/formMonitor.js'></script>
+<script src='../Assests/dist/js/formTeclado.js'></script>
+<script src='../Assests/dist/js/formMouse.js'></script>
 
 
 <script>
