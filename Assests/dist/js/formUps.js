@@ -60,11 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     confirmButtonColor: '#3085d6',
                                     confirmButtonText: 'Ok'
                                 }).then(() => {
-                                    document.getElementById("upsForm").reset(); // Limpiar el formulario
-                                    actualizarTabla(); // Actualizar la tabla
-                                    editing = false;
-                                    editingId = null;
-                                    document.getElementById("btUps").textContent = "Agregar"; // Cambiar el texto del botón
+                                    location.reload(); // Refrescar la página
                                 });
                             } else {
                                 Swal.fire('Error no se activó el registro: ' + response.response, '', 'error');

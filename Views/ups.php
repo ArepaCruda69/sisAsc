@@ -190,7 +190,7 @@ $conn2->close();
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" " class="nav-link">
+                <a href="../Views/catMarcas.php " class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
@@ -282,6 +282,12 @@ $conn2->close();
 </div>
 
 <!-- ./wrapper -->
+ <!-- jQuery -->
+<script src="../Assests/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../Assests/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../Assests/dist/js/adminlte.min.js"></script>
 
 <!-- REQUIRED SCRIPTS -->
 

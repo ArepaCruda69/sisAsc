@@ -35,6 +35,17 @@
                 </select>
             </div>
 
+            <div class="col-md-3"> 
+      <label for="unidad" class="form-label">Unidad</label> 
+      <select class="form-control select2" id="txtUnidadUps" name="unidad" required> 
+        <option value="">Seleccione...</option> 
+        <?php if (!empty($unidades)) { foreach ($unidades as $unidad) { 
+          echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>"; } 
+       } else { echo "<option>No hay unidades disponibles</option>"; } ?> 
+      </select> 
+    </div>
+    
+
             <div class="form-group col-3" >
             <label>Marca</label>
                    <select class="form-control select2" id="txtMarcaCpu">

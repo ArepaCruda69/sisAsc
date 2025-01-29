@@ -27,22 +27,40 @@
         <div class="invalid-feedback">Por favor ingrese el serial</div>
     </div>
 
+    <div class="col-md-3"> 
+      <label for="unidad" class="form-label">Unidad</label> 
+      <select class="form-control select2" id="txtUnidadUps" name="unidad" required> 
+        <option value="">Seleccione...</option> 
+        <?php if (!empty($unidades)) { foreach ($unidades as $unidad) { 
+          echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>"; } 
+       } else { echo "<option>No hay unidades disponibles</option>"; } ?> 
+      </select> 
+    </div>
 
-    <div class="col-md-3">
-    <label for="unidad" class="form-label">Unidad</label>
-    <select class="form-control select2" id="txtUnidadUps" name="unidad" required>   
+
+    <div class="form-group col-3">
+    <label for="txtMarcaImpresora">Marca</label>
+    <select class="form-control select2" id="txtMarcaImpresora" name="txtMarcaImpresora" required>
         <option value="">Seleccione...</option>
         <?php
-            if (!empty($unidades)) {
-                foreach ($unidades as $unidad) {
-                    echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>";
+            include '../Model/conexion.php';
+            $conn = conectarDB("bdd_sisasc");
+            $query = "SELECT marca_marca FROM marca";
+            $result = mysqli_query($conn, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
                 }
             } else {
-                echo "<option>No hay unidades disponibles</option>";
+                echo "<option>No hay marcas disponibles</option>";
             }
+
+            $conn->close();
         ?>
     </select>
 </div>
+
 
     
 
@@ -61,13 +79,14 @@
         <div class="invalid-feedback">Por favor ingrese el modelo de la batería</div>
         <br>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-3">
         <div class="form-group">
             <label for="observaciones">Observaciones</label>
             <textarea class="form-control" id="txtObserUps" name="observaciones" rows="1"></textarea>
         </div>
     </div>
-    <div class="col-md-6">
+    <br>
+    <div class="col-md-3">
                   <button class="btn btn-outline-success" type="button" id = "btUps" ><b>Agregar</b></button>
                 
                 </div>

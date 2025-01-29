@@ -146,10 +146,6 @@ function EliminarDisco(row) {
 }
 
 
-
-
-
-
 document.getElementById("btCpu").addEventListener("click", () => {
     var action = "btCpus";
     var dataCpu = [];
@@ -200,8 +196,6 @@ document.getElementById("btCpu").addEventListener("click", () => {
     });
 
     
-   
-
     var txtmarcapoder = document.getElementById("txtMarcaPoder").value;
     var txtmodelopoder = document.getElementById("txtModeloPoder").value;
     var txtserialpoder= document.getElementById("txtSerialPoder").value;

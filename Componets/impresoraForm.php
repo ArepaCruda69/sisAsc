@@ -17,25 +17,35 @@
     <div class="col-md-3">
         <label for="inputAddress2" class="form-label"><b>Modelo</b><b
             style="color: red;">*</b></label>
-            <input type="tel" class="form-control" id="txtModeloImpresora" required>
-            <div class="invalid-feedback">
-             Porfavor seleccione una fecha
-            </div>
+            <input type="text" class="form-control" id="txtModeloImpresora" required> 
+            <div class="invalid-feedback">Por favor, ingrese el modelo</div> 
             </div>
 
 
-    
             <div class="form-group col-3">
-              <label for="txtMarcaImpresora">Marca</label>
-              <select class="form-control select2" id="txtMarcaImpresora" name="txtMarcaImpresora">
-              <option value="">Seleccione...</option>  
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
-              </select>
-            </div>
+      <label for="txtMarcaImpresora">Marca</label>
+      <select class="form-control select2" id="txtMarcaImpresora" name="txtMarcaImpresora" required>
+          <option value="">Seleccione...</option>
+        <?php
+            include '../Model/conexion.php';
+            $conn = conectarDB("bdd_sisasc");
+            $query = "SELECT marca_marca FROM marca"; // Incluir ID
+            $result = mysqli_query($conn, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                }
+            } else {
+                echo "<option>No hay marca disponibles</option>";
+            }
+
+            $conn->close();
+        ?>
+    </select>
+</div>
+
+
 
             <div class="col-md-3">
                     <label for="inputAddress2" class="form-label"><b>Serial</b><b
@@ -71,16 +81,12 @@
 
       
             <div class="form-group col-3">
-              <label for="txtPuertoImpresora">Puerto</label>
-              <select class="form-control select2" id="txtPuertoImpresora" name="txtPuertoImpresora"> 
-              <option value="">Seleccione...</option> 
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
-              </select>
-            </div>
+    <label for="txtPuertoImpresora">Puerto</label>
+    <select class="form-control select2" id="txtPuertoImpresora" name="txtPuertoImpresora">
+        <option value="">Seleccione...</option>
+    </select>
+</div>
+
 
       
       

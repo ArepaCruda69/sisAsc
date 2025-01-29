@@ -1,5 +1,4 @@
 
-
 <?php 
 include	'../Model/conexion.php';
 
@@ -40,14 +39,11 @@ if ($_POST['actionImp'] == "btImpresoras") {
         }
     }
 
- 
-    
-
-
-
 }
 
 
- 
 
 ?>
+
+
+
