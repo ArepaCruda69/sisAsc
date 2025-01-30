@@ -232,7 +232,6 @@ if ($_POST['action'] == "btCpus") {
     }
 
     
-
     if($response1 == 1 || $response11 == 1 || $response22 == 1 ||  $response33 == 1 ||  $response44 == 1 || $response77 == 1 ||  $response444 == 1 || $response555 == 1 || $response8 == 1  ){
         $respuestaFinal = $response1.''.$response11.''.$response22.''.$response33.''.$response44.''.$response77.''.$response444.''.$response555. ''.$response8. '' ;
         echo json_encode($respuestaFinal, JSON_UNESCAPED_UNICODE);
@@ -256,10 +255,6 @@ if ($_POST['actionn'] == "btMarca") {
     $respons='';
     $respuestaFina = '';
 
-
-
-   
-        
 
         $insertcl = $conexion->prepare("INSERT INTO marca (marca_marca) VALUES (?)");
         $insertcl->bind_param("s", $txtnombremarca);
@@ -300,10 +295,6 @@ if ($_POST['actiooon'] == "btPuertos") {
      $respuestaFinaa = '';
  
  
- 
-    
-         
- 
          $insertclll = $conexion->prepare("INSERT INTO puertos (nombre_puerto) VALUES (?)");
          $insertclll->bind_param("s", $txtnombrepuertos);
          $insertclll->execute();
@@ -342,8 +333,6 @@ if ($_POST['actionImp'] == "btImpresora") {
 
     $responseImp='';
 
-
-
     foreach ($dataImp as $dataImps) {
         $modeloImpresora = $dataImps["modeloImpresora"];
         $marcaImpresora = $dataImps["marcaImpresora"];
@@ -363,7 +352,6 @@ if ($_POST['actionImp'] == "btImpresora") {
         $insertcliImpr->execute();
 
        
-
         if (!$insertcliImpr) {
             $responseImp = 1;
            
@@ -373,15 +361,8 @@ if ($_POST['actionImp'] == "btImpresora") {
         }
     }
 
- 
-    
-
-
-
 }
 
 
-
- 
 
 ?>

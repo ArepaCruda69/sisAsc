@@ -1,3 +1,9 @@
+
+
+
+
+
+
 var dataRam = [];
 var cant = 0;
 
@@ -145,6 +151,29 @@ function EliminarDisco(row) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    function cargarUnidades() {
+        $.ajax({
+            url: '../Controller/getUnidades.php',
+            type: 'GET',
+            success: function(data) {
+                const unidades = JSON.parse(data);
+                const selectUnidad = document.getElementById("txtUnidadCpu");
+                selectUnidad.innerHTML = "<option value=''>Seleccione...</option>";
+                unidades.forEach(unidad => {
+                    const option = document.createElement("option");
+                    option.value = unidad.nom_unidad;
+                    option.textContent = unidad.nom_unidad;
+                    selectUnidad.appendChild(option);
+                });
+            },
+            error: function() {
+                Swal.fire('Error', 'No se pudo cargar las unidades.', 'error');
+            }
+        });
+    }
+
+    cargarUnidades();
 
 document.getElementById("btCpu").addEventListener("click", () => {
     var action = "btCpus";
@@ -307,5 +336,4 @@ document.getElementById("btCpu").addEventListener("click", () => {
 
 
 
-
-
+});

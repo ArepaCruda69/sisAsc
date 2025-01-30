@@ -23,28 +23,16 @@
               <input type="" class="form-control" id="txtNombreCpu">
             </div>
             
-            <div class="form-group col-3">
-               <label>Unidad</label>
-                   <select class="form-control select2" id="txtUnidadCpu">
-                            
-                   <option value="1">opcion 1</option>
-                   <option value="2">opcion 2</option>
-                   <option value="3">opcion 3</option>
-                   <option value="4">opcion 4</option>
-                   <option value="5">opcion 5</option>
-                </select>
-            </div>
-
             <div class="col-md-3"> 
       <label for="unidad" class="form-label">Unidad</label> 
-      <select class="form-control select2" id="txtUnidadUps" name="unidad" required> 
+      <select class="form-control select2" id="txtUnidadCpu" name="unidad" required> 
         <option value="">Seleccione...</option> 
         <?php if (!empty($unidades)) { foreach ($unidades as $unidad) { 
           echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>"; } 
        } else { echo "<option>No hay unidades disponibles</option>"; } ?> 
       </select> 
     </div>
-    
+
 
             <div class="form-group col-3" >
             <label>Marca</label>
