@@ -3,7 +3,8 @@ include '../Model/conexion.php';
 
 if ($_POST['actionImp'] == "updateImpresora") {
     $dataImp = json_decode($_POST['jsonImp'], true)[0];
-
+    
+    $idi = $dataImp["id"];
     $modeloImpresora = $dataImp["modeloImpresora"];
     $marcaImpresora = $dataImp["marcaImpresora"];
     $serialImpresora = $dataImp["serialImpresora"];
@@ -23,7 +24,7 @@ if ($_POST['actionImp'] == "updateImpresora") {
         echo json_encode(array("response" => 1)); // Error
         exit();
     }
-    $updatecliImp->bind_param("ssssssssssss", $modeloImpresora, $marcaImpresora, $serialImpresora, $tipoImpresora, $estiloImpresora, $puertoImpresora, $anchoImpresora, $consumibleImpresora,$estatusImpresora,$unidadImpresora,$asignadoImpresora,$obsImpresora);
+    $updatecliImp->bind_param("ssssssssssss", $modeloImpresora, $marcaImpresora, $serialImpresora, $tipoImpresora, $estiloImpresora, $puertoImpresora, $anchoImpresora, $consumibleImpresora,$estatusImpresora,$unidadImpresora,$asignadoImpresora,$obsImpresora,$idi);
     $executeResult = $updatecliImp->execute();
 
     if (!$executeResult) {

@@ -5,7 +5,6 @@ include	'../Model/conexion.php';
 
 if ($_POST['actionImp'] == "btImpresoras") {
     $dataImp = json_decode($_POST['jsonImp'], true);
-
     $responseImp='';
 
 
@@ -45,9 +44,6 @@ if ($_POST['actionImp'] == "btImpresoras") {
 
     echo json_encode(array("response" => $responseImp));
 }
-
-
-
 ?>
 
 

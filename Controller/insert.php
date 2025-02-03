@@ -33,7 +33,7 @@ if ($_POST['action'] == "btCpus") {
         $modelocpu = $datos["modelocpu"];
 
         $insertcli1 = $conexion->prepare("INSERT INTO cpuss (nombre_cpu,unidad,marca_cpu,modelo_cpu) VALUES (?,?,?,?)");
-        $insertcli1->bind_param("siis", $nombrecpu, $unidadcpu, $marcacpu, $modelocpu);
+        $insertcli1->bind_param("ssss", $nombrecpu, $unidadcpu, $marcacpu, $modelocpu);
         $insertcli1->execute();
 
        
