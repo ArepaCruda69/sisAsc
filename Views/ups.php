@@ -340,7 +340,7 @@ $conn2->close();
 
 
 
-<script>
+<!-- <script>
 
 function editRecord(id) {
   $.ajax({
@@ -362,7 +362,7 @@ function editRecord(id) {
   });
 }
 
-</script>
+</script> -->
 
 
   <style>
@@ -396,8 +396,6 @@ function editRecord(id) {
 </script>
 
 </body>
-
-
 </html>
 
 

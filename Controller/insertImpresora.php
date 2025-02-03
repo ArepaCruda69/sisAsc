@@ -25,20 +25,25 @@ if ($_POST['actionImp'] == "btImpresoras") {
         $obsImpresora = $dataImps["obsImpresora"];
 
         $insertcliImpr = $conexion->prepare("INSERT INTO impresoras (modelo_impresora,marca_impresora,serial_impresora,tipo_impresora,estilo_impresora,puerto_impresora,ancho_impresora,consumible_impresora,estatus_impresora,unidad_impresora,asignado_impresora,observaciones) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+        if ($insertcliImpr === false) {
+            error_log("Error en la preparación de la declaración: " . $conexion->error);
+            echo json_encode(array("response" => 1)); // Error
+            exit();
+        }
         $insertcliImpr->bind_param("ssssssssssss", $modeloImpresora, $marcaImpresora, $serialImpresora, $tipoImpresora,$estiloImpresora,$puertoImpresora,$anchoImpresora,$consumibleImpresora,$estatusImpresora,$unidadImpresora,$asignadoImpresora,$obsImpresora);
-        $insertcliImpr->execute();
+        $executeResult = $insertcliImpr->execute();
 
-       
-
-        if (!$insertcliImpr) {
-            $responseImp = 1;
-           
-        } else if ($insertcliImpr) {
-            $responseImp = 0;
-           
+        if (!$executeResult) {
+            error_log("Error al ejecutar la declaración: " . $insertcliImpr->error);
+            echo json_encode(array("response" => 1)); // Error
+            exit();
+        } else {
+            $responseImp = 0; // Éxito
         }
     }
 
+
+    echo json_encode(array("response" => $responseImp));
 }
 
 

@@ -39,8 +39,8 @@
 
 
     <div class="form-group col-3">
-    <label for="txtMarcaImpresora">Marca</label>
-    <select class="form-control select2" id="txtMarcaImpresora" name="txtMarcaImpresora" required>
+    <label for="txtMarcaUps">Marca</label>
+    <select class="form-control select2" id="txtMarcaUps" name="txtMarcaUps" required>
         <option value="">Seleccione...</option>
         <?php
             include '../Model/conexion.php';

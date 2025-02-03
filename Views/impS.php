@@ -1,3 +1,36 @@
+<?php
+
+require '../Model/conexion.php';
+
+function conectarDB($dbname) {
+    $conn = new mysqli("localhost", "root", "123456789", $dbname);
+    if ($conn->connect_error) {
+        die("Conexión fallida a $dbname: " . $conn->connect_error);
+    }
+    return $conn;
+}
+
+function obtenerDatos($conn, $query) {
+    $stmt = $conn->prepare($query);
+    if ($stmt === false) {
+        die("Error en la consulta: " . $conn->error);
+    }
+    $stmt->execute();
+    return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+}
+
+// Conectar y obtener datos
+$conn1 = conectarDB("bd_globales");
+$unidades = obtenerDatos($conn1, "SELECT nom_unidad FROM glo_1unidad");
+$conn1->close();
+
+$conn2 = conectarDB("bdd_sisasc");
+$datosTabla = obtenerDatos($conn2, "SELECT id_impresora, modelo_impresora, serial_impresora, unidad_impresora, estatus_impresora, observaciones FROM impresoras");
+$conn2->close();
+?>
+
+
+
 <!DOCTYPE html>
 
 <?php include '../Componets/head.php'; ?>
@@ -53,6 +86,43 @@
 <script src='../Assests/dist/js/select2.min.js'></script>
 <script src='../Assests/dist/js/formImpresora.js'></script>
 
+
+ <!-- Page specific script -->
+ <script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        language: {
+          processing: "Busqueda en curso...",
+          search: "Buscar&nbsp;:",
+          lengthMenu: "Agrupar de MENU Solicitudes",
+          infoEmpty: "No existen datos.",
+          infoFiltered: "(filtrado de MAX elementos en total)",
+          infoPostFix: "",
+          loadingRecords: "Cargando...",
+          zeroRecords: "No se encontraron datos con tu busqueda",
+          emptyTable: "No hay datos disponibles en la tabla.",
+          paginate: {
+              first: "Primero",
+              previous: "Anterior",
+              next: "Siguiente",
+              last: "Ultimo"
+          },
+          aria: {
+              sortAscending: ": active para ordenar la columna en orden ascendente",
+              sortDescending: ": active para ordenar la columna en orden descendente"
+          }
+      },
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+  </script>
+
+
+
+
+
+
 <script>
   $(function () {
     $('.select2').each(function () {
@@ -71,8 +141,6 @@
         });
     });
 });
-
-
 
 </script>
 

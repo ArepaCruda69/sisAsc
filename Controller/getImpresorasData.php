@@ -9,23 +9,16 @@ $resultTabla = $queryTabla->get_result();
 
 while ($row = $resultTabla->fetch_assoc()) {
     echo "<tr>";
-    echo "<td>" . htmlspecialchars($row['id_impresora']) . "</td>";
     echo "<td>" . htmlspecialchars($row['modelo_impresora']) . "</td>";
     echo "<td>" . htmlspecialchars($row['marca_impresora']) . "</td>";
     echo "<td>" . htmlspecialchars($row['serial_impresora']) . "</td>";
-    echo "<td>" . htmlspecialchars($row['tipo_impresora']) . "</td>";
-    echo "<td>" . htmlspecialchars($row['estilo_impresora']) . "</td>";
-    echo "<td>" . htmlspecialchars($row['puerto_impresora']) . "</td>";
-    echo "<td>" . htmlspecialchars($row['ancho_impresora']) . "</td>";
-    echo "<td>" . htmlspecialchars($row['consumible_impresora']) . "</td>";
-    echo "<td>" . htmlspecialchars($row['estatus_impresora']) . "</td>";
     echo "<td>" . htmlspecialchars($row['unidad_impresora']) . "</td>";
-    echo "<td>" . htmlspecialchars($row['asignado_impresora']) . "</td>";
-    echo "<td>" . htmlspecialchars($row['observaciones']) . "</td>";
-    echo "<td>";
-    echo "<button class='btn btn-danger' href='../Model/deleteImpresora.php?id=" . $row['id_impresora'] . "'>Eliminar</button>";
-    echo "</td>";
-    echo "</tr>";
+    echo "<td>" . htmlspecialchars($row['estilo_impresora']) . "</td>";
+    echo "<td>
+    <button type='button' class='btn btn-warning btn-sm' onclick='editRecord(" . $row['id_impresora'] . ")'>Editar</button>
+    <a href='../Model/delete.php?id=" . $row['id_impresora'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+    </td>";
+echo "</tr>";
 }
 
 $conn->close();

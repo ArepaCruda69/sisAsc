@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var txtmodeloups = document.getElementById("txtModeloUps").value;
         var txtserialups = document.getElementById("txtSerialUps").value;
         var txtunidadups = document.getElementById("txtUnidadUps").value;
+        var txtmarcaups = document.getElementById("txtMarcaUps").value;
         var txtfechaups = document.getElementById("txtfechaUps").value;
         var txtcantidadups = document.getElementById("txtCantidadUps").value;
         var txtmodelobateriaups = document.getElementById("txtModeloBateriaUps").value;
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "modeloups": txtmodeloups,
             "serialups": txtserialups,
             "unidadups": txtunidadups,
+            "marcaups": txtmarcaups,
             "fechaups": txtfechaups,
             "cantidadups": txtcantidadups,
             "modelobateriaups": txtmodelobateriaups,
@@ -74,6 +76,27 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    function cargarMarcas() {
+        $.ajax({
+            url: '../Controller/getMarcas.php',
+            type: 'GET',
+            success: function(data) {
+                const marcas = JSON.parse(data);
+                const selectMarca = document.getElementById("txtMarcaUps");
+                selectMarca.innerHTML = "<option value=''>Seleccione...</option>";
+                marcas.forEach(marca => {
+                    const option = document.createElement("option");
+                    option.value = marca.marca_marca;
+                    option.textContent = marca.marca_marca;
+                    selectMarca.appendChild(option);
+                });
+            },
+            error: function() {
+                Swal.fire('Error', 'No se pudo cargar las marcas.', 'error');
+            }
+        });
+    }
 
     function actualizarTabla() {
         $.ajax({
@@ -163,5 +186,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+  
+    
+
+    cargarMarcas();
     actualizarTabla(); // Añadir eventos al cargar la página
+    
 });

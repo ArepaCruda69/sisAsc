@@ -1,9 +1,4 @@
 
-
-
-
-
-
 var dataRam = [];
 var cant = 0;
 

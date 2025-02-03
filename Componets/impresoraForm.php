@@ -1,3 +1,8 @@
+
+
+
+
+
 <!-- Main content -->
 <div class="content">
       <div class="container-fluid">
@@ -20,6 +25,8 @@
             <input type="text" class="form-control" id="txtModeloImpresora" required> 
             <div class="invalid-feedback">Por favor, ingrese el modelo</div> 
             </div>
+
+            
 
 
             <div class="form-group col-3">
@@ -119,17 +126,16 @@
               </select>
             </div>
 
-            <div class="form-group col-3">
-              <label for="txtUnidadImpresora">Unidad</label>
-              <select class="form-control select2" id="txtUnidadImpresora" name="txtUnidadImpresora"> 
-              <option value="">Seleccione...</option> 
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
-              </select>
-            </div>
+            
+    <div class="col-md-3"> 
+      <label for="unidad" class="form-label">Unidad</label> 
+      <select class="form-control select2" id="txtUnidadImpresora" name="unidad" required> 
+        <option value="">Seleccione...</option> 
+        <?php if (!empty($unidades)) { foreach ($unidades as $unidad) { 
+          echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>"; } 
+       } else { echo "<option>No hay unidades disponibles</option>"; } ?> 
+      </select> 
+    </div>
 
 
      
@@ -157,9 +163,56 @@
                   <button class="btn btn-outline-success" type="button" id = "btImpresora" ><b>Agregar</b></button>
                 
                 </div>
+
+
+                
       
               </form>
            
+    
+
+              <!-- /.card-header -->
+              <div class="card-body">
+        <table id="tablaImpresora" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Marca</th>
+              <th>Serial</th>
+              <th>Unidad</th>
+              <th>Estilo</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+            if (!empty($datosTabla)) {
+                foreach ($datosTabla as $row) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row['modelo_impresora']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['marca_impresora']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['serial_impresora']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['unidad_impresora']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['estilo_impresora']) . "</td>";
+                    echo "<td>
+                        <button type='button' class='btn btn-warning btn-sm' onclick='editRecord(" . $row['id_impresora'] . ")'>Editar</button>
+                        <a href='../Model/delete.php?id=" . $row['id_impresora'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+                        </td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+            }
+            ?>
+          </tbody>
+         
+        </table>
+
+          
+        </div>
+        <!-- /.card-body -->
+
+
 
           
 
