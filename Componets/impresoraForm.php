@@ -184,10 +184,11 @@
               <th></th>
             </tr>
           </thead>
+          
           <tbody>
           <?php
-            if (!empty($datosTabla)) {
-                foreach ($datosTabla as $row) {
+            if (!empty($datosTablaa)) {
+                foreach ($datosTablaa as $row) {
                     echo "<tr>";
                     echo "<td>" . htmlspecialchars($row['modelo_impresora']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['marca_impresora']) . "</td>";
@@ -196,7 +197,7 @@
                     echo "<td>" . htmlspecialchars($row['estilo_impresora']) . "</td>";
                     echo "<td>
                         <button type='button' class='btn btn-warning btn-sm' onclick='editRecord(" . $row['id_impresora'] . ")'>Editar</button>
-                        <a href='../Model/delete.php?id=" . $row['id_impresora'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+                        <a href='../Model/deleteImpresora.php?id=" . $row['id_impresora'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
                         </td>";
                     echo "</tr>";
                 }

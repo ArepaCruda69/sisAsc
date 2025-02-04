@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require '../Model/conexion.php';
 
 function conectarDB($dbname) {
@@ -88,7 +92,7 @@ $conn2->close();
 
 
  <!-- Page specific script -->
- <script>
+ <!-- <script>
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
@@ -116,10 +120,7 @@ $conn2->close();
       },
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
-  </script>
-
-
-
+  </script> -->
 
 
 

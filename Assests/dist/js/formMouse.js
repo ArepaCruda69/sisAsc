@@ -60,7 +60,10 @@ document.getElementById("btMouse").addEventListener("click", () => {
                                 icon: 'success',
                                 confirmButtonColor: '#3085d6',
                                 confirmButtonText: 'Ok'
-                            })
+                            }).then(() => {
+                                location.reload(); // Refrescar la página
+                            });
+
                         }
                         else {
                             Swal.fire('Error no se activo el registro por valor' + respo, '', 'error')

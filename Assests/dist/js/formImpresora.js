@@ -1,10 +1,10 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    let editing = false;
-    let editingId = null;
+    let editingg = false;
+    let editingIid = null;
 
     document.getElementById("btImpresora").addEventListener("click", () => {
-        var actionImp = editing ? "updateImpresora" : "btImpresoras";
+        var actionImp = editingg ? "updateImpresora" : "btImpresoras";
         var dataImp = [];
 
         var txtmodeloimpresora = document.getElementById("txtModeloImpresora").value;
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var txtobsimpresora = document.getElementById("txtObsImpresora").value;
 
         dataImp.push({
-            "id": editingId,
+            "id": editingIid,
             "modeloImpresora": txtmodeloimpresora,
             "marcaImpresora": txtmarcaimpresora,
             "serialImpresora": txtseiialImpresora,
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     var jsonImp = JSON.stringify(dataImp);
 
                     $.ajax({
-                        url: editing ? '../Controller/updateImpresora.php' :'../Controller/insertImpresora.php',
+                        url: editingg ? '../Controller/updateImpresora.php' :'../Controller/insertImpresora.php',
                         type: 'POST',
                         async: true,
                         data: { actionImp: actionImp, jsonImp: jsonImp },
@@ -113,8 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
             type: 'GET',
             success: function(html) {
                 document.querySelector('#tablaImpresora tbody').innerHTML = html;
-                agregarEventosEliminar();
-                agregarEventosEditar();
+                agregarEventosEliminar();// Añadir eventos de eliminación
+                agregarEventosEditar();// Añadir eventos de edición
             },
             error: function() {
                 Swal.fire('Error al actualizar la tabla', '', 'error');
@@ -175,23 +175,22 @@ document.addEventListener('DOMContentLoaded', function() {
             type: 'GET',
             data: { id: id },
             success: function (respo) {
-                var data = JSON.parse(respo);
+                var dataa = JSON.parse(respo);
+                document.getElementById("txtModeloImpresora").value = dataa.modelo_impresora;
+                document.getElementById("txtMarcaImpresora").value = dataa.marca_impresora;
+                document.getElementById("txtSerialImpresora").value = dataa.serial_impresora;
+                document.getElementById("txtTipoImpresora").value = dataa.tipo_impresora;
+                document.getElementById("txtEstiloImpresora").value = dataa.estilo_impresora;
+                document.getElementById("txtPuertoImpresora").value = dataa.puerto_impresora;
+                document.getElementById("txtAnchoImpresora").value = dataa.ancho_impresora;
+                document.getElementById("txtConsumibleImpresora").value = dataa.consumibles_impresora;
+                document.getElementById("txtEstatusImpresora").value = dataa.estatus_impresora;
+                document.getElementById("txtUnidadImpresora").value = dataa.unidad_impresora;
+                document.getElementById("txtAsignadoImpresora").value = dataa.asignado_impresora;
+                document.getElementById("txtObsImpresora").value = dataa.obs_impresora;
 
-                document.getElementById("txtModeloImpresora").value = data.modelo_impresora;
-                document.getElementById("txtMarcaImpresora").value = data.marca_impresora;
-                document.getElementById("txtSerialImpresora").value = data.serial_impresora;
-                document.getElementById("txtTipoImpresora").value = data.tipo_impresora;
-                document.getElementById("txtEstiloImpresora").value = data.estilo_impresora;
-                document.getElementById("txtPuertoImpresora").value = data.puerto_impresora;
-                document.getElementById("txtAnchoImpresora").value = data.ancho_impresora;
-                document.getElementById("txtConsumibleImpresora").value = data.consumibles_impresora;
-                document.getElementById("txtEstatusImpresora").value = data.estatus_impresora;
-                document.getElementById("txtUnidadImpresora").value = data.unidad_impresora;
-                document.getElementById("txtAsignadoImpresora").value = data.asignado_impresora;
-                document.getElementById("txtObsImpresora").value = data.obs_impresora;
-
-                editing = true;
-                editingId = id;
+                editingg = true;
+                editingIid = id;
                 document.getElementById("btImpresora").textContent = "Actualizar"; // Cambiar el texto del botón
             },
             error: function () {

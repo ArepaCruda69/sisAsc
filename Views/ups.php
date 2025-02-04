@@ -293,7 +293,6 @@ $conn2->close();
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src='../Assests/plugins/jquery/jquery.min.js'></script>
-
 <script src='../Assests/dist/js/select2.min.js'></script>
 <script src="../Assests/dist/js/formUps.js"></script>
 
@@ -302,7 +301,7 @@ $conn2->close();
 
 
   <!-- Page specific script -->
-  <script>
+  <!-- <script>
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
@@ -330,7 +329,7 @@ $conn2->close();
       },
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
-  </script>
+  </script> -->
 
 
 
@@ -372,6 +371,7 @@ function editRecord(id) {
       border: none;
     }
   </style>
+  
 
 <script>
 

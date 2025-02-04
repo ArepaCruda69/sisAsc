@@ -26,17 +26,30 @@
                   </div>
 
 
-                  
+
                   <div class="form-group col-4">
-                    <label for="txtMarcaTeclado">Marca</label>
-                    <br>
-                    <select class="form-control select2" id="txtMarcaTeclado" name="txtMarcaTeclado">  
-                    <option value="">Seleccione...</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
-                    </select>
+                        <label for="txtMarcaTeclado">Marca</label> <br>
+                        <select class="form-control select2" id="txtMarcaTeclado" name="txtMarcaTeclado" required>
+                        <option value="">Seleccione...</option>
+
+                      <?php
+                          include '../Model/conexion.php';
+                          $conn = conectarDB("bdd_sisasc");
+                          $query = "SELECT marca_marca FROM marca"; // Incluir ID
+                          $result = mysqli_query($conn, $query);
+
+                          if ($result && mysqli_num_rows($result) > 0) {
+                              while ($row = mysqli_fetch_assoc($result)) {
+                                  echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                              }
+                          } else {
+                              echo "<option>No hay marca disponibles</option>";
+                          }
+
+                          $conn->close();
+                              ?>
+                              
+                      </select>
                   </div>
 
                   <div class="col-md-4">
@@ -49,16 +62,33 @@
                   </div>
 
 
-                  <div class="form-group col-4">
-              <label for="txtPuertoTeclado">Puertos</label>
-              <select class="form-control select2" id="txtPuertoTeclado" name="txtPuertoTeclado"> 
-              <option value="">Seleccione...</option> 
-                <option>USB</option>
-                <option>USB-C</option>
-                <option>PS/2</option>
-                <option>Lightning</option>
-              </select>
-            </div>
+
+            
+            <div class="form-group col-4">
+                      <label for="txtPuertoTeclado">Puerto</label> <br>
+                      <select class="form-control select2" id="txtPuertoTeclado" name="txtPuertoTeclado" required>
+                      <option value="">Seleccione...</option>
+
+                    <?php
+                        include '../Model/conexion.php';
+                        $conn = conectarDB("bdd_sisasc");
+                        $query = "SELECT nombre_puerto FROM puertos"; // Incluir ID
+                        $result = mysqli_query($conn, $query);
+
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<option value='" . htmlspecialchars($row['nombre_puerto']) . "'>" . htmlspecialchars($row['nombre_puerto']) . "</option>";
+                            }
+                        } else {
+                            echo "<option>No hay marca disponibles</option>";
+                        }
+
+                        $conn->close();
+                            ?>
+                            
+                    </select>
+                </div>
+
 
             <div class="form-group col-4">
               <label for="txtTipoTeclado">Tipo</label>

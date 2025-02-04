@@ -64,27 +64,7 @@
                 </a>
               </li>
               
-              <!-- <li class="nav-item">
-                <a href="./monT.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Monitor</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="./tecLado.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Teclado</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="./mouSe.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mouse</p>
-                </a>
-              </li>
-               -->
+             
               <li class="nav-item">
                 <a href="./acceS.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
@@ -129,18 +109,6 @@
 
             <ul class="nav nav-treeview">
 
-              <li class="nav-item">
-                <a href="" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tipos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estilos de Impresoras</p>
-                </a>
-              </li>
               <li class="nav-item">
                 <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
