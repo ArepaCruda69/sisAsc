@@ -101,9 +101,6 @@
             </div>
 
 
-
-                  
-
             <div class="col-md-6">
                   <button class="btn btn-outline-success" type="button" id = "btTeclado" ><b>Agregar</b></button>
                  </div>     

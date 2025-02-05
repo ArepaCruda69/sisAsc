@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("txtEstatusImpresora").value = dataa.estatus_impresora;
                 document.getElementById("txtUnidadImpresora").value = dataa.unidad_impresora;
                 document.getElementById("txtAsignadoImpresora").value = dataa.asignado_impresora;
-                document.getElementById("txtObsImpresora").value = dataa.obs_impresora;
+                document.getElementById("txtObsImpresora").value = dataass.obs_impresora;
 
                 editingg = true;
                 editingIid = id;

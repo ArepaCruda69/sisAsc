@@ -269,9 +269,6 @@
 
                  
                   
-
-                 
-                  
                   <div class="col-md-3">
                     <label for="inputAddress2" class="form-label"><b>Tipo</b><b
                         style="color: red;">*</b></label>
@@ -281,12 +278,6 @@
                     </div>
                   </div>
 
-
-
-                  
-                 
-
-                  
 
                   
 
@@ -309,13 +300,7 @@
             </div>  
             
             
-
-           
-
             </main>
-
-            
-
 
           </div>
 

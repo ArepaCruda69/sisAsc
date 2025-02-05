@@ -270,9 +270,6 @@ $conn2->close();
 
 
 
-
-
-
   <!-- /.control-sidebar -->
    <footer class="main-footer">
     <strong>Copyright &copy; 2025 <a href="">Alfred</a>.</strong>
@@ -330,13 +327,6 @@ $conn2->close();
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
   </script> -->
-
-
-
-
-
-
-
 
 
 <!-- <script>

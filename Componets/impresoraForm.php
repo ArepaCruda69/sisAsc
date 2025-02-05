@@ -164,8 +164,6 @@
                 
                 </div>
 
-
-                
       
               </form>
            
@@ -208,15 +206,8 @@
           </tbody>
          
         </table>
-
-          
         </div>
         <!-- /.card-body -->
-
-
-
-          
-
             <!-- /.card-header -->
 
 
