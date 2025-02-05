@@ -53,7 +53,7 @@ if ($_POST['action'] == "btCpus") {
         $serialmadre = $datos11["serialmadre"];
 
         $insertcli11 = $conexion->prepare("INSERT INTO tarjeta_madre (marca_madre,modelo_madre,serial_madre) VALUES (?,?,?)");
-        $insertcli11->bind_param("iss", $marcamadre, $modelomadre, $serialmadre);
+        $insertcli11->bind_param("sss", $marcamadre, $modelomadre, $serialmadre);
         $insertcli11->execute();
 
         if (!$insertcli11 ) {
@@ -92,15 +92,15 @@ if ($_POST['action'] == "btCpus") {
 
     
     foreach ($data3 as $datos33) {
-        $modeloram = $datos33["modeloram"];
         $marcaram = $datos33["marcaram"];
+        $modeloram = $datos33["modeloram"];
         $serialram = $datos33["serialram"];
         $tiporam = $datos33["tiporam"];
         $capacidadram = $datos33["capacidadram"];
         $velocidadram = $datos33["velocidadram"];
 
         $insertcli33 = $conexion->prepare("INSERT INTO tarjeta_ram (marca_ram,modelo_ram,serial_ram,tipo_ram,capacidad_ram,velocidad_ram) VALUES (?,?,?,?,?,?)");
-        $insertcli33->bind_param("ssssss", $modeloram, $marcaram, $serialram,$tiporam,$capacidadram,$velocidadram);
+        $insertcli33->bind_param("ssssss", $marcaram, $modeloram, $serialram,$tiporam,$capacidadram,$velocidadram);
         $insertcli33->execute();
 
         
@@ -117,15 +117,15 @@ if ($_POST['action'] == "btCpus") {
 
 
     foreach ($data4 as $datos44) {
-        $modelodisco = $datos44["modelodisco"];
         $marcadisco = $datos44["marcadisco"];
+        $modelodisco = $datos44["modelodisco"];
         $serialdisco = $datos44["serialdisco"];
         $tipodisco = $datos44["tipodisco"];
         $capacidaddisco = $datos44["capacidaddisco"];
         $puertodisco = $datos44["puertodisco"];
 
         $insertcli44 = $conexion->prepare("INSERT INTO disco_duro (marca_duro,modelo_duro,serial_duro,tipo_duro,capacidad_duro,puerto_duro) VALUES (?,?,?,?,?,?)");
-        $insertcli44->bind_param("ssssss", $modelodisco, $marcadisco, $serialdisco,$tipodisco,$capacidaddisco,$puertodisco);
+        $insertcli44->bind_param("ssssss", $marcadisco, $modelodisco, $serialdisco,$tipodisco,$capacidaddisco,$puertodisco);
         $insertcli44->execute();
 
         

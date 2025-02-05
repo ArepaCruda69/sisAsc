@@ -314,9 +314,10 @@ document.getElementById("btCpu").addEventListener("click", () => {
                                 icon: 'success',
                                 confirmButtonColor: '#3085d6',
                                 confirmButtonText: 'Ok'
-                            })
-                        }
-                        else {
+                            }).then(() => {
+                                location.reload(); // Refrescar la página
+                            });
+                        } else {
                             Swal.fire('Error no se activo el registro por valor' + respo, '', 'error')
                         }
                     },

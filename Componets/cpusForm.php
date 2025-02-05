@@ -23,16 +23,31 @@
               <input type="" class="form-control" id="txtNombreCpu">
             </div>
             
-            <div class="col-md-3"> 
-      <label for="unidad" class="form-label">Unidad</label> 
-      <select class="form-control select2" id="txtUnidadCpu" name="unidad" required> 
-        <option value="">Seleccione...</option> 
-        <?php if (!empty($unidades)) { foreach ($unidades as $unidad) { 
-          echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>"; } 
-       } else { echo "<option>No hay unidades disponibles</option>"; } ?> 
-      </select> 
-    </div>
+        
 
+           
+    <div class="form-group col-3">
+    <label for="txtUnidadCpu">Unidad</label>
+    <select class="form-control select2" id="txtUnidadCpu" name="txtMarcaCpu" required>
+        <option value="">Seleccione...</option>
+        <?php
+            include '../Model/conexion.php';
+            $conn = conectarDB("bd_globales");
+            $query = "SELECT nom_unidad FROM glo_1unidad";
+            $result = mysqli_query($conn, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" . htmlspecialchars($row['nom_unidad']) . "'>" . htmlspecialchars($row['nom_unidad']) . "</option>";
+                }
+            } else {
+                echo "<option>No hay marcas disponibles</option>";
+            }
+
+            $conn->close();
+        ?>
+    </select>
+</div>
 
            
     <div class="form-group col-3">
@@ -76,17 +91,33 @@
           <div><h3>Tarjeta Madre</h3></div>
 
           <div class="form-row">
-          <div class="form-group col-4" >
-            <label>Marca</label>
-                   <select class="form-control select2" id="txtMarcaMadre">
-                            
-                   <option value="1">opcion 1</option>
-                   <option value="2">opcion 2</option>
-                   <option value="3">opcion 3</option>
-                   <option value="4">opcion 4</option>
-                   <option value="5">opcion 5</option>
-                </select>
-            </div>
+          
+
+            <div class="form-group col-4">
+            <label for="txtMarcaMadre">Marca</label>
+            <select class="form-control select2" id="txtMarcaMadre" name="txtMarcaMadre" required>
+                <option value="">Seleccione...</option>
+                <?php
+                    include '../Model/conexion.php';
+                    $conn = conectarDB("bdd_sisasc");
+                    $query = "SELECT marca_marca FROM marca";
+                    $result = mysqli_query($conn, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                        }
+                    } else {
+                        echo "<option>No hay marcas disponibles</option>";
+                    }
+
+                    $conn->close();
+                ?>
+            </select>
+        </div>
+
+
+
 
             <div class="form-group col-4">
               <label for="">Modelo</label>
@@ -111,17 +142,32 @@
           <div><h3>Procesador</h3></div>
 
           <div class="form-row">
-            <div class="form-group col-3">
-            <label>Marca</label>
-                   <select class="form-control select2" id="txtMarcaProcesador">
-                            
-                   <option>opcion 1</option>
-                   <option>opcion 2</option>
-                   <option>opcion 3</option>
-                   <option>opcion 4</option>
-                   <option>opcion 5</option>
-                </select>
-               </div>
+           
+
+
+               <div class="form-group col-3">
+            <label for="txtMarcaProcesador">Marca</label>
+            <select class="form-control select2" id="txtMarcaProcesador" name="txtMarcaProcesador" required>
+                <option value="">Seleccione...</option>
+                <?php
+                    include '../Model/conexion.php';
+                    $conn = conectarDB("bdd_sisasc");
+                    $query = "SELECT marca_marca FROM marca";
+                    $result = mysqli_query($conn, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                        }
+                    } else {
+                        echo "<option>No hay marcas disponibles</option>";
+                    }
+
+                    $conn->close();
+                ?>
+            </select>
+        </div>
+
           
 
           <div class="form-group col-3">
@@ -163,16 +209,34 @@
 
           <div class="form-row">
 
-          <div class="form-group col-2">
-              <label for="txtMarcaRam">Marca</label>
-              <select class="form-control select2" id="txtMarcaRam" name="txtMarcaRam">  
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
-              </select>
-            </div>
+         
+
+            <div class="form-group col-2">
+            <label for="txtMarcaRam">Marca</label>
+            <select class="form-control select2" id="txtMarcaRam" name="txtMarcaRam" required>
+                <option value="">Seleccione...</option>
+                <?php
+                    include '../Model/conexion.php';
+                    $conn = conectarDB("bdd_sisasc");
+                    $query = "SELECT marca_marca FROM marca";
+                    $result = mysqli_query($conn, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                        }
+                    } else {
+                        echo "<option>No hay marcas disponibles</option>";
+                    }
+
+                    $conn->close();
+                ?>
+            </select>
+        </div>
+
+
+
+            
             
             <div class="form-group col-2">
               <label for="txtModeloRam">Modelo</label>
@@ -202,7 +266,7 @@
             </div>
           </div>
 
-          <button class="btn btn-outline-success" type="button" id="btRam"><b>Agregar</b></button>
+          <button class="btn btn-outline-success" type="button" id="btRam"><b>Agregar Tarjeta RAM</b></button>
           <br>
           <br>
 
@@ -234,20 +298,32 @@
             <form>
 
             <hr class="hr hr-blurry"></hr>
-          <div><h3>Disco Duro</h3></div>
+          <div><h3>Disco de Almacenamiento</h3></div>
 
           <div class="form-row">
 
-          <div class="form-group col-2">
-              <label for="txtMarcaDisco">Marca</label>
-              <select class="form-control select2" id="txtMarcaDisco" name="txtMarcaDisco">  
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
-              </select>
-            </div>
+            <div class="form-group col-2">
+            <label for="txtMarcaDisco">Marca</label>
+            <select class="form-control select2" id="txtMarcaDisco" name="txtMarcaDisco" required>
+                <option value="">Seleccione...</option>
+                <?php
+                    include '../Model/conexion.php';
+                    $conn = conectarDB("bdd_sisasc");
+                    $query = "SELECT marca_marca FROM marca";
+                    $result = mysqli_query($conn, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                        }
+                    } else {
+                        echo "<option>No hay marcas disponibles</option>";
+                    }
+
+                    $conn->close();
+                ?>
+            </select>
+        </div>
           
 
           <div class="form-group col-2">
@@ -282,7 +358,7 @@
             </div>
           </div>
 
-          <button class="btn btn-outline-success" type="button" id="btDisco"><b>Agregar</b></button>
+          <button class="btn btn-outline-success" type="button" id="btDisco"><b>Agregar Disco </b></button>
           <br>
           <br>
 
@@ -317,16 +393,29 @@
           <div><h3>Fuente de Poder</h3></div>
 
           <div class="form-row">
-          <div class="form-group col-3">
-              <label for="txtMarcaPoder">Marca</label>
-              <select class="form-control select2" id="txtMarcaPoder" name="txtMarcaPoder">  
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
-              </select>
-            </div>
+
+            <div class="form-group col-3">
+            <label for="txtMarcaPoder">Marca</label>
+            <select class="form-control select2" id="txtMarcaPoder" name="txtMarcaPoder" required>
+                <option value="">Seleccione...</option>
+                <?php
+                    include '../Model/conexion.php';
+                    $conn = conectarDB("bdd_sisasc");
+                    $query = "SELECT marca_marca FROM marca";
+                    $result = mysqli_query($conn, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                        }
+                    } else {
+                        echo "<option>No hay marcas disponibles</option>";
+                    }
+
+                    $conn->close();
+                ?>
+            </select>
+        </div>
 
           <div class="form-group col-2">
               <label for="">Modelo</label>
@@ -363,16 +452,29 @@
           <div><h3>Lector de Disco</h3></div>
 
           <div class="form-row">
+
             <div class="form-group col-3">
-              <label for="txtMarcaLector">Marca</label>
-              <select class="form-control select2" id="txtMarcaLector" name="txtMarcaLector">  
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
-              </select>
-            </div>
+            <label for="txtMarcaLector">Marca</label>
+            <select class="form-control select2" id="txtMarcaLector" name="txtMarcaLector" required>
+                <option value="">Seleccione...</option>
+                <?php
+                    include '../Model/conexion.php';
+                    $conn = conectarDB("bdd_sisasc");
+                    $query = "SELECT marca_marca FROM marca";
+                    $result = mysqli_query($conn, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                        }
+                    } else {
+                        echo "<option>No hay marcas disponibles</option>";
+                    }
+
+                    $conn->close();
+                ?>
+            </select>
+        </div>
 
           <div class="form-group col-2">
               <label for="">Modelo</label>
@@ -409,16 +511,29 @@
           <div><h3>Tarjeta Grafica</h3></div>
 
           <div class="form-row">
-          <div class="form-group col-3">
-              <label for="txtMarcaGrafica">Marca</label>
-              <select class="form-control select2" id="txtMarcaGrafica" name="txtMarcaGrafica">  
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
-              </select>
-            </div>
+
+            <div class="form-group col-3">
+            <label for="txtMarcaGrafica">Marca</label>
+            <select class="form-control select2" id="txtMarcaGrafica" name="txtMarcaGrafica" required>
+                <option value="">Seleccione...</option>
+                <?php
+                    include '../Model/conexion.php';
+                    $conn = conectarDB("bdd_sisasc");
+                    $query = "SELECT marca_marca FROM marca";
+                    $result = mysqli_query($conn, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                        }
+                    } else {
+                        echo "<option>No hay marcas disponibles</option>";
+                    }
+
+                    $conn->close();
+                ?>
+            </select>
+        </div>
 
           <div class="form-group col-2">
               <label for="">Modelo</label>
