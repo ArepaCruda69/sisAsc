@@ -274,9 +274,9 @@
            <tr>
            <td ><?php echo $columnaa['id_puerto']; ?></td>
            <td ><?php echo $columnaa['nombre_puerto']; ?></td>
-           <td ><?php if ($columnaa['status_puertos']== 1 ) {?>
+           <td ><?php if ($columnaa['status_puertos']== 0 ) {?>
             <button class="btn btn-danger">Desactivar</button>
-           <?php  }else if($columnaa['status_puertos']== 0 ){ ?>
+           <?php  }else if($columnaa['status_puertos']== 1 ){ ?>
             <button class="btn btn-success"> Activar</button>
             <?php   }  ?>
           </td>
