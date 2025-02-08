@@ -196,18 +196,6 @@
 
             <ul class="nav nav-treeview">
 
-              <li class="nav-item">
-                <a href="./catTipoImp.html" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tipos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./catEstiloImp.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estilos de Impresoras</p>
-                </a>
-              </li>
               
               <li class="nav-item">
                 <a href="./catAcc.html" class="nav-link">

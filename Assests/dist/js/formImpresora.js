@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                     location.reload(); // Refrescar la página
                                 });
                             } else {
-                                Swal.fire('Error no se activó el registro: tres ' + respo, '', 'error');
+                                Swal.fire('Error no se activó el registro: ' + response.response, '', 'error');
                             }
                         },
-                        error: function(respo) {
-                            Swal.fire('Error no se activó el registro: dos ' + respo, '', 'error');
+                        error: function(xhr, status, error) {
+                            Swal.fire('Error no se activó el registro: ' + error, '', 'error');
                         }
                     });
                 }
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function agregarEventosEliminar() {
+       function agregarEventosEliminar() {
         document.querySelectorAll('.btn-danger').forEach(function(button) {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -142,11 +142,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             url: '../Model/deleteImpresora.php?id=' + id,
                             type: 'GET',
                             success: function(respo) {
-                                if (respo.response === 'success') {
+                                var response = JSON.parse(respo);
+                                if (response.response === 'success') {
                                     Swal.fire('Eliminado!', 'La impresora ha sido eliminada.', 'success');
                                     actualizarTabla();
                                 } else {
-                                    Swal.fire('Error', respo.response, 'error');
+                                    Swal.fire('Error', response.response, 'error');
                                 }
                             },
                             error: function() {
@@ -183,11 +184,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("txtEstiloImpresora").value = dataa.estilo_impresora;
                 document.getElementById("txtPuertoImpresora").value = dataa.puerto_impresora;
                 document.getElementById("txtAnchoImpresora").value = dataa.ancho_impresora;
-                document.getElementById("txtConsumibleImpresora").value = dataa.consumibles_impresora;
+                document.getElementById("txtConsumibleImpresora").value = dataa.consumible_impresora;
                 document.getElementById("txtEstatusImpresora").value = dataa.estatus_impresora;
                 document.getElementById("txtUnidadImpresora").value = dataa.unidad_impresora;
                 document.getElementById("txtAsignadoImpresora").value = dataa.asignado_impresora;
-                document.getElementById("txtObsImpresora").value = dataass.obs_impresora;
+                document.getElementById("txtObsImpresora").value = dataa.observaciones;
 
                 editingg = true;
                 editingIid = id;

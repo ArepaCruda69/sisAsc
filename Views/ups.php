@@ -199,15 +199,14 @@ $conn2->close();
 
             <ul class="nav nav-treeview">
 
-             
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="../Views/catPuertos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="../Views/acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
