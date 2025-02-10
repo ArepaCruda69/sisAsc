@@ -143,11 +143,22 @@
               <label for="txtAsignadoImpresora">Asignado a</label>
               <select class="form-control select2" id="txtAsignadoImpresora" name="txtAsignadoImpresora"> 
               <option value="">Seleccione...</option> 
-                <option>opcion 1</option>
-                <option>opcion 2</option>
-                <option>opcion 3</option>
-                <option>opcion 4</option>
-                <option>opcion 5</option>
+              <?php
+            include '../Model/conexion.php';
+            $conn = conectarDB("bdd_sisasc");
+            $query = "SELECT nombre_cpu FROM cpuss"; // Incluir ID
+            $result = mysqli_query($conn, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" . htmlspecialchars($row['nombre_cpu']) . "'>" . htmlspecialchars($row['nombre_cpu']) . "</option>";
+                }
+            } else {
+                echo "<option>No hay cpuss disponibles</option>";
+            }
+
+            $conn->close();
+        ?>
               </select>
             </div>
 

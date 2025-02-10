@@ -350,9 +350,18 @@ function editRecord(id) {
     }
   </style>
   
+  <style>
+  .select2-container {
+    width: 100% !important;
+  }
+  @media (max-width: 768px) {
+    .select2-container--bootstrap4 .select2-selection--single {
+      height: auto;
+    }
+  }
+</style>
 
 <script>
-
   $(function () {
     $('.select2').each(function () {
         $(this).select2({
@@ -361,7 +370,7 @@ function editRecord(id) {
             allowClear: Boolean($(this).data('allow-clear')),
             language: {
                 noResults: function () {
-                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoCPU()">Agregar Nuevo CPU <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
+                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoImpresora()">Agregar Nuevo Impresora <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
                 },
             },
             escapeMarkup: function (markup) {
@@ -369,8 +378,7 @@ function editRecord(id) {
             }
         });
     });
-});
-
+  });
 </script>
 
 </body>

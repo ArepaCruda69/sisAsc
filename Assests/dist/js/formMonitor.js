@@ -15,6 +15,7 @@ document.getElementById("btMonitor").addEventListener("click", () => {
     var txtpuertomonitor = document.getElementById("txtPuertoMonitor").value;
     var txtpanelmonitor = document.getElementById("txtPanelMonitor").value;
     var txtherciosmonitor = document.getElementById("txtHerciosMonitor").value;
+    var txtasignadomonitor = document.getElementById("txtAsignadoMonitor").value;
     
     dataMonitor.push({
         "modelomonitor": txtmodelomonitor,
@@ -23,6 +24,7 @@ document.getElementById("btMonitor").addEventListener("click", () => {
         "puertomonitor": txtpuertomonitor,
         "panelmonitor": txtpanelmonitor,
         "herciosmonitor": txtherciosmonitor,
+        "asignadomonitor": txtasignadomonitor,
     });
 
   

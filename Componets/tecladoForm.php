@@ -100,6 +100,32 @@
               </select>
             </div>
 
+            <div class="form-group col-4">
+              <label for="txtAsignadoTeclado">Asignado a</label>
+              <select class="form-control select2" id="txtAsignadoTeclado" name="txtAsignadoTeclado"> 
+              <option value="">Seleccione...</option> 
+              <?php
+                include '../Model/conexion.php';
+                $conn = conectarDB("bdd_sisasc");
+                $query = "SELECT nombre_cpu FROM cpuss"; // Incluir ID
+                $result = mysqli_query($conn, $query);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='" . htmlspecialchars($row['nombre_cpu']) . "'>" . htmlspecialchars($row['nombre_cpu']) . "</option>";
+                    }
+                } else {
+                    echo "<option>No hay cpuss disponibles</option>";
+                }
+
+                $conn->close();
+              ?>  
+              </select>
+            </div>
+
+
+            
+
 
             <div class="col-md-6">
                   <button class="btn btn-outline-success" type="button" id = "btTeclado" ><b>Agregar</b></button>

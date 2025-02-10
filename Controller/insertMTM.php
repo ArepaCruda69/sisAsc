@@ -18,9 +18,10 @@ if ($_POST['actionMonitor'] == "btMonitors") {
         $puertoMonitor = $dataMonts["puertomonitor"];
         $panelMonitor = $dataMonts["panelmonitor"];
         $herciosMonitor = $dataMonts["herciosmonitor"];
+        $asignadoMonitor = $dataMonts["asignadomonitor"];
 
-        $insertcliMont = $conexion->prepare("INSERT INTO monitor (modelo_monitor,marca_monitor,serial_monitor,puertos_monitor,panel_monitor,hercios_monitor) VALUES (?,?,?,?,?,?)");
-        $insertcliMont->bind_param("ssssss", $modeloMonitor, $marcaMonitor, $serialMonitor, $puertoMonitor,$panelMonitor,$herciosMonitor);
+        $insertcliMont = $conexion->prepare("INSERT INTO monitor (modelo_monitor,marca_monitor,serial_monitor,puertos_monitor,panel_monitor,hercios_monitor,asignado_monitor) VALUES (?,?,?,?,?,?,?)");
+        $insertcliMont->bind_param("sssssss", $modeloMonitor, $marcaMonitor, $serialMonitor, $puertoMonitor,$panelMonitor,$herciosMonitor,$asignadoMonitor);
         $insertcliMont->execute();
 
        
@@ -54,10 +55,11 @@ if ($_POST['actionTeclado'] == "btTeclados") {
         $serialTeclado = $dataTecls["serialteclado"];
         $puertoTeclado = $dataTecls["puertoteclado"];
         $tipoTeclado = $dataTecls["tipoteclado"];
+        $asignadoTeclado = $dataTecls["asignadoteclado"];
 
 
-        $insertcliTecl = $conexion->prepare("INSERT INTO teclados (modelo_teclado,marca_teclado,serial_teclado,puertos_teclado,tipo_teclado) VALUES (?,?,?,?,?)");
-        $insertcliTecl->bind_param("sssss", $modeloTeclado, $marcaTeclado, $serialTeclado, $puertoTeclado,$tipoTeclado);
+        $insertcliTecl = $conexion->prepare("INSERT INTO teclados (modelo_teclado,marca_teclado,serial_teclado,puertos_teclado,tipo_teclado,asignado_teclado) VALUES (?,?,?,?,?,?)");
+        $insertcliTecl->bind_param("ssssss", $modeloTeclado, $marcaTeclado, $serialTeclado, $puertoTeclado,$tipoTeclado,$asignadoTeclado);
         $insertcliTecl->execute();
 
        
@@ -93,9 +95,11 @@ if ($_POST['actionMouse'] == "btMouse") {
         $serialMouse = $dataMouses["serialmouse"];
         $puertoMouse = $dataMouses["puertomouse"];
         $tipoMouse = $dataMouses["tipomouse"];
+        $asignadoMouse = $dataMouses["asignadomouse"];
 
-        $insertcliMouse = $conexion->prepare("INSERT INTO mouse (modelo_mouse,marca_mouse,serial_mouse,puertos_mouse,tipo_mouse) VALUES (?,?,?,?,?)");
-        $insertcliMouse->bind_param("sssss", $modeloMouse, $marcaMouse, $serialMouse, $puertoMouse,$tipoMouse);
+
+        $insertcliMouse = $conexion->prepare("INSERT INTO mouse (modelo_mouse,marca_mouse,serial_mouse,puertos_mouse,tipo_mouse,asignado_mouse) VALUES (?,?,?,?,?,?)");
+        $insertcliMouse->bind_param("ssssss", $modeloMouse, $marcaMouse, $serialMouse, $puertoMouse,$tipoMouse, $asignadoMouse);
         $insertcliMouse->execute();
 
        

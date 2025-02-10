@@ -91,6 +91,8 @@ $conn2->close();
 <script src='../Assests/dist/js/formImpresora.js'></script>
 
 
+
+
  <!-- Page specific script -->
  <!-- <script>
     $(function () {
@@ -124,6 +126,18 @@ $conn2->close();
 
 
 
+
+<style>
+  .select2-container {
+    width: 100% !important;
+  }
+  @media (max-width: 768px) {
+    .select2-container--bootstrap4 .select2-selection--single {
+      height: auto;
+    }
+  }
+</style>
+
 <script>
   $(function () {
     $('.select2').each(function () {
@@ -141,8 +155,7 @@ $conn2->close();
             }
         });
     });
-});
-
+  });
 </script>
 
 

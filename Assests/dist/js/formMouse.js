@@ -14,6 +14,7 @@ document.getElementById("btMouse").addEventListener("click", () => {
     var txtserialmouse = document.getElementById("txtSerialMouse").value;
     var txtpuertomouse = document.getElementById("txtPuertoMouse").value;
     var txttipomouse = document.getElementById("txtTipoMouse").value;
+    var txtasignadomouse = document.getElementById("txtAsignadoMouse").value;
     
     dataMouse.push({
         "modelomouse": txtmodelomouse,
@@ -21,6 +22,7 @@ document.getElementById("btMouse").addEventListener("click", () => {
         "serialmouse": txtserialmouse,
         "puertomouse": txtpuertomouse,
         "tipomouse": txttipomouse,
+        "asignadomouse": txtasignadomouse,
     });
 
   

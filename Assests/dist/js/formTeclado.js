@@ -12,6 +12,7 @@ document.getElementById("btTeclado").addEventListener("click", () => {
     var txtserialteclado = document.getElementById("txtSerialTeclado").value;
     var txtpuertoteclado = document.getElementById("txtPuertoTeclado").value;
     var txttipoteclado = document.getElementById("txtTipoTeclado").value;
+    var txtasignadoteclado = document.getElementById("txtAsignadoTeclado").value;
     
     dataTeclado.push({
         "modeloteclado": txtmodeloteclado,
@@ -19,6 +20,7 @@ document.getElementById("btTeclado").addEventListener("click", () => {
         "serialteclado": txtserialteclado,
         "puertoteclado": txtpuertoteclado,
         "tipoteclado": txttipoteclado,
+        "asignadoteclado": txtasignadoteclado,
     });
 
   

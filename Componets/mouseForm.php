@@ -14,7 +14,7 @@
                   <div class="card-body">
 
                 <main class="col">
-                      <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
+                      <form class="row g-3 needs-validation" style="border-radius: 30px;" novalidate>
 
                       <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Modelo</b><b
@@ -65,6 +65,8 @@
 
                   
 
+                  
+
                   <div class="form-group col-4">
                       <label for="txtPuertoMouse">Puerto</label> <br>
                       <select class="form-control select2" id="txtPuertoMouse" name="txtPuertoMouse" required>
@@ -90,7 +92,6 @@
                     </select>
                 </div>
 
-                 
 
                   <div class="form-group col-4">
                     <label for="txtTipoMouse">Tipo</label>
@@ -103,6 +104,32 @@
                       <option>Otro</option>
                     </select>
                   </div>
+
+                  
+            <div class="form-group col-4">
+              <label for="txtAsignadoMouse">Asignado a</label>
+              <select class="form-control select2" id="txtAsignadoMouse" name="txtAsignadoMouse"> 
+              <option value="">Seleccione...</option> 
+              <?php
+                include '../Model/conexion.php';
+                $conn = conectarDB("bdd_sisasc");
+                $query = "SELECT nombre_cpu FROM cpuss"; // Incluir ID
+                $result = mysqli_query($conn, $query);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='" . htmlspecialchars($row['nombre_cpu']) . "'>" . htmlspecialchars($row['nombre_cpu']) . "</option>";
+                    }
+                } else {
+                    echo "<option>No hay cpuss disponibles</option>";
+                }
+
+                $conn->close();
+              ?>  
+              </select>
+            </div>
+
+
 
                   <div class="col-md-6">
                   <button class="btn btn-outline-success" type="button" id = "btMouse" ><b>Agregar</b></button>

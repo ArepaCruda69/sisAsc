@@ -59,6 +59,17 @@ include '../Componets/scripts.php';
 <script src='../Assests/dist/js/formMouse.js'></script>
 
 
+<style>
+  .select2-container {
+    width: 100% !important;
+  }
+  @media (max-width: 768px) {
+    .select2-container--bootstrap4 .select2-selection--single {
+      height: auto;
+    }
+  }
+</style>
+
 <script>
   $(function () {
     $('.select2').each(function () {
@@ -68,7 +79,7 @@ include '../Componets/scripts.php';
             allowClear: Boolean($(this).data('allow-clear')),
             language: {
                 noResults: function () {
-                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoAccesorios()">Agregar Nuevo Accesorios <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
+                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoImpresora()">Agregar Nuevo Impresora <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
                 },
             },
             escapeMarkup: function (markup) {
@@ -76,11 +87,9 @@ include '../Componets/scripts.php';
             }
         });
     });
-});
-
-
-
+  });
 </script>
+
          
 
   </body>
