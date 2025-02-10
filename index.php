@@ -206,23 +206,6 @@
               </li>
             </ul>
 
-            <ul class="nav nav-treeview">
-
-             
-             
-
-             
-
-              <li class="nav-item">
-                <a href="../sisAsc/Views/catAcc.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Accesorios</p>
-                </a>
-              </li>
-
-            </ul>
-            
-
           </li>
          
         </ul>
