@@ -1,5 +1,7 @@
 
-      <!-- Main content -->
+
+     
+     <!-- Main content -->
       <div class="content">
         <div class="container-fluid">
           <div class="row">
@@ -132,6 +134,49 @@
                  </div>     
 
                         </form> 
+
+                   </div>  
+
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table id="example3" class="table table-bordered table-striped">
+                          <thead>
+                              <tr>
+                              <th>Modelo</th>
+                              <th>Marca</th>
+                              <th>Serial</th>
+                              <th>Tipo</th>
+                              <th>Asignado a</th>
+                              </tr>
+                          </thead>
+                        <tbody>
+                      <?php
+                      if (!empty($datosTabla2)) {
+                        foreach ($datosTabla2 as $row) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['modelo_teclado']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['marca_teclado']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['serial_teclado']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['tipo_teclado']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['asignado_teclado']) . "</td>";
+                            echo "<td>
+                                <button type='button' class='btn btn-warning btn-sm' onclick='editRecord(" . $row['id_teclado'] . ")'>Editar</button>
+                                <a href='../Model/deleteTeclados.php?id=" . $row['id_teclado'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+                                </td>";
+                            echo "</tr>";
+                        }
+                      } else {
+                        echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+                      }
+                      ?>
+                      </tbody>
+
+                      </table>
+
+
+                      </div>
+                      <!-- /.card-body -->
+
                       </main> 
                    </div>
                  </div>

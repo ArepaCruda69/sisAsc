@@ -282,66 +282,6 @@ $conn2->close();
 <script src="../Assests/dist/js/formUps.js"></script>
 
 
-
-
-
-  <!-- Page specific script -->
- <script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-        language: {
-          processing: "Busqueda en curso...",
-          search: "Buscar&nbsp;:",
-          lengthMenu: "Agrupar de MENU Solicitudes",
-          infoEmpty: "No existen datos.",
-          infoFiltered: "(filtrado de MAX elementos en total)",
-          infoPostFix: "",
-          loadingRecords: "Cargando...",
-          zeroRecords: "No se encontraron datos con tu busqueda",
-          emptyTable: "No hay datos disponibles en la tabla.",
-          paginate: {
-              first: "Primero",
-              previous: "Anterior",
-              next: "Siguiente",
-              last: "Ultimo"
-          },
-          aria: {
-              sortAscending: ": active para ordenar la columna en orden ascendente",
-              sortDescending: ": active para ordenar la columna en orden descendente"
-          }
-      },
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    });
-  </script>
-
-
-<!-- <script>
-
-function editRecord(id) {
-  $.ajax({
-    url: 'edit.php',
-    type: 'GET',
-    data: { id: id },
-    success: function(response) {
-      const record = JSON.parse(response);
-      $('#editId').val(record.id);
-      $('#editModelo').val(record.modelo);
-      $('#editSerial').val(record.serial);
-      $('#editUnidad').val(record.unidad);
-      $('#editFechaInstalacion').val(record.fecha_instalacion);
-      $('#editCantidadBateria').val(record.cantidad_bateria);
-      $('#editModeloBateria').val(record.modelo_bateria);
-      $('#editObservaciones').val(record.observaciones);
-      $('#editModal').modal('show');
-    }
-  });
-}
-
-</script> -->
-
-
   <style>
     hr {
       height: 4px;
