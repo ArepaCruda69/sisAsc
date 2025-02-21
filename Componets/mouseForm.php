@@ -143,7 +143,7 @@
 
                           <!-- /.card-header -->
                       <div class="card-body">
-                        <table id="example4" class="table table-bordered table-striped">
+                        <table id="" class="table table-bordered table-striped">
                           <thead>
                               <tr>
                               <th>Modelo</th>
