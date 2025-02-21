@@ -1,28 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let ediiting = false;
-    let ediitingId = null;
+    let editingMonitor = false;
+    let editingMonitorId = null;
 
     document.getElementById("btMonitor").addEventListener("click", () => {
-        var actionMonitor = ediiting ? "updateMonitor" : "btMonitors";
+        var actionMonitor = editingMonitor ? "updateMonitor" : "btMonitorr";
         var dataMonitor = [];
 
-        var txtmodelomonitor = document.getElementById("txtModeloMonitor").value;
-        var txtmarcamonitor = document.getElementById("txtMarcaMonitor").value;
-        var txtserialmonitor = document.getElementById("txtSerialMonitor").value;
-        var txtpuertomonitor = document.getElementById("txtPuertoMonitor").value;
-        var txtpanelmonitor = document.getElementById("txtPanelMonitor").value;
-        var txtherciosmonitor = document.getElementById("txtHerciosMonitor").value;
-        var txtasignadomonitor = document.getElementById("txtAsignadoMonitor").value;
+        var txtModeloMonitor = document.getElementById("txtModeloMonitor").value;
+        var txtMarcaMonitor = document.getElementById("txtMarcaMonitor").value;
+        var txtSerialMonitor = document.getElementById("txtSerialMonitor").value;
+        var txtPuertoMonitor = document.getElementById("txtPuertoMonitor").value;
+        var txtPanelMonitor = document.getElementById("txtPanelMonitor").value;
+        var txtHerciosMonitor = document.getElementById("txtHerciosMonitor").value;
+        var txtAsignadoMonitor = document.getElementById("txtAsignadoMonitor").value;
 
         dataMonitor.push({
-            "id": ediitingId,
-            "modelomonitor": txtmodelomonitor,
-            "marcamonitor": txtmarcamonitor,
-            "serialmonitor": txtserialmonitor,
-            "puertomonitor": txtpuertomonitor,
-            "panelmonitor": txtpanelmonitor,
-            "herciosmonitor": txtherciosmonitor,
-            "asignadomonitor": txtasignadomonitor,
+            "id": editingMonitorId,
+            "modelomonitor": txtModeloMonitor,
+            "marcamonitor": txtMarcaMonitor,
+            "serialmonitor": txtSerialMonitor,
+            "puertomonitor": txtPuertoMonitor,
+            "panelmonitor": txtPanelMonitor,
+            "herciosmonitor": txtHerciosMonitor,
+            "asignadomonitor": txtAsignadoMonitor,
         });
 
         if (dataMonitor.length === 0) {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     var jsonMont = JSON.stringify(dataMonitor);
 
                     $.ajax({
-                        url: ediiting ? '../Controller/updateMonitor.php' : '../Controller/insertMTM.php',
+                        url: editingMonitor ? '../Controller/updateMonitor.php' : '../Controller/insertMTM.php',
                         type: 'POST',
                         async: true,
                         data: { actionMonitor: actionMonitor, jsonMont: jsonMont },
@@ -96,14 +96,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function actualizarTabla() {
+    function actualizarTablaMonitor() {
         $.ajax({
             url: '../Controller/getMonitorData.php',
             type: 'GET',
             success: function (html) {
                 document.querySelector('#example2 tbody').innerHTML = html;
-                agregarEventosEliminar(); // Añadir eventos de eliminación
-                agregarEventosEditar(); // Añadir eventos de edición
+                agregarEventosEliminarMonitor(); // Añadir eventos de eliminación
+                agregarEventosEditarMonitor(); // Añadir eventos de edición
             },
             error: function () {
                 Swal.fire('Error al actualizar la tabla', '', 'error');
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function agregarEventosEliminar() {
+    function agregarEventosEliminarMonitor() {
         document.querySelectorAll('.btn-danger').forEach(function(button) {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 var response = JSON.parse(respo);
                                 if (response.response === 'success') {
                                     Swal.fire('Eliminado!', 'El registro ha sido eliminado.', 'success');
-                                    actualizarTabla(); // Actualizar la tabla
+                                    actualizarTablaMonitor(); // Actualizar la tabla
                                 } else {
                                     Swal.fire('Error', response.response, 'error');
                                 }
@@ -149,34 +149,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function agregarEventosEditar() {
+    function agregarEventosEditarMonitor() {
         document.querySelectorAll('.btn-warning').forEach(function(button) {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
                 var id = this.getAttribute('onclick').split('(')[1].split(')')[0];
-                editarRegistro(id);
+                editarRegistroMonitor(id);
             });
         });
     }
 
-    function editarRegistro(id) {
+    function editarRegistroMonitor(id) {
         $.ajax({
             url: '../Controller/getMonitorById.php',
             type: 'GET',
             data: { id: id },
             success: function (respo) {
-                var datas = JSON.parse(respo);
-                document.getElementById("txtModeloMonitor").value = datas.modelo_monitor;
-                document.getElementById("txtMarcaMonitor").value = datas.marca_monitor;
-                document.getElementById("txtSerialMonitor").value = datas.serial_monitor;
-                document.getElementById("txtPuertoMonitor").value = datas.puertos_monitor;
-                document.getElementById("txtPanelMonitor").value = datas.panel_monitor;
-                document.getElementById("txtHerciosMonitor").value = datas.hercios_monitor;
-                document.getElementById("txtAsignadoMonitor").value = datas.asignado_monitor;
+                try {
+                    var datas = JSON.parse(respo);
 
-                ediiting = true;
-                ediitingId = id;
-                document.getElementById("btMonitor").textContent = "Actualizar"; // Cambiar el texto del botón
+                    if (datas.response) {
+                        Swal.fire('Error', datas.response, 'error');
+                        return;
+                    }
+
+                    document.getElementById("txtModeloMonitor").value = datas.modelo_monitor || '';
+                    document.getElementById("txtMarcaMonitor").value = datas.marca_monitor || '';
+                    document.getElementById("txtSerialMonitor").value = datas.serial_monitor || '';
+                    document.getElementById("txtPuertoMonitor").value = datas.puertos_monitor || '';
+                    document.getElementById("txtPanelMonitor").value = datas.panel_monitor || '';
+                    document.getElementById("txtHerciosMonitor").value = datas.hercios_monitor || '';
+                    document.getElementById("txtAsignadoMonitor").value = datas.asignado_monitor || '';
+
+                    editingMonitor = true;
+                    editingMonitorId = id;
+                    document.getElementById("btMonitor").textContent = "Actualizar"; // Cambiar el texto del botón
+                } catch (error) {
+                    Swal.fire('Error', 'No se pudo cargar el registro.', 'error');
+                }
             },
             error: function () {
                 Swal.fire('Error', 'No se pudo cargar el registro.', 'error');
@@ -185,5 +195,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     cargarMarcas();
-    actualizarTabla(); // Añadir eventos al cargar la página
+    actualizarTablaMonitor(); // Añadir eventos al cargar la página
 });

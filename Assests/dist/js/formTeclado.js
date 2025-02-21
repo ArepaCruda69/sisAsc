@@ -1,43 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let editting = false;
-    let edittingId = null;
+    let editingTeclado = false;
+    let editingTecladoId = null;
 
-document.getElementById("btTeclado").addEventListener("click", () => {
-    var actionTeclado =  editting ? "updateTeclado" :"btTeclados";
-    var dataTeclado = [];
-    
+    document.getElementById("btTeclado").addEventListener("click", () => {
+        var actionTeclado = editingTeclado ? "updateTeclado" : "btTeclado";
+        var dataTeclado = [];
 
+        var txtModeloTeclado = document.getElementById("txtModeloTeclado").value;
+        var txtMarcaTeclado = document.getElementById("txtMarcaTeclado").value;
+        var txtSerialTeclado = document.getElementById("txtSerialTeclado").value;
+        var txtPuertoTeclado = document.getElementById("txtPuertoTeclado").value;
+        var txtTipoTeclado = document.getElementById("txtTipoTeclado").value;
+        var txtAsignadoTeclado = document.getElementById("txtAsignadoTeclado").value;
 
-    var txtmodeloteclado = document.getElementById("txtModeloTeclado").value;
-    var txtmarcateclado = document.getElementById("txtMarcaTeclado").value;
-    var txtserialteclado = document.getElementById("txtSerialTeclado").value;
-    var txtpuertoteclado = document.getElementById("txtPuertoTeclado").value;
-    var txttipoteclado = document.getElementById("txtTipoTeclado").value;
-    var txtasignadoteclado = document.getElementById("txtAsignadoTeclado").value;
-    
-    dataTeclado.push({
-        "id": edittingId,
-        "modeloteclado": txtmodeloteclado,
-        "marcateclado": txtmarcateclado,
-        "serialteclado": txtserialteclado,
-        "puertoteclado": txtpuertoteclado,
-        "tipoteclado": txttipoteclado,
-        "asignadoteclado": txtasignadoteclado,
-    });
-
-  
-
-
-
+        dataTeclado.push({
+            "id": editingTecladoId,
+            "modeloteclado": txtModeloTeclado,
+            "marcateclado": txtMarcaTeclado,
+            "serialteclado": txtSerialTeclado,
+            "puertoteclado": txtPuertoTeclado,
+            "tipoteclado": txtTipoTeclado,
+            "asignadoteclado": txtAsignadoTeclado,
+        });
 
         if (dataTeclado.length === 0) {
             Swal.fire({
                 icon: "warning",
                 title: "Campos Vacíos",
-                text: "El registro de los campos está vacío, debe seleccionar al menos un ítem para guardar",
+                text: "El registro de los campos está vacío, debe completar todos los campos",
             });
-
-
         } else {
             Swal.fire({
                 title: "Atención",
@@ -53,26 +44,26 @@ document.getElementById("btTeclado").addEventListener("click", () => {
                     var jsonTecl = JSON.stringify(dataTeclado);
 
                     $.ajax({
-                        url: editing ? '../Controller/updateTeclados.php' : '../Controller/insertMTM.php',
+                        url: editingTeclado ? '../Controller/updateTeclados.php' : '../Controller/insertMTM.php',
                         type: 'POST',
                         async: true,
                         data: { actionTeclado: actionTeclado, jsonTecl: jsonTecl },
                         success: function (respo) {
-                            var response = JSON.parse(respo);
-                            if (response.response === 0) {
-                                Swal.fire({
-                                    title: 'Correcto',
-                                    text: "Registrado Correctamente",
-                                    icon: 'success',
-                                    confirmButtonColor: '#3085d6',
-                                    confirmButtonText: 'Ok'
-                                }).then(() => {
-                                    location.reload(); // Refrescar la página
-                                });
-                            } else {
-                                Swal.fire('Error no se activó el registro: ' + response.response, '', 'error');
-                            }
-                        },
+                                var response = JSON.parse(respo);
+                                if (response.response === 0) {
+                                    Swal.fire({
+                                        title: 'Correcto',
+                                        text: "Registrado Correctamente",
+                                        icon: 'success',
+                                        confirmButtonColor: '#3085d6',
+                                        confirmButtonText: 'Ok'
+                                    }).then(() => {
+                                        location.reload(); // Refrescar la página
+                                    });
+                                } else {
+                                    Swal.fire('Error no se activó el registro: ' + response.response, '', 'error');
+                                }
+                         },
                         error: function (respo) {
                             Swal.fire('Error no se activó el registro por función: ' + respo, '', 'error');
                         }
@@ -81,8 +72,6 @@ document.getElementById("btTeclado").addEventListener("click", () => {
             });
         }
     });
-
-
 
     function cargarMarcas() {
         $.ajax({
@@ -105,15 +94,14 @@ document.getElementById("btTeclado").addEventListener("click", () => {
         });
     }
 
-
-    function actualizarTabla() {
+    function actualizarTablaTeclado() {
         $.ajax({
             url: '../Controller/getTecladoData.php',
             type: 'GET',
             success: function (html) {
                 document.querySelector('#example3 tbody').innerHTML = html;
-                agregarEventosEliminar(); // Añadir eventos de eliminación
-                agregarEventosEditar(); // Añadir eventos de edición
+                agregarEventosEliminarTeclado(); // Añadir eventos de eliminación
+                agregarEventosEditarTeclado(); // Añadir eventos de edición
             },
             error: function () {
                 Swal.fire('Error al actualizar la tabla', '', 'error');
@@ -121,7 +109,7 @@ document.getElementById("btTeclado").addEventListener("click", () => {
         });
     }
 
-    function agregarEventosEliminar() {
+    function agregarEventosEliminarTeclado() {
         document.querySelectorAll('.btn-danger').forEach(function(button) {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -138,16 +126,16 @@ document.getElementById("btTeclado").addEventListener("click", () => {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({
-                            url: '../Model/deleteTeclado.php?id=' + id,
+                            url: '../Model/deleteTeclado.php?iid=' + id,
                             type: 'GET',
                             success: function (respo) {
-                                var response = JSON.parse(respo);
-                                if (response.response === 'success') {
-                                    Swal.fire('Eliminado!', 'El registro ha sido eliminado.', 'success');
-                                    actualizarTabla(); // Actualizar la tabla
-                                } else {
-                                    Swal.fire('Error', response.response, 'error');
-                                }
+                                    var response = JSON.parse(respo);
+                                    if (response.response === 'success') {
+                                        Swal.fire('Eliminado!', 'El registro ha sido eliminado.', 'success');
+                                        actualizarTablaTeclado(); // Actualizar la tabla
+                                    } else {
+                                        Swal.fire('Error', response.response, 'error');
+                                    }
                             },
                             error: function () {
                                 Swal.fire('Error', 'No se pudo eliminar el registro.', 'error');
@@ -159,33 +147,43 @@ document.getElementById("btTeclado").addEventListener("click", () => {
         });
     }
 
-    function agregarEventosEditar() {
+    function agregarEventosEditarTeclado() {
         document.querySelectorAll('.btn-warning').forEach(function(button) {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
                 var id = this.getAttribute('onclick').split('(')[1].split(')')[0];
-                editarRegistro(id);
+                editarRegistroTeclado(id);
             });
         });
     }
 
-    function editarRegistro(id) {
+    function editarRegistroTeclado(id) {
         $.ajax({
             url: '../Controller/getTecladoById.php',
             type: 'GET',
             data: { id: id },
             success: function (respo) {
-                var dataas = JSON.parse(respo);
-                document.getElementById("txtModeloTeclado").value = dataas.modelo_teclado;
-                document.getElementById("txtMarcaTeclado").value = dataas.marca_teclado;
-                document.getElementById("txtSerialTeclado").value = dataas.serial_teclado;
-                document.getElementById("txtPuertoTeclado").value = dataas.puertos_teclado;
-                document.getElementById("txtTipoTeclado").value = dataas.tipo_teclado;
-                document.getElementById("txtAsignadoTeclado").value = dataas.asignado_teclado;
+                try {
+                    var dattaas = JSON.parse(respo);
 
-                editting = true;
-                edittingId = id;
-                document.getElementById("btTeclado").textContent = "Actualizar"; // Cambiar el texto del botón
+                    if (dattaas.response) {
+                        Swal.fire('Error', dattaas.response, 'error');
+                        return;
+                    }
+
+                    document.getElementById("txtModeloTeclado").value = dattaas.modelo_teclado ;
+                    document.getElementById("txtMarcaTeclado").value = dattaas.marca_teclado ;
+                    document.getElementById("txtSerialTeclado").value = dattaas.serial_teclado ;
+                    document.getElementById("txtPuertoTeclado").value = dattaas.puertos_teclado ;
+                    document.getElementById("txtTipoTeclado").value = dattaas.tipo_teclado ;
+                    document.getElementById("txtAsignadoTeclado").value = dattaas.asignado_teclado ;
+
+                    editingTeclado = true;
+                    editingTecladoId = id;
+                    document.getElementById("btTeclado").textContent = "Actualizar"; // Cambiar el texto del botón
+                } catch (error) {
+                    Swal.fire('Error', 'No se pudo cargar el registro.', 'error');
+                }
             },
             error: function () {
                 Swal.fire('Error', 'No se pudo cargar el registro.', 'error');
@@ -193,8 +191,6 @@ document.getElementById("btTeclado").addEventListener("click", () => {
         });
     }
 
-
     cargarMarcas();
-    actualizarTabla(); // Añadir eventos al cargar la página
-
+    actualizarTablaTeclado(); // Añadir eventos al cargar la página
 });
