@@ -1,4 +1,38 @@
 
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require '../Model/conexion.php';
+
+function conectarDB($dbname) {
+    $conn = new mysqli("localhost", "root", "123456789", $dbname);
+    if ($conn->connect_error) {
+        die("Conexión fallida a $dbname: " . $conn->connect_error);
+    }
+    return $conn;
+}
+
+function obtenerDatos($conn, $query) {
+    $stmt = $conn->prepare($query);
+    if ($stmt === false) {
+        die("Error en la consulta: " . $conn->error);
+    }
+    $stmt->execute();
+    return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+}
+
+// Conectar y obtener datos
+$conn1 = conectarDB("bd_globales");
+$unidades = obtenerDatos($conn1, "SELECT nom_unidad FROM glo_1unidad");
+$conn1->close();
+
+$conn2 = conectarDB("bdd_sisasc");
+$datosTablaM = obtenerDatos($conn2, "SELECT id_monitor, modelo_monitor, marca_monitor, serial_monitor, puertos_monitor, panel_monitor,hercios_monitor, asignado_monitor FROM monitor");
+$conn2->close();
+
+?>
 
 
 <?php
@@ -89,7 +123,7 @@ include '../Componets/scripts.php';
             allowClear: Boolean($(this).data('allow-clear')),
             language: {
                 noResults: function () {
-                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevoImpresora()">Agregar Nuevo Impresora <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
+                    return `<button type="button" class="btn btn-primary btn-lg btn-block" onclick="AgregarNuevo()">Agregar Nuevo  <i class="zmdi zmdi-plus-square zmdi-hc-1x"></i></button>`;
                 },
             },
             escapeMarkup: function (markup) {

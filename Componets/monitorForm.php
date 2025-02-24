@@ -28,7 +28,7 @@
 
                         <div class="form-group col-3">
                         <label for="txtMarcaMonitor">Marca</label> <br>
-                        <select class="form-control select2" id="txtMarcaMonitor" name="txtMarcaMonitor" required>
+                        <select class="form-control select2" id="txtMarcaMonitor" name="marca" required>
                         <option value="">Seleccione...</option>
 
                       <?php
@@ -64,7 +64,7 @@
 
                     <div class="form-group col-3">
                       <label for="txtPuertoMonitor">Puerto</label> <br>
-                      <select class="form-control select2" id="txtPuertoMonitor" name="txtPuertoMonitor" required>
+                      <select class="form-control select2" id="txtPuertoMonitor" name="puerto" required>
                       <option value="">Seleccione...</option>
 
                     <?php
@@ -90,7 +90,7 @@
 
                   <div class="form-group col-3">
                     <label for="txtPanelMonitor">Panel</label>
-                    <select class="form-control select2" id="txtPanelMonitor" name="txtPanelMonitor">  
+                    <select class="form-control select2" id="txtPanelMonitor" name="panel">  
                     <option value="">Seleccione...</option>
                       <option>TN </option>
                       <option>IPS </option>
@@ -103,7 +103,7 @@
 
                   <div class="form-group col-3">
                     <label for="txtHerciosMonitor">Hercios</label>
-                    <select class="form-control select2" id="txtHerciosMonitor" name="txtHerciosMonitor">  
+                    <select class="form-control select2" id="txtHerciosMonitor" name="hercios">  
                     <option value="">Seleccione...</option>
                       <option>60 Hz </option>
                       <option>75 Hz </option>
@@ -121,7 +121,7 @@
                   
             <div class="form-group col-3">
               <label for="txtAsignadoMonitor">Asignado a</label>
-              <select class="form-control select2" id="txtAsignadoMonitor" name="txtAsignadoMonitor"> 
+              <select class="form-control select2" id="txtAsignadoMonitor" name="asignado"> 
               <option value="">Seleccione...</option> 
 
               <?php
@@ -154,7 +154,7 @@
                         
               <!-- /.card-header -->
               <div class="card-body">
-        <table id="" class="table table-bordered table-striped">
+        <table id="examplemonitor" class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>Modelo</th>
@@ -165,7 +165,25 @@
             </tr>
           </thead>
           <tbody>
-          
+                   <?php
+          if (!empty($datosTablaM)) {
+              foreach ($datosTablaM as $row) {
+                  echo "<tr>";
+                  echo "<td>" . htmlspecialchars($row['modelo_monitor']) . "</td>";
+                  echo "<td>" . htmlspecialchars($row['marca_monitor']) . "</td>";
+                  echo "<td>" . htmlspecialchars($row['serial_monitor']) . "</td>";
+                  echo "<td>" . htmlspecialchars($row['hercios_monitor']) . "</td>";
+                  echo "<td>" . htmlspecialchars($row['asignado_monitor']) . "</td>";
+                  echo "<td>
+                      <button type='button' class='btn btn-warning btn-sm' onclick='editarRegistro(" . $row['id_monitor'] . ")'>Editar</button>
+                      <a href='../Model/deleteMonitor.php?id=" . $row['id_monitor'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+                      </td>";
+                  echo "</tr>";
+              }
+          } else {
+              echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+          }
+          ?>
           </tbody>
          
         </table>
