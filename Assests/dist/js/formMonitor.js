@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let editingg = false;
-    let editingIdd = null;
+    let editing = false;
+    let editingId = null;
 
     document.getElementById("btMonitor").addEventListener("click", () => {
-        var actionMonitor = editingg ? "updateMonitor" : "btMonitorr";
+        var actionMonitor = editing ? "updateMonitor" : "btMonitorr";
         var dataMonitor = [];
 
         var txtmodelomonitor = document.getElementById("txtModeloMonitor").value;
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var txtasignadomonitor = document.getElementById("txtAsignadoMonitor").value;
 
         dataMonitor.push({
-            "idmonitor": editingIdd,
+            "idmonitor": editingId,
             "modelomonitor": txtmodelomonitor,
             "marcamonitor": txtmarcamonitor,
             "serialmonitor": txtserialmonitor,
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     var jsonMonitor = JSON.stringify(dataMonitor);
 
                     $.ajax({
-                        url: editingg ? '../Controller/updateMonitor.php' : '../Controller/insertMTM.php',
+                        url: editing ? '../Controller/updateMonitor.php' : '../Controller/insertMTM.php',
                         type: 'POST',
                         async: true,
                         data: { actionMonitor: actionMonitor, jsonMonitor: jsonMonitor },
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $.ajax({
             url: '../Controller/getMonitorById.php',
             type: 'GET',
-            datam: { id: id },
+            data: { id: id }, // Corregir 'datam' a 'data'
             success: function (respo) {
                 var datam = JSON.parse(respo);
                 document.getElementById("txtModeloMonitor").value = datam.modelo_monitor;
@@ -184,9 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    
     cargarMarcas();
     actualizarTabla(); // Añadir eventos al cargar la página
-    
 });
-

@@ -19,7 +19,7 @@
                       <div class="col-md-3">
                     <label for="inputAddress2" class="form-label"><b>Modelo</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtModeloMonitor" required>
+                    <input type="tel" class="form-control" id="txtModeloMonitor" name="modelomonitor" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -28,7 +28,7 @@
 
                         <div class="form-group col-3">
                         <label for="txtMarcaMonitor">Marca</label> <br>
-                        <select class="form-control select2" id="txtMarcaMonitor" name="marca" required>
+                        <select class="form-control select2" id="txtMarcaMonitor" name="marcamonitor" required>
                         <option value="">Seleccione...</option>
 
                       <?php
@@ -54,7 +54,7 @@
                         <div class="col-md-3">
                           <label for="inputAddress2" class="form-label"><b>Serial</b><b
                               style="color: red;">*</b></label>
-                          <input type="tel" class="form-control" id="txtSerialMonitor" required>
+                          <input type="tel" class="form-control" id="txtSerialMonitor" name="serialmonitor" required>
                           <div class="invalid-feedback">
                             Porfavor seleccione una fecha
                           </div>
@@ -64,7 +64,7 @@
 
                     <div class="form-group col-3">
                       <label for="txtPuertoMonitor">Puerto</label> <br>
-                      <select class="form-control select2" id="txtPuertoMonitor" name="puerto" required>
+                      <select class="form-control select2" id="txtPuertoMonitor" name="puertomonitor" required>
                       <option value="">Seleccione...</option>
 
                     <?php

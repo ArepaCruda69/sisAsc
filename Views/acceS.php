@@ -32,6 +32,9 @@ $conn2 = conectarDB("bdd_sisasc");
 $datosTablaM = obtenerDatos($conn2, "SELECT id_monitor, modelo_monitor, marca_monitor, serial_monitor, puertos_monitor, panel_monitor,hercios_monitor, asignado_monitor FROM monitor");
 $conn2->close();
 
+$conn3 = conectarDB("bdd_sisasc");
+$datosTablaT = obtenerDatos($conn3, "SELECT id_teclado, modelo_teclado, marca_teclado, serial_teclado, puertos_teclado, tipo_teclado,asignado_teclado FROM teclados");
+$conn3->close();
 ?>
 
 

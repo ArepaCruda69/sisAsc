@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
     
-
+    
     cargarMarcas();
     actualizarTabla(); // Añadir eventos al cargar la página
     

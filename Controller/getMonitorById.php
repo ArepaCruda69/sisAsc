@@ -12,7 +12,9 @@ if (isset($_GET['id'])) {
     $result = $query->get_result();
 
     if ($result->num_rows > 0) {
-        echo json_encode($result->fetch_assoc());
+        $data = $result->fetch_assoc();
+        error_log("Datos obtenidos: " . json_encode($data)); // Log de depuración
+        echo json_encode($data);
     } else {
         echo json_encode(array("response" => "No se encontró el registro."));
     }
