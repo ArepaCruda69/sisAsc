@@ -19,7 +19,7 @@
                       <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Modelo</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtModeloMouse" required>
+                    <input type="tel" class="form-control" id="txtModeloMouse" name="modelomouse" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -30,7 +30,7 @@
                     
                   <div class="form-group col-4">
                         <label for="txtMarcaMouse">Marca</label> <br>
-                        <select class="form-control select2" id="txtMarcaMouse" name="txtMarcaMouse" required>
+                        <select class="form-control select2" id="txtMarcaMouse" name="marcamouse" required>
                         <option value="">Seleccione...</option>
 
                       <?php
@@ -57,7 +57,7 @@
                   <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Serial</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtSerialMouse" required>
+                    <input type="tel" class="form-control" id="txtSerialMouse" name="serialmouse" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -69,7 +69,7 @@
 
                   <div class="form-group col-4">
                       <label for="txtPuertoMouse">Puerto</label> <br>
-                      <select class="form-control select2" id="txtPuertoMouse" name="txtPuertoMouse" required>
+                      <select class="form-control select2" id="txtPuertoMouse" name="puertomouse" required>
                       <option value="">Seleccione...</option>
 
                     <?php
@@ -95,7 +95,7 @@
 
                   <div class="form-group col-4">
                     <label for="txtTipoMouse">Tipo</label>
-                    <select class="form-control select2" id="txtTipoMouse" name="txtTipoMouse"> 
+                    <select class="form-control select2" id="txtTipoMouse" name="tipomouse"> 
                     <option value="">Seleccione...</option> 
                       <option>Óptico</option>
                       <option>Láser</option>
@@ -108,7 +108,7 @@
                   
             <div class="form-group col-4">
               <label for="txtAsignadoMouse">Asignado a</label>
-              <select class="form-control select2" id="txtAsignadoMouse" name="txtAsignadoMouse"> 
+              <select class="form-control select2" id="txtAsignadoMouse" name="asignadomouse"> 
               <option value="">Seleccione...</option> 
               <?php
                 include '../Model/conexion.php';
@@ -143,7 +143,7 @@
 
                           <!-- /.card-header -->
                       <div class="card-body">
-                        <table id="" class="table table-bordered table-striped">
+                        <table id="examplemouse" class="table table-bordered table-striped">
                           <thead>
                               <tr>
                               <th>Modelo</th>
@@ -154,7 +154,25 @@
                               </tr>
                           </thead>
                         <tbody>
-                      
+                        <?php
+                          if (!empty($datosTablaMo)) {
+                              foreach ($datosTablaMo as $row) {
+                                  echo "<tr>";
+                                  echo "<td>" . htmlspecialchars($row['modelo_mouse']) . "</td>";
+                                  echo "<td>" . htmlspecialchars($row['marca_mouse']) . "</td>";
+                                  echo "<td>" . htmlspecialchars($row['serial_mouse']) . "</td>";
+                                  echo "<td>" . htmlspecialchars($row['tipo_mouse']) . "</td>";
+                                  echo "<td>" . htmlspecialchars($row['asignado_mouse']) . "</td>";
+                                  echo "<td>
+                                      <button type='button' class='btn btn-warning btn-sm' onclick='editarRegistroMo(" . $row['id_mouse'] . ")'>Editar</button>
+                                      <a href='../Model/deleteMouse.php?id=" . $row['id_mouse'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+                                      </td>";
+                                  echo "</tr>";
+                              }
+                          } else {
+                              echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+                          }
+                          ?>
                     
                       </tbody>
 

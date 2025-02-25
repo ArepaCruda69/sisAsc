@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             success: function (html) {
                 document.querySelector('#examplemonitor tbody').innerHTML = html;
                 agregarEventosEliminar(); // Añadir eventos de eliminación
-                agregarEventosEditar(); // Añadir eventos de edición
+                agregarEventosEditarM(); // Añadir eventos de edición
             },
             error: function () {
                 Swal.fire('Error al actualizar la tabla', '', 'error');
@@ -149,17 +149,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function agregarEventosEditar() {
+    function agregarEventosEditarM() {
         document.querySelectorAll('.btn-warning').forEach(function(button) {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
                 var id = this.getAttribute('onclick').split('(')[1].split(')')[0];
-                editarRegistro(id);
+                editarRegistroM(id);
             });
         });
     }
 
-    function editarRegistro(id) {
+    function editarRegistroM(id) {
         $.ajax({
             url: '../Controller/getMonitorById.php',
             type: 'GET',

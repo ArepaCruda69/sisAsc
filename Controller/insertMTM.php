@@ -72,4 +72,37 @@ if ($_POST['actionTeclado'] == "btTecladoss") {
 }
 
 // Mouse
+
+if ($_POST['actionMouse'] == "btMousee") {
+    $dataMouse = json_decode($_POST['jsonMouse'], true);
+    $responseMouse ='';
+
+    foreach ($dataMouse as $dataMousee) {
+        $modeloMouse = $dataMousee["modelomouse"];
+        $marcaMouse = $dataMousee["marcamouse"];
+        $serialMouse = $dataMousee["serialmouse"];
+        $puertoMouse = $dataMousee["puertomouse"];
+        $tipoMouse = $dataMousee["tipomouse"];
+        $asignadoMouse = $dataMousee["asignadomouse"];
+
+        $insertcliMouse = $conexion->prepare("INSERT INTO mouse (modelo_mouse, marca_mouse, serial_mouse, puertos_mouse, tipo_mouse, asignado_mouse) VALUES (?, ?, ?, ?, ?, ?)");
+        if ($insertcliMouse === false) {
+            error_log("Error en la preparación de la declaración: " . $conexion->error);
+            echo json_encode(array("response" => 1)); // Error
+            exit();
+        }
+        $insertcliMouse->bind_param("ssssss", $modeloMouse, $marcaMouse, $serialMouse, $puertoMouse, $tipoMouse, $asignadoMouse);
+        $executeResult = $insertcliMouse->execute();
+
+        if (!$executeResult) {
+            error_log("Error al ejecutar la declaración: " . $insertcliMouse->error);
+            echo json_encode(array("response" => 1)); // Error
+            exit();
+        } else {
+            $responseMouse = 0; // Éxito
+        }
+    }
+
+    echo json_encode(array("response" => $responseMouse));
+}
 ?>

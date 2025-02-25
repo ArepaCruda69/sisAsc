@@ -35,6 +35,11 @@ $conn2->close();
 $conn3 = conectarDB("bdd_sisasc");
 $datosTablaT = obtenerDatos($conn3, "SELECT id_teclado, modelo_teclado, marca_teclado, serial_teclado, puertos_teclado, tipo_teclado,asignado_teclado FROM teclados");
 $conn3->close();
+
+
+$conn4 = conectarDB("bdd_sisasc");
+$datosTablaMo = obtenerDatos($conn4, "SELECT id_mouse, modelo_mouse, marca_mouse, serial_mouse, puertos_mouse, tipo_mouse, asignado_mouse FROM mouse");
+$conn4->close();
 ?>
 
 
