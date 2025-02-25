@@ -21,7 +21,7 @@
                       <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Modelo</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtModeloTeclado" required>
+                    <input type="tel" class="form-control" id="txtModeloTeclado" name="modeloteclado" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -31,7 +31,7 @@
 
                   <div class="form-group col-4">
                         <label for="txtMarcaTeclado">Marca</label> <br>
-                        <select class="form-control select2" id="txtMarcaTeclado" name="txtMarcaTeclado" required>
+                        <select class="form-control select2" id="txtMarcaTeclado" name="marcateclado" required>
                         <option value="">Seleccione...</option>
 
                       <?php
@@ -57,7 +57,7 @@
                   <div class="col-md-4">
                     <label for="inputAddress2" class="form-label"><b>Serial</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtSerialTeclado" required>
+                    <input type="tel" class="form-control" id="txtSerialTeclado" name="serialteclado" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -68,7 +68,7 @@
             
                        <div class="form-group col-4">
                 <label for="txtPuertoTeclado">Puerto</label>
-                <select class="form-control select2" id="txtPuertoTeclado" name="txtPuertoTeclado" required>
+                <select class="form-control select2" id="txtPuertoTeclado" name="puertoteclado" required>
                     <option value="">Seleccione...</option>
                     <?php
                     include '../Model/conexion.php';
@@ -91,7 +91,7 @@
             
             <div class="form-group col-4">
                 <label for="txtTipoTeclado">Tipo</label>
-                <select class="form-control select2" id="txtTipoTeclado" name="txtTipoTeclado">
+                <select class="form-control select2" id="txtTipoTeclado" name="tipoteclado">
                     <option value="">Seleccione...</option>
                     <option>Óptico</option>
                     <option>Láser</option>
@@ -103,7 +103,7 @@
             
             <div class="form-group col-4">
                 <label for="txtAsignadoTeclado">Asignado a</label>
-                <select class="form-control select2" id="txtAsignadoTeclado" name="txtAsignadoTeclado">
+                <select class="form-control select2" id="txtAsignadoTeclado" name="asignadoteclado">
                     <option value="">Seleccione...</option>
                     <?php
                     include '../Model/conexion.php';
@@ -129,7 +129,7 @@
 
 
             <div class="col-md-6">
-                  <button class="btn btn-outline-success" type="button" id = "btTeclado" ><b>Agregar</b></button>
+                  <button class="btn btn-outline-success" type="button" id = "btTeclados" ><b>Agregar</b></button>
                  </div>     
 
                         </form> 
@@ -138,7 +138,7 @@
 
                       <!-- /.card-header -->
                       <div class="card-body">
-                        <table id="" class="table table-bordered table-striped">
+                        <table id="exampleteclado" class="table table-bordered table-striped">
                           <thead>
                               <tr>
                               <th>Modelo</th>
@@ -149,7 +149,25 @@
                               </tr>
                           </thead>
                         <tbody>
-                     
+                        <?php
+                          if (!empty($datosTablaT)) {
+                              foreach ($datosTablaT as $row) {
+                                  echo "<tr>";
+                                  echo "<td>" . htmlspecialchars($row['modelo_teclado']) . "</td>";
+                                  echo "<td>" . htmlspecialchars($row['marca_teclado']) . "</td>";
+                                  echo "<td>" . htmlspecialchars($row['serial_teclado']) . "</td>";
+                                  echo "<td>" . htmlspecialchars($row['tipo_teclado']) . "</td>";
+                                  echo "<td>" . htmlspecialchars($row['asignado_teclado']) . "</td>";
+                                  echo "<td>
+                                      <button type='button' class='btn btn-warning btn-sm' onclick='editarRegistro(" . $row['id_teclado'] . ")'>Editar</button>
+                                      <a href='../Model/deleteTeclado.php?id=" . $row['id_teclado'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+                                      </td>";
+                                  echo "</tr>";
+                              }
+                          } else {
+                              echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+                          }
+                          ?>         
                       </tbody>
 
                       </table>
