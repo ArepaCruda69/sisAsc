@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data: { id: id },
             success: function (respo) {
                 var dataa = JSON.parse(respo);
+                console.log("Datos recibidos:", dataa); // Log para depuración
                 document.getElementById("txtModeloImpresora").value = dataa.modelo_impresora;
                 document.getElementById("txtMarcaImpresora").value = dataa.marca_impresora;
                 document.getElementById("txtSerialImpresora").value = dataa.serial_impresora;
@@ -189,6 +190,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("txtUnidadImpresora").value = dataa.unidad_impresora;
                 document.getElementById("txtAsignadoImpresora").value = dataa.asignado_impresora;
                 document.getElementById("txtObsImpresora").value = dataa.observaciones;
+
+                  // Actualizar los select
+                  console.log("Actualizando select Unidad con valor:", dataa.marca_impresora); // Log para depuración
+                  $('#txtMarcaImpresora').val(dataa.marca_impresora).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", dataa.tipo_impresora); // Log para depuración
+                  $('#txtTipoImpresora').val(dataa.tipo_impresora).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", dataa.estilo_impresora); // Log para depuración
+                  $('#txtEstiloImpresora').val(dataa.estilo_impresora).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", dataa.puerto_impresora); // Log para depuración
+                  $('#txtPuertoImpresora').val(dataa.puerto_impresora).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", dataa.estatus_impresora); // Log para depuración
+                  $('#txtEstatusImpresora').val(dataa.estatus_impresora).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", dataa.unidad_impresora); // Log para depuración
+                  $('#txtUnidadImpresora').val(dataa.unidad_impresora).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", dataa.asignado_impresora); // Log para depuración
+                  $('#txtAsignadoImpresora').val(dataa.asignado_impresora).trigger('change');
 
                 editingg = true;
                 editingIid = id;

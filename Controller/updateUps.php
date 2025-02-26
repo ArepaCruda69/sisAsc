@@ -8,18 +8,19 @@ if ($_POST['actionUps'] == "updateUps") {
     $modeloUps = $dataUps["modeloups"];
     $serialUps = $dataUps["serialups"];
     $unidadUps = $dataUps["unidadups"];
+    $marcaUps = $dataUps["marcaups"];
     $fechaUps = $dataUps["fechaups"];
     $cantidadUps = $dataUps["cantidadups"];
     $modelobateriaUps = $dataUps["modelobateriaups"];
     $obserUps = $dataUps["obserups"];
 
-    $updatecliUps = $conexion->prepare("UPDATE ups SET modelo_ups = ?, serial_ups = ?, unidad = ?, fecha_instalacion = ?, cantidad_bateria = ?, modelo_bateria = ?, observaciones_ups = ? WHERE id_ups = ?");
+    $updatecliUps = $conexion->prepare("UPDATE ups SET modelo_ups = ?, serial_ups = ?, unidad = ?, marca_ups = ?, fecha_instalacion = ?, cantidad_bateria = ?, modelo_bateria = ?, observaciones_ups = ? WHERE id_ups = ?");
     if ($updatecliUps === false) {
         error_log("Error en la preparación de la declaración: " . $conexion->error);
         echo json_encode(array("response" => 1)); // Error
         exit();
     }
-    $updatecliUps->bind_param("ssssissi", $modeloUps, $serialUps, $unidadUps, $fechaUps, $cantidadUps, $modelobateriaUps, $obserUps, $id);
+    $updatecliUps->bind_param("sssssissi", $modeloUps, $serialUps, $unidadUps,$marcaUps, $fechaUps, $cantidadUps, $modelobateriaUps, $obserUps, $id);
     $executeResult = $updatecliUps->execute();
 
     if (!$executeResult) {

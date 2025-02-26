@@ -166,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data: { id: id }, // Corregir 'datam' a 'data'
             success: function (respo) {
                 var datam = JSON.parse(respo);
+                console.log("Datos recibidos:", datam); // Log para depuración
                 document.getElementById("txtModeloMonitor").value = datam.modelo_monitor;
                 document.getElementById("txtMarcaMonitor").value = datam.marca_monitor;
                 document.getElementById("txtSerialMonitor").value = datam.serial_monitor;
@@ -173,6 +174,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("txtPanelMonitor").value = datam.panel_monitor;
                 document.getElementById("txtHerciosMonitor").value = datam.hercios_monitor;
                 document.getElementById("txtAsignadoMonitor").value = datam.asignado_monitor;
+
+                  // Actualizar los select
+                  console.log("Actualizando select Unidad con valor:", datam.marca_monitor); // Log para depuración
+                  $('#txtMarcaMonitor').val(datam.marca_monitor).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", datam.puertos_monitor); // Log para depuración
+                  $('#txtPuertoMonitor').val(datam.puertos_monitor).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", datam.panel_monitor); // Log para depuración
+                  $('#txtPanelMonitor').val(datam.panel_monitor).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", datam.hercios_monitor); // Log para depuración
+                  $('#txtHerciosMonitor').val(datam.hercios_monitor).trigger('change');
+
+                  console.log("Actualizando select Marca con valor:", datam.asignado_monitor); // Log para depuración
+                  $('#txtAsignadoMonitor').val(datam.asignado_monitor).trigger('change');
+
 
                 editing = true;
                 editingId = id;

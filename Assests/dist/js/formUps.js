@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     let editing = false;
     let editingId = null;
@@ -169,13 +168,21 @@ document.addEventListener('DOMContentLoaded', function() {
             data: { id: id },
             success: function (respo) {
                 var data = JSON.parse(respo);
+                console.log("Datos recibidos:", data); // Log para depuración
                 document.getElementById("txtModeloUps").value = data.modelo_ups;
                 document.getElementById("txtSerialUps").value = data.serial_ups;
                 document.getElementById("txtUnidadUps").value = data.unidad;
+                document.getElementById("txtMarcaUps").value = data.marca_ups;
                 document.getElementById("txtfechaUps").value = data.fecha_instalacion;
                 document.getElementById("txtCantidadUps").value = data.cantidad_bateria;
                 document.getElementById("txtModeloBateriaUps").value = data.modelo_bateria;
                 document.getElementById("txtObserUps").value = data.observaciones_ups;
+
+                // Actualizar los select
+                console.log("Actualizando select Unidad con valor:", data.unidad); // Log para depuración
+                $('#txtUnidadUps').val(data.unidad).trigger('change');
+                console.log("Actualizando select Marca con valor:", data.marca_ups); // Log para depuración
+                $('#txtMarcaUps').val(data.marca_ups).trigger('change');
 
                 editing = true;
                 editingId = id;
@@ -187,10 +194,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-  
-    
-    
     cargarMarcas();
     actualizarTabla(); // Añadir eventos al cargar la página
-    
 });

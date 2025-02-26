@@ -22,7 +22,7 @@
     <div class="col-md-3">
         <label for="inputAddress2" class="form-label"><b>Modelo</b><b
             style="color: red;">*</b></label>
-            <input type="text" class="form-control" id="txtModeloImpresora" required> 
+            <input type="text" class="form-control" id="txtModeloImpresora" name="ModeloImpresora" required> 
             <div class="invalid-feedback">Por favor, ingrese el modelo</div> 
             </div>
 
@@ -31,7 +31,7 @@
 
             <div class="form-group col-3">
       <label for="txtMarcaImpresora">Marca</label>
-      <select class="form-control select2" id="txtMarcaImpresora" name="txtMarcaImpresora" required>
+      <select class="form-control select2" id="txtMarcaImpresora" name="MarcaImpresora" required>
           <option value="">Seleccione...</option>
         <?php
             include '../Model/conexion.php';
@@ -57,7 +57,7 @@
             <div class="col-md-3">
                     <label for="inputAddress2" class="form-label"><b>Serial</b><b
                         style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtSerialImpresora" required>
+                    <input type="tel" class="form-control" id="txtSerialImpresora" name+name="SerialImpresora" required>
                     <div class="invalid-feedback">
                       Porfavor seleccione una fecha
                     </div>
@@ -66,7 +66,7 @@
 
         <div class="form-group col-3">
               <label for="txtTipoImpresora">Tipo</label>
-              <select class="form-control select2" id="txtTipoImpresora" name="txtTipoImpresora">
+              <select class="form-control select2" id="txtTipoImpresora" name="TipoImpresora">
               <option value="">Seleccione...</option>  
                 <option>Toner</option>
                 <option>Tinta</option>
@@ -78,7 +78,7 @@
 
         <div class="form-group col-3">
               <label for="txtEstiloImpresora">Estilo</label>
-              <select class="form-control select2" id="txtEstiloImpresora" name="txtEstiloImpresora">
+              <select class="form-control select2" id="txtEstiloImpresora" name="EstiloImpresora">
               <option value="">Seleccione...</option>  
                 <option>Blanco y negro</option>
                 <option>Color</option>
@@ -89,7 +89,7 @@
       
             <div class="form-group col-3">
     <label for="txtPuertoImpresora">Puerto</label>
-    <select class="form-control select2" id="txtPuertoImpresora" name="txtPuertoImpresora">
+    <select class="form-control select2" id="txtPuertoImpresora" name="PuertoImpresora">
         <option value="">Seleccione...</option>
     </select>
 </div>
@@ -99,7 +99,7 @@
       
       <div class="col-md-3">
           <label for="txtAnchoImpresora" class="form-label"><b>Ancho</b><b style="color: red;">*</b></label>
-          <input type="tel" class="form-control" id="txtAnchoImpresora" required>
+          <input type="tel" class="form-control" id="txtAnchoImpresora" name="AnchoImpresora" required>
           <div class="invalid-feedback">
               Por favor, seleccione una fecha
           </div>
@@ -110,7 +110,7 @@
       <div class="col-md-3">
       <label for="inputAddress2" class="form-label"><b>Consumible</b><b
             style="color: red;">*</b></label>
-            <input type="tel" class="form-control" id="txtConsumibleImpresora" required>
+            <input type="tel" class="form-control" id="txtConsumibleImpresora" name="ConsumibleImpresora" required>
             <div class="invalid-feedback">
              Porfavor seleccione una fecha
             </div>
@@ -119,7 +119,7 @@
 
       <div class="form-group col-3">
               <label for="txtEstatusImpresora">Estatus</label>
-              <select class="form-control select2" id="txtEstatusImpresora" name="txtEstatusImpresora"> 
+              <select class="form-control select2" id="txtEstatusImpresora" name="EstatusImpresora"> 
               <option value="">Seleccione...</option> 
                 <option>Activa</option>
                 <option>Inactiva</option>
@@ -141,7 +141,7 @@
      
             <div class="form-group col-3">
               <label for="txtAsignadoImpresora">Asignado a</label>
-              <select class="form-control select2" id="txtAsignadoImpresora" name="txtAsignadoImpresora"> 
+              <select class="form-control select2" id="txtAsignadoImpresora" name="AsignadoImpresora"> 
               <option value="">Seleccione...</option> 
               <?php
             include '../Model/conexion.php';
@@ -166,7 +166,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>Observaciones</label>
-                    <textarea class="form-control" rows="3" id="txtObsImpresora"></textarea>
+                    <textarea class="form-control" rows="3" id="txtObsImpresora" name="txtObsImpresora" ></textarea>
                 </div>
             </div>
         

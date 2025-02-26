@@ -163,15 +163,30 @@ function agregarEventosEliminar() {
         $.ajax({
             url: '../Controller/getMouseById.php',
             type: 'GET',
-            data: { id: id }, // Corregir 'datam' a 'data'
+            data: { id: id },
             success: function (respo) {
                 var datamo = JSON.parse(respo);
+                console.log("Datos recibidos:", datamo); // Log para depuración
                 document.getElementById("txtModeloMouse").value = datamo.modelo_mouse;
                 document.getElementById("txtMarcaMouse").value = datamo.marca_mouse;
                 document.getElementById("txtSerialMouse").value = datamo.serial_mouse;
                 document.getElementById("txtPuertoMouse").value = datamo.puertos_mouse;
                 document.getElementById("txtTipoMouse").value = datamo.tipo_mouse;
                 document.getElementById("txtAsignadoMouse").value = datamo.asignado_mouse;
+
+                // Actualizar los select
+                console.log("Actualizando select Unidad con valor:", datamo.marca_mouse); // Log para depuración
+                $('#txtMarcaMouse').val(datamo.marca_mouse).trigger('change');
+
+                console.log("Actualizando select Marca con valor:", datamo.puertos_mouse); // Log para depuración
+                $('#txtPuertoMouse').val(datamo.puertos_mouse).trigger('change');
+
+                console.log("Actualizando select Marca con valor:", datamo.tipo_mouse); // Log para depuración
+                $('#txtTipoMouse').val(datamo.tipo_mouse).trigger('change');
+
+                console.log("Actualizando select Marca con valor:", datamo.asignado_mouse); // Log para depuración
+                $('#txtAsignadoMouse').val(datamo.asignado_mouse).trigger('change');
+
 
                 editing = true;
                 editingId = id;

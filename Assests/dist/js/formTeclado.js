@@ -164,12 +164,29 @@ document.addEventListener('DOMContentLoaded', function() {
             data: { id: id }, 
             success: function (respo) {
                 var datat = JSON.parse(respo);
+                console.log("Datos recibidos:", datat); // Log para depuración
                 document.getElementById("txtModeloTeclado").value = datat.modelo_teclado;
                 document.getElementById("txtMarcaTeclado").value = datat.marca_teclado;
                 document.getElementById("txtSerialTeclado").value = datat.serial_teclado;
                 document.getElementById("txtPuertoTeclado").value = datat.puertos_teclado;
                 document.getElementById("txtTipoTeclado").value = datat.tipo_teclado;
                 document.getElementById("txtAsignadoTeclado").value = datat.asignado_teclado;
+
+                // Actualizar los select
+                console.log("Actualizando select Unidad con valor:", datat.marca_teclado); // Log para depuración
+                $('#txtMarcaTeclado').val(datat.marca_teclado).trigger('change');
+
+                console.log("Actualizando select Marca con valor:", datat.puertos_teclado); // Log para depuración
+                $('#txtPuertoTeclado').val(datat.puertos_teclado).trigger('change');
+
+                console.log("Actualizando select Marca con valor:", datat.tipo_teclado); // Log para depuración
+                $('#txtTipoTeclado').val(datat.tipo_teclado).trigger('change');
+
+                console.log("Actualizando select Marca con valor:", datat.asignado_teclado); // Log para depuración
+                $('#txtAsignadoTeclado').val(datat.asignado_teclado).trigger('change');
+
+
+
                 editing = true;
                 editingId = id;
                 document.getElementById("btMonitor").textContent = "Actualizar"; // Cambiar el texto del botón

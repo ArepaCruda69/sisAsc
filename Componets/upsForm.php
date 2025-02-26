@@ -42,7 +42,7 @@
 
     <div class="form-group col-3">
     <label for="txtMarcaUps">Marca</label>
-    <select class="form-control select2" id="txtMarcaUps" name="txtMarcaUps" required>
+    <select class="form-control select2" id="txtMarcaUps" name="marcaups" required>
         <option value="">Seleccione...</option>
         <?php
             include '../Model/conexion.php';
