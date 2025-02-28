@@ -7,12 +7,12 @@ $query = $conn->prepare("SELECT id_marca, marca_marca FROM marca WHERE status_ma
 $query->execute();
 $result = $query->get_result();
 
-$marcas = array();
+$marca = array();
 while ($row = $result->fetch_assoc()) {
-    $marcas[] = $row;
+    $marca[] = $row;
 }
 
 $conn->close();
 
-echo json_encode($marcas);
+echo json_encode($marca);
 ?>

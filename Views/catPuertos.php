@@ -238,40 +238,46 @@
 
      <!-- /.card-header -->
      <div class="card-body">
-        <table id="tablaPuerto" class="table table-bordered table-striped">
+              <table id="tablaPuerto" class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>Codigo</th>
-              <th>Marca</th>
+              <th>Nombre</th>
+              <th>Estado</th>
               <th>Accion</th>
             </tr>
           </thead>
           <tbody>
-      
-        <?php while ($columnaa = mysqli_fetch_assoc($resultadoss)) { ?>
-           <tr>
-           <td ><?php echo $columnaa['id_puerto']; ?></td>
-           <td ><?php echo $columnaa['nombre_puerto']; ?></td>
-           <td ><?php if ($columnaa['status_puertos']== 0 ) {?>
-            <button class="btn btn-danger">Desactivar</button>
-           <?php  }else if($columnaa['status_puertos']== 1 ){ ?>
-            <button class="btn btn-success"> Activar</button>
-            <?php   }  ?>
-          </td>
-                                                      
-          </tr>
-           <?php } ?>
-
+            <?php while ($columnaa = mysqli_fetch_assoc($resultadoss)) { ?>
+              <tr>
+                <td><?php echo $columnaa['id_puerto']; ?></td>
+                <td><?php echo $columnaa['nombre_puerto']; ?></td>
+                <td>
+                  <?php if ($columnaa['status_puertos'] == '0') { ?>
+                    Inactivo
+                  <?php } else { ?>
+                    Activo
+                  <?php } ?>
+                </td>
+                <td>
+                  <?php if ($columnaa['status_puertos'] == '0') { ?>
+                    <button class="btn btn-success btn-sm" onclick="cambiarEstadoPuerto(<?php echo $columnaa['id_puerto']; ?>, '1')">Activar</button>
+                  <?php } else { ?>
+                    <button class="btn btn-danger btn-sm" onclick="cambiarEstadoPuerto(<?php echo $columnaa['id_puerto']; ?>, '0')">Desactivar</button>
+                  <?php } ?>
+                </td>
+              </tr>
+            <?php } ?>
           </tbody>
           <tfoot>
             <tr>
               <th>Codigo</th>
-              <th>Marca</th>
+              <th>Nombre</th>
+              <th>Estado</th>
               <th>Accion</th>
             </tr>
           </tfoot>
         </table>
-
        
 
                 </div>
@@ -317,6 +323,32 @@
 
 <script src="../Assests/dist/js/formPuertos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<script>
+function cambiarEstadoPuerto(id_puerto, nuevo_status) {
+  $.ajax({
+    url: '../Controller/updateStatusPuerto.php',
+    type: 'POST',
+    data: {
+      id_puerto: id_puerto,
+      status: nuevo_status
+    },
+    dataType: 'json',
+    success: function(response) {
+      if (response.response === 'success') {
+        alert('Estado del puerto actualizado correctamente.');
+        location.reload(); // Recargar la página para reflejar los cambios
+      } else {
+        alert('Error al actualizar el estado del puerto.');
+      }
+    },
+    error: function() {
+      alert('Error de comunicación con el servidor.');
+    }
+  });
+}
+</script>
 
 
 </body>

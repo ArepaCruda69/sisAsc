@@ -220,7 +220,7 @@
               
                     <div class="form-group col-6" >
                         <label for=""> ID</label>
-                        <input type="" class="form-control" id="txtModeloDisco" name="" disabled>
+                        <input type="" class="form-control" id="txtIdMarca" name="" disabled>
                       
                     </div>
 
@@ -233,47 +233,49 @@
                     <button  class="btn btn-outline-success  btn-sm btn-block" type="button" id = "btMarca"><b>Agregar</b></button>
             
 
-
-           <!-- /.card-header -->
-           <div class="card-body">
-              <table id="tablaMarca" class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th>Codigo</th>
-                    <th>Marca</th>
-                    <th>Accion</th>
-                  </tr>
-                </thead>
-                <tbody>
-            
-              <?php while ($columna = mysqli_fetch_assoc($resultados)) { ?>
-                 <tr>
-                 <td ><?php echo $columna['id_marca']; ?></td>
-                 <td ><?php echo $columna['marca_marca']; ?></td>
-                 <td ><?php if ($columna['status_marca']== 1 ) {?>
-                  <button class="btn btn-danger">Desactivar</button>
-                 <?php  }else if($columna['status_marca']== 0 ){ ?>
-                  <button class="btn btn-success"> Activar</button>
-                  <?php   }  ?>
-                </td>
-                                                            
+<div class="card-body">
+    <table id="tablaMarca" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Marca</th>
+                <th>Estado</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while ($columna = mysqli_fetch_assoc($resultados)) { ?>
+                <tr>
+                    <td><?php echo $columna['id_marca']; ?></td>
+                    <td><?php echo $columna['marca_marca']; ?></td>
+                    <td>
+                        <?php if ($columna['status_marca'] == '0') { ?>
+                            Inactivo
+                        <?php } else { ?>
+                            Activo
+                        <?php } ?>
+                    </td>
+                    <td>
+                        <?php if ($columna['status_marca'] == '0') { ?>
+                            <button class="btn btn-success btn-sm" onclick="cambiarEstadoMarca(<?php echo $columna['id_marca']; ?>, '1')">Activar</button>
+                        <?php } else { ?>
+                            <button class="btn btn-danger btn-sm" onclick="cambiarEstadoMarca(<?php echo $columna['id_marca']; ?>, '0')">Desactivar</button>
+                        <?php } ?>
+                    </td>
                 </tr>
-                 <?php } ?>
+            <?php } ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Codigo</th>
+                <th>Marca</th>
+                <th>Estado</th>
+                <th>Accion</th>
+            </tr>
+        </tfoot>
+    </table>
 
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th>Codigo</th>
-                    <th>Marca</th>
-                    <th>Accion</th>
-                  </tr>
-                </tfoot>
-              </table>
-
-             
-
-            </div>
-
+      </div>
     </form>
   </main>
 </div>
@@ -317,15 +319,30 @@
 <script src="../Assests/dist/js/formMarca.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
-
-
-
-
-
-
-
+<script>
+function cambiarEstadoMarca(id_marca, nuevo_status) {
+    $.ajax({
+        url: '../Controller/updateStatusMarca.php',
+        type: 'POST',
+        data: {
+            id_marca: id_marca,
+            statuss: nuevo_status
+        },
+        dataType: 'json',
+        success: function(response) {
+            if (response.response === 'success') {
+                alert('Estado de la marca actualizado correctamente.');
+                location.reload(); // Recargar la página para reflejar los cambios
+            } else {
+                alert('Error al actualizar el estado de la marca.');
+            }
+        },
+        error: function() {
+            alert('Error de comunicación con el servidor.');
+        }
+    });
+}
+</script>
 
 
 </body>

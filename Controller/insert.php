@@ -187,35 +187,34 @@ if ($_POST['actionImp'] == "btImpresora") {
     }
 }
 
+
+
 if ($_POST['actionn'] == "btMarca") {
-    $txtnombremarca = $_POST['txtnombremarca'];
+    $nombreMarca = $_POST['txtnombremarca'];
 
-    $respons = '';
-    $respuestaFina = '';
+    $insertclM = $conexion->prepare("INSERT INTO marca (marca_marca, status_marca) VALUES (?, '1')");
+    $insertclM->bind_param("s", $nombreMarca);
+    $result = $insertclM->execute();
 
-    $insertcl = $conexion->prepare("INSERT INTO marca (marca_marca) VALUES (?)");
-    $insertcl->bind_param("s", $txtnombremarca);
-    $insertcl->execute();
-
-    $respons = $insertcl ? 0 : 1;
-
-    $respuestaFina = $respons;
-    echo json_encode($respuestaFina, JSON_UNESCAPED_UNICODE);
+    if ($result) {
+        echo 0; // Éxito
+    } else {
+        echo 1; // Error
+    }
 }
 
 if ($_POST['actiooon'] == "btPuertos") {
-    $txtnombrepuertos = $_POST['txtnombrepuertos'];
+    $nombrePuerto = $_POST['txtnombrepuertos'];
 
-    $responss = '';
-    $respuestaFinaa = '';
+    $insertPuerto = $conexion->prepare("INSERT INTO puertos (nombre_puerto, status_puertos) VALUES (?, '1')");
+    $insertPuerto->bind_param("s", $nombrePuerto);
+    $result = $insertPuerto->execute();
 
-    $insertclll = $conexion->prepare("INSERT INTO puertos (nombre_puerto) VALUES (?)");
-    $insertclll->bind_param("s", $txtnombrepuertos);
-    $insertclll->execute();
-
-    $responss = $insertclll ? 0 : 1;
-
-    $respuestaFinaa = $responss;
-    echo json_encode($respuestaFinaa, JSON_UNESCAPED_UNICODE);
+    if ($result) {
+        echo 0; // Éxito
+    } else {
+        echo 1; // Error
+    }
 }
+
 ?>

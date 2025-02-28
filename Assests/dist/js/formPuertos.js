@@ -1,9 +1,6 @@
 
 document.getElementById("btPuertos").addEventListener("click", () => {
     var actiooon = "btPuertos";
-    
-
-
     var txtnombrepuertos = document.getElementById("txtNombrePuertos").value;
 
 
