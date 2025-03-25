@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -62,7 +66,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-danger elevation-4" style="background-color: #959a9b;">
     <!-- Brand Logo -->
-    <a href="../index.html" class="brand-link">
+    <a href="../index.php" class="brand-link">
       <img src="../Assests/dist/img/images.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Sistemas</span>
     </a>
@@ -117,26 +121,7 @@
                       <p>CPUs</p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="../Views/mantMont.php" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Monitor</p>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="../Views/mantTecl.php" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p> Teclado</p>
-                    </a>
-                  </li>
-    
-                  <li class="nav-item">
-                    <a href="../Views/mantMou.php" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Mouse</p>
-                    </a>
-                  </li>
+                 
                   
                   <li class="nav-item">
                     <a href="../Views/mantAcc.php" class="nav-link">
@@ -158,7 +143,7 @@
               </li>
 
 
-          <li class="nav-item menu-close">
+              <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-file"></i>
               <p>
@@ -170,37 +155,21 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" " class="nav-link">
+                <a href="../Views/catMarcas.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
               </li>
             </ul>
 
+            
             <ul class="nav nav-treeview">
 
-              <li class="nav-item">
-                <a href="" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tipos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estilos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
+          
+            <li class="nav-item">
+                <a href="../Views/catPuertos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Accesorios</p>
                 </a>
               </li>
 
@@ -259,350 +228,206 @@
                       Porfavor Digite un Codigo
                     </div>
                   </div>
-
                   <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Modelo</b><b style="color: red;">*</b></label>
-                    <input type="number" class="form-control" id="txtcantidad" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una Modelo
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Marca</label>
-                      <select class="form-control">
-                        
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Serial</b><b style="color: red;">*</b></label>
-                    <input type="number" class="form-control" id="txtcantidad" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una Serial
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Tipo</label>
-                      <select class="form-control">
-                        
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Estilo</label>
-                      <select class="form-control">
-                       
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <hr>
-                  <div class="col-md-3">
-
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Puerto</label>
-                      <select class="form-control">
-                       
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>IP</b><b style="color: red;"></b></label>
-                    <input type="number" class="form-control" id="txtcantidad" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una Serial
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Ancho</b><b style="color: red;">*</b></label>
-                    <input type="number" class="form-control" id="txtcantidad" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una Serial
-                    </div>
-                  </div>
-
-
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Consumibles</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                    <br>
-                  </div>
-
-                  <div class="col-md-3">
-
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Estatus</label>
-                      <select class="form-control">
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-
-
-                  <div class="col-md-3">
-
-                    <!-- select -->
-                    <div class="form-group">
-                      <label>Unidad</label>
-                      <select class="form-control">
-                        
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-
-
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Asignado a</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-
-                    <div class="form-group">
-                      <label>PC</label>
-                      <select class="form-control">
-                        
-                        <option>opcion 1</option>
-                        <option>opcion 2</option>
-                        <option>opcion 3</option>
-                        <option>opcion 4</option>
-                        <option>opcion 5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-
-                    <label for="inputAddress2" class="form-label"><b>Frecuencia de Mantenimiento</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtmonto" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                  </div>
-
-                  
-                  <div class="col-md-3">
-
-                    <label>Ultimo Mantenimiento:</label>
-                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                      <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" />
-
-                    </div>
-                  </div>
-
-                  <div class="col-md-12">
-                    <!-- textarea -->
-                    <div class="form-group">
-                      <label>Observaciones</label>
-                      <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-                    <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-                  </div>
-
-
-
-            </div>  
-            
-           
-
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th>Codigo</th>
-                    <th>Modelo</th>
-                    <th>Marca</th>
-                    <th>Tipo</th>
-                    <th>Unidad</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Test</td>
-                    <td>-----</td>
-                    <td>-----</td>
-                    <td> 4</td>
-                    <td>----</td>
-                  </tr>
-
-                  <td>Test</td>
-                    <td>----</td>
-                    <td>-----</td>
-                    <td> 5</td>
-                    <td>----</td>
-                  </tr>
-                  <tr>
-
-                    <td>Test</td>
-                    <td>-----</td>
-                    <td>-----</td>
-                    <td> 7</td>
-                    <td>----</td>
-                  </tr>
-
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 6
-                    </td>
-                    <td>Win 98+</td>
-                    <td>6</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet Explorer 7</td>
-                    <td>Win XP SP2+</td>
-                    <td>7</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>AOL browser (AOL desktop)</td>
-                    <td>Win XP</td>
-                    <td>6</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Firefox 1.0</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.7</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Get</td>
-                    <td>------</td>
-                    <td>----</td>
-                    <td>1.8</td>
-                    <td>--</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Firefox 2.0</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Firefox 3.0</td>
-                    <td>Win 2k+ / OSX.3+</td>
-                    <td>1.9</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Camino 1.0</td>
-                    <td>OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Camino 1.5</td>
-                    <td>OSX.3+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Netscape 7.2</td>
-                    <td>Win 95+ / Mac OS 8.6-9.2</td>
-                    <td>1.7</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Netscape Browser 8</td>
-                    <td>Win 98SE+</td>
-                    <td>1.7</td>
-                    <td>A</td>
-                  </tr>
-                 
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th>Codigo</th>
-                    <th>Modelo</th>
-                    <th>Marca</th>
-                    <th>Tipo</th>
-                    <th>Unidad</th>
-                  </tr>
-                </tfoot>
-              </table>
-
-              <div class="d-grid gap-2">
-                <button class="btn btn-outline-success" type="button" onclick=";"><b>Editar</b></button>
-                <button class="btn btn-outline-danger" type="button" onclick=";"><b>Eliminar</b></button>
-              </div>
+        <label for="inputAddress2" class="form-label"><b>Modelo</b><b
+            style="color: red;">*</b></label>
+            <input type="text" class="form-control" id="txtModeloImpresora" name="ModeloImpresora" required> 
+            <div class="invalid-feedback">Por favor, ingrese el modelo</div> 
             </div>
-            <!-- /.card-body -->
+
+            
 
 
+            <div class="form-group col-3">
+      <label for="txtMarcaImpresora">Marca</label>
+      <select class="form-control select2" id="txtMarcaImpresora" name="MarcaImpresora" required>
+          <option value="">Seleccione...</option>
+        <?php
+            include '../Model/conexion.php';
+            $conn = conectarDB("bdd_sisasc");
+            $query = "SELECT marca_marca FROM marca"; // Incluir ID
+            $result = mysqli_query($conn, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" . htmlspecialchars($row['marca_marca']) . "'>" . htmlspecialchars($row['marca_marca']) . "</option>";
+                }
+            } else {
+                echo "<option>No hay marca disponibles</option>";
+            }
+
+            $conn->close();
+        ?>
+    </select>
+</div>
+
+
+
+            <div class="col-md-3">
+                    <label for="inputAddress2" class="form-label"><b>Serial</b><b
+                        style="color: red;">*</b></label>
+                    <input type="tel" class="form-control" id="txtSerialImpresora" name+name="SerialImpresora" required>
+                    <div class="invalid-feedback">
+                      Porfavor seleccione una fecha
+                    </div>
+                  </div>
+
+
+        <div class="form-group col-3">
+              <label for="txtTipoImpresora">Tipo</label>
+              <select class="form-control select2" id="txtTipoImpresora" name="TipoImpresora">
+              <option value="">Seleccione...</option>  
+                <option>Toner</option>
+                <option>Tinta</option>
+                <option>Laser </option>
+                <option>Matriz</option>
+                <option>Otras</option>
+              </select>
+            </div>
+
+        <div class="form-group col-3">
+              <label for="txtEstiloImpresora">Estilo</label>
+              <select class="form-control select2" id="txtEstiloImpresora" name="EstiloImpresora">
+              <option value="">Seleccione...</option>  
+                <option>Blanco y negro</option>
+                <option>Color</option>
+                <option>Ambas</option>
+              </select>
+            </div>
+
+      
+            <div class="form-group col-3">
+    <label for="txtPuertoImpresora">Puerto</label>
+    <select class="form-control select2" id="txtPuertoImpresora" name="PuertoImpresora">
+        <option value="">Seleccione...</option>
+    </select>
+</div>
+
+
+      
+      
+      <div class="col-md-3">
+          <label for="txtAnchoImpresora" class="form-label"><b>Ancho</b><b style="color: red;">*</b></label>
+          <input type="tel" class="form-control" id="txtAnchoImpresora" name="AnchoImpresora" required>
+          <div class="invalid-feedback">
+              Por favor, seleccione una fecha
+          </div>
+
+          
+          <br>
+      </div>
+      <div class="col-md-3">
+      <label for="inputAddress2" class="form-label"><b>Consumible</b><b
+            style="color: red;">*</b></label>
+            <input type="tel" class="form-control" id="txtConsumibleImpresora" name="ConsumibleImpresora" required>
+            <div class="invalid-feedback">
+             Porfavor seleccione una fecha
+            </div>
+          <br>
+      </div>
+
+      <div class="form-group col-3">
+              <label for="txtEstatusImpresora">Estatus</label>
+              <select class="form-control select2" id="txtEstatusImpresora" name="EstatusImpresora"> 
+              <option value="">Seleccione...</option> 
+                <option>Activa</option>
+                <option>Inactiva</option>
+              </select>
+            </div>
+
+            
+    <div class="col-md-3"> 
+      <label for="unidad" class="form-label">Unidad</label> 
+      <select class="form-control select2" id="txtUnidadImpresora" name="unidad" required> 
+        <option value="">Seleccione...</option> 
+        <?php if (!empty($unidades)) { foreach ($unidades as $unidad) { 
+          echo "<option value='" . htmlspecialchars($unidad['nom_unidad']) . "'>" . htmlspecialchars($unidad['nom_unidad']) . "</option>"; } 
+       } else { echo "<option>No hay unidades disponibles</option>"; } ?> 
+      </select> 
+    </div>
+
+
+     
+            <div class="form-group col-3">
+              <label for="txtAsignadoImpresora">Asignado a</label>
+              <select class="form-control select2" id="txtAsignadoImpresora" name="AsignadoImpresora"> 
+              <option value="">Seleccione...</option> 
+              <?php
+            include '../Model/conexion.php';
+            $conn = conectarDB("bdd_sisasc");
+            $query = "SELECT nombre_cpu FROM cpuss"; // Incluir ID
+            $result = mysqli_query($conn, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" . htmlspecialchars($row['nombre_cpu']) . "'>" . htmlspecialchars($row['nombre_cpu']) . "</option>";
+                }
+            } else {
+                echo "<option>No hay cpuss disponibles</option>";
+            }
+
+            $conn->close();
+        ?>
+              </select>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Observaciones</label>
+                    <textarea class="form-control" rows="3" id="txtObsImpresora" name="txtObsImpresora" ></textarea>
+                </div>
+            </div>
+        
+              <div class="col-md-6">
+                  <button class="btn btn-outline-success" type="button" id = "btImpresora" ><b>Agregar</b></button>
+                
+                </div>
+
+      
+              </form>
+           
+    
+
+              <!-- /.card-header -->
+              <div class="card-body">
+        <table id="tablaImpresora" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Marca</th>
+              <th>Serial</th>
+              <th>Unidad</th>
+              <th>Estilo</th>
+              <th></th>
+            </tr>
+          </thead>
+          
+          <tbody>
+          <?php
+            if (!empty($datosTablaa)) {
+                foreach ($datosTablaa as $row) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row['modelo_impresora']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['marca_impresora']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['serial_impresora']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['unidad_impresora']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['estilo_impresora']) . "</td>";
+                    echo "<td>
+                        <button type='button' class='btn btn-warning btn-sm' onclick='editRecord(" . $row['id_impresora'] . ")'>Editar</button>
+                        <a href='../Model/deleteImpresora.php?id=" . $row['id_impresora'] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('¿Estás seguro de eliminar este registro?');\">Eliminar</a>
+                        </td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='6'>No se encontraron registros</td></tr>";
+            }
+            ?>
+          </tbody>
+         
+        </table>
+        </div>
+        <!-- /.card-body -->
             <!-- /.card-header -->
 
 
@@ -658,7 +483,7 @@
 <script src="../Controller/cancelar.js"></script>
 
 <!-- Page specific script -->
-<script>
+<!-- <script>
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
@@ -687,7 +512,7 @@
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
   });
-</script>
+</script> -->
 
 
 <style>
@@ -697,6 +522,9 @@
     border: none;
   }
 </style>
+
+
+
 
 </body>
 </html>

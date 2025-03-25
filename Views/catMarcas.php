@@ -162,7 +162,7 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./catMarcas.html " class="nav-link active">
+                <a href="./catMarcas.php " class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
