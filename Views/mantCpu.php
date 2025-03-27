@@ -473,7 +473,6 @@
                       </div>
 
                       <div class="col-md-3">
-                        <hr class="hr hr-blurry" />
 
                         <label for="inputAddress2" class="form-label"><b>Frecuencia de Mantenimiento</b><b
                             style="color: red;">*</b></label>
