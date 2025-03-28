@@ -108,6 +108,48 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Actividad Realizada a Impresoras (Preventivo)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Actividad Realizada a Impresoras (Correctivo)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Motivo (Preventivo)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Motivo (Correctivo)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Responsable (Mantenimiento)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> Componentes (Impresoras)</p>
+                </a>
+              </li>
+
             </ul>
             
 

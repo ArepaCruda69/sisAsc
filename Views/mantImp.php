@@ -392,13 +392,15 @@ require '../Model/conexion.php';
                       
                           <!-- /.card-header -->
                           <div class="card-body">
-                    <table id="tablaImpresora" class="table table-bordered table-striped">
+                    <table id="tablaMantImpresora" class="table table-bordered table-striped">
                       <thead>
                         <tr>
-                          <th>Nombre</th>
-                          <th>Motivo</th>
+                          <th>Componentes</th>
                           <th>Accion Realizada</th>
-                          <th>Fecha de Mantenimiento </th>
+                          <th>Nuevo</th>
+                          <th>Reparado</th>
+                          <th>Estado Final</th>
+                          <th>Fecha</th>
                           <th>Observacion</th>
                           <th></th>
                         </tr>
@@ -413,6 +415,8 @@ require '../Model/conexion.php';
                                 echo "<td>" . htmlspecialchars($row['marca_impresora']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['serial_impresora']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['unidad_impresora']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['estilo_impresora']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['estilo_impresora']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['estilo_impresora']) . "</td>";
                                 echo "<td>
                                     <button type='button' class='btn btn-warning btn-sm' onclick='editRecord(" . $row['id_impresora'] . ")'>Editar</button>
