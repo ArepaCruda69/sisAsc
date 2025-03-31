@@ -217,4 +217,32 @@ if ($_POST['actiooon'] == "btPuertos") {
     }
 }
 
+if ($_POST['actionm'] == "btMotivop") {
+    $nombreMotivop = $_POST['txtmotivop'];
+
+    $insertclMot = $conexion->prepare("INSERT INTO motivo_preventivo (motivosp_motivop, status_motivop) VALUES (?, '1')");
+    $insertclMot->bind_param("s", $nombreMotivop);
+    $result = $insertclMot->execute();
+
+    if ($result) {
+        echo 0; // Éxito
+    } else {
+        echo 1; // Error
+    }
+}
+
+if ($_POST['actionc'] == "btMotivoc") {
+    $nombreMotivoc = $_POST['txtmotivoc'];
+
+    $insertclMotc = $conexion->prepare("INSERT INTO motivo_correctivo (motivosc_motivoc, status_motivoc) VALUES (?, '1')");
+    $insertclMotc->bind_param("s", $nombreMotivoc);
+    $result = $insertclMotc->execute();
+
+    if ($result) {
+        echo 0; // Éxito
+    } else {
+        echo 1; // Error
+    }
+}
+
 ?>
