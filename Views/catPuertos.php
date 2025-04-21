@@ -1,3 +1,6 @@
+
+<?php include '../Model/consultas.php'?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -62,7 +65,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-danger elevation-4" style="background-color: #959a9b;">
     <!-- Brand Logo -->
-    <a href="../index.html" class="brand-link">
+    <a href="../index.php" class="brand-link">
       <img src="../Assests/dist/img/images.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Sistemas</span>
     </a>
@@ -112,40 +115,20 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="./impS.php" class="nav-link">
+                <a href="../Views/impS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./cpuS.php" class="nav-link">
+                <a href="../Views/cpuS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./monT.php" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Monitor</p>
-                </a>
-              </li>
               
               <li class="nav-item">
-                <a href="./tecLado.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Teclado</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="./mouSe.php" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mouse</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="./acceS.php" class="nav-link">
+                <a href="../Views/acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
@@ -178,41 +161,24 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./catMarcas.html " class="nav-link ">
+                <a href="../Views/catMarcas.php " class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
               </li>
-            </ul>
-
-            <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="./catTipoImp.html" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tipos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./catEstiloImp.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estilos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./catPuertos.html" class="nav-link active">
+                <a href="../Views/catPuertos.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./catAcc.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Accesorios</p>
-                </a>
-              </li>
 
             </ul>
+
+            
+
+            
 
           </li>
          
@@ -249,67 +215,75 @@
             <div class="card-header">
               <h2>Puertos</h2> 
             </div>
-            <div class="card-body">
 
+              <div class="card-body">
               <main class="col">
+              <form id="puertoForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
+              
+              <div class="form-group col-6" >
+                  <label for=""> ID</label>
+                  <input type="" class="form-control" id="txtIdPuertos" name="" disabled>
+                
+              </div>
 
-                <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
-                  <div class="col-md-3">
-                    <label for="inputEmail4" class="form-label"><b> Codigo </b><b style="color: red;">*</b></label>
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                      <button class="btn btn-danger" type="button" id="button-addon2" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop"><b>Buscar</b></button>
-                    </div>
-                    <div class="invalid-feedback">
-                      Porfavor Digite un Codigo
-                    </div>
-                  </div>
+            <div class="form-group col-6">
+                  <label for=""> Nombre</label>
+                  <input type="" class="form-control" id="txtNombrePuertos" >
+                
+              </div>
 
-               
-                  
-                  <div class="col-md-3">
-                    <label for="inputAddress2" class="form-label"><b>Tipo de Puerto</b><b
-                        style="color: red;">*</b></label>
-                    <input type="tel" class="form-control" id="txtdescripcion" required>
-                    <div class="invalid-feedback">
-                      Porfavor seleccione una fecha
-                    </div>
-                  </div>
+              <button  class="btn btn-outline-success  btn-sm btn-block" type="button" id = "btPuertos"><b>Agregar</b></button>
+      
 
 
-    
+     <!-- /.card-header -->
+     <div class="card-body">
+              <table id="tablaPuerto" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Estado</th>
+              <th>Accion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php while ($columnaa = mysqli_fetch_assoc($resultadoss)) { ?>
+              <tr>
+                <td><?php echo $columnaa['id_puerto']; ?></td>
+                <td><?php echo $columnaa['nombre_puerto']; ?></td>
+                <td>
+                  <?php if ($columnaa['status_puertos'] == '0') { ?>
+                    Inactivo
+                  <?php } else { ?>
+                    Activo
+                  <?php } ?>
+                </td>
+                <td>
+                  <?php if ($columnaa['status_puertos'] == '0') { ?>
+                    <button class="btn btn-success btn-sm" onclick="cambiarEstadoPuerto(<?php echo $columnaa['id_puerto']; ?>, '1')">Activar</button>
+                  <?php } else { ?>
+                    <button class="btn btn-danger btn-sm" onclick="cambiarEstadoPuerto(<?php echo $columnaa['id_puerto']; ?>, '0')">Desactivar</button>
+                  <?php } ?>
+                </td>
+              </tr>
+            <?php } ?>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Estado</th>
+              <th>Accion</th>
+            </tr>
+          </tfoot>
+        </table>
+       
 
-                  <div class="col-md-12">
-                    <!-- textarea -->
-                    <div class="form-group">
-                      <label>Observacion</label>
-                      <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-                    <button class="btn btn-outline-danger" type="button" onclick="cancelar();"><b>Cancelar</b></button>
-                  </div>
-
-
-
-            </div>  
-            
-            
-
-           
-
+                </div>
+              </form>
             </main>
-
-            
-
-
           </div>
-
 
         </div>
       </div><!-- /.container-fluid -->
@@ -318,22 +292,8 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
+ 
 
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="">Alfred</a>.</strong>
-    <div class="float-right d-none d-sm-inline-block">
-    </div>
-  </footer>
-</div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
@@ -359,49 +319,37 @@
 <script src="../Assests/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-<script src="../Controller/agregar.js"></script>
-<script src="../Controller/cancelar.js"></script>
 
-<!-- Page specific script -->
+
+<script src="../Assests/dist/js/formPuertos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-      language: {
-        processing: "Busqueda en curso...",
-        search: "Buscar&nbsp;:",
-        lengthMenu: "Agrupar de MENU Solicitudes",
-        infoEmpty: "No existen datos.",
-        infoFiltered: "(filtrado de MAX elementos en total)",
-        infoPostFix: "",
-        loadingRecords: "Cargando...",
-        zeroRecords: "No se encontraron datos con tu busqueda",
-        emptyTable: "No hay datos disponibles en la tabla.",
-        paginate: {
-            first: "Primero",
-            previous: "Anterior",
-            next: "Siguiente",
-            last: "Ultimo"
-        },
-        aria: {
-            sortAscending: ": active para ordenar la columna en orden ascendente",
-            sortDescending: ": active para ordenar la columna en orden descendente"
-        }
+function cambiarEstadoPuerto(id_puerto, nuevo_status) {
+  $.ajax({
+    url: '../Controller/updateStatusPuerto.php',
+    type: 'POST',
+    data: {
+      id_puerto: id_puerto,
+      status: nuevo_status
     },
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
+    dataType: 'json',
+    success: function(response) {
+      if (response.response === 'success') {
+        alert('Estado del puerto actualizado correctamente.');
+        location.reload(); // Recargar la página para reflejar los cambios
+      } else {
+        alert('Error al actualizar el estado del puerto.');
+      }
+    },
+    error: function() {
+      alert('Error de comunicación con el servidor.');
+    }
   });
+}
 </script>
 
-
-<style>
-  hr {
-    height: 4px;
-    background-color: #cac3c3;
-    border: none;
-  }
-</style>
 
 </body>
 </html>

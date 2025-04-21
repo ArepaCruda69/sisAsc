@@ -62,7 +62,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-danger elevation-4" style="background-color: #959a9b;">
     <!-- Brand Logo -->
-    <a href="../index.html" class="brand-link">
+    <a href="../index.php" class="brand-link">
       <img src="../Assests/dist/img/images.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Sistemas</span>
     </a>
@@ -255,7 +255,7 @@
 
                 <form class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
                   <div class="col-md-3">
-                    <label for="inputEmail4" class="form-label"><b> Codigo </b><b style="color: red;">*</b></label>
+                    <label for="inputEmail4" class="form-label"><b> Id </b><b style="color: red;">*</b></label>
                     <div class="input-group mb-3">
                       <input type="text" class="form-control" id="txtcliente" aria-label="Recipient's username"
                         aria-describedby="button-addon2">
@@ -263,7 +263,7 @@
                         data-bs-target="#staticBackdrop"><b>Buscar</b></button>
                     </div>
                     <div class="invalid-feedback">
-                      Porfavor Digite un Codigo
+                      Porfavor Digite un Id
                     </div>
                   </div>
 

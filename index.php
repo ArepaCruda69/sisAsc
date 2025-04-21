@@ -120,27 +120,6 @@
                 </a>
               </li>
 
-              <!-- <li class="nav-item">
-                <a href="../sisAsc/Views/monT.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Monitor</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="../sisAsc/Views/tecLado.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Teclado</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mouSe.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mouse</p>
-                </a>
-              </li>
-               -->
               <li class="nav-item">
                 <a href="../sisAsc/Views/acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -188,38 +167,19 @@
                 </a>
               </li>
 
-<!--               
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantMont.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Monitor</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantTecl.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Teclado</p>
-                </a>
-              </li>
 
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantMou.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mouse</p>
-                </a>
-              </li>
-               -->
               <li class="nav-item">
                 <a href="../sisAsc/Views/mantAcc.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
               </li>
-              
-
-
-
+              <li class="nav-item">
+                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
+                </a>
+              </li>
             </ul>
             
             
@@ -242,37 +202,58 @@
                   <p>Marcas</p>
                 </a>
               </li>
-            </ul>
 
-            <ul class="nav nav-treeview">
-
-              <li class="nav-item">
-                <a href="../sisAsc/Views/catTipoImp.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tipos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../sisAsc/Views/catEstiloImp.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estilos de Impresoras</p>
-                </a>
-              </li>
               <li class="nav-item">
                 <a href="../sisAsc/Views/catPuertos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
                 </a>
               </li>
+              
               <li class="nav-item">
-                <a href="../sisAsc/Views/catAcc.php" class="nav-link">
+                <a href="../sisAsc/Views/catActRePreventivo.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Accesorios</p>
+                  <p>Actividad Realizada a Impresoras (Preventivo)</p>
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a href="../sisAsc/Views/catActReCorrectivo.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Actividad Realizada a Impresoras (Correctivo)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="../sisAsc/Views/catMotivoPreventivo.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Motivo (Preventivo)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="../sisAsc/Views/catMotivoCorrectivo.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Motivo (Correctivo)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Responsable (Mantenimiento)</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> Componentes (Impresoras)</p>
+                </a>
+              </li>
+
+              
             </ul>
-            
 
           </li>
          

@@ -1,3 +1,6 @@
+<?php include '../Model/consultas.php'?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -123,26 +126,7 @@
                   <p>CPUs</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./monT.php" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Monitor</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="./tecLado.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Teclado</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="./mouSe.php" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mouse</p>
-                </a>
-              </li>
+            
 
               <li class="nav-item">
                 <a href="./acceS.php" class="nav-link">
@@ -152,7 +136,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/ups.php" class="nav-link ">
+                <a href="../Views/ups.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ups</p>
                 </a>
@@ -178,42 +162,20 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./catMarcas.html " class="nav-link active">
+                <a href="./catMarcas.php " class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
               </li>
-            </ul>
-
-            <ul class="nav nav-treeview">
-
               <li class="nav-item">
-                <a href="./catTipoImp.html" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tipos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./catEstiloImp.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estilos de Impresoras</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./catPuertos.html" class="nav-link">
+                <a href="../Views/catPuertos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./catAcc.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Accesorios</p>
-                </a>
-              </li>
-
             </ul>
 
+            
           </li>
          
         </ul>
@@ -240,6 +202,8 @@
     </div>
     <!-- /.content-header -->
 
+
+
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
@@ -250,52 +214,68 @@
               <h2>Marcas</h2> 
             </div>
 
-         <div class="card-body">
-  <main class="col">
-  <form id="marcaForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
-      <div class="col-md-4">
-        <label for="codigo" class="form-label"><b>Codigo</b><b style="color: red;">*</b></label>
-        <div class="input-group mb-3">
-          <input type="number" class="form-control" id="codigo" name="codigo" aria-label="Código" aria-describedby="button-addon2" required disabled>
-        </div>
-        <div class="invalid-feedback">
-          Por favor, ingrese un código.
-        </div>
-      </div>
+              <div class="card-body">
+              <main class="col">
+              <form id="marcaForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
+              
+                    <div class="form-group col-6" >
+                        <label for=""> ID</label>
+                        <input type="" class="form-control" id="txtIdMarca" name="" disabled>
+                      
+                    </div>
 
-      <div class="col-md-4">
-        <label for="marca" class="form-label"><b>Marca</b><b style="color: red;">*</b></label>
-        <input type="text" class="form-control" id="marca" name="marca" required>
-        <div class="invalid-feedback">
-          Por favor, ingrese una marca.
-        </div>
-      </div>
+                  <div class="form-group col-6">
+                        <label for=""> Nombre</label>
+                        <input type="" class="form-control" id="txtNombreMarca" >
+                      
+                    </div>
 
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="equipo" class="form-label"><b>Equipo</b><b style="color: red;">*</b></label>
-          <select class="form-control" id="equipo" name="equipo" required>
-            <option value="">Seleccione...</option>
-            <option>Impresora</option>
-            <option>Cpu</option>
-            <option>Monitor</option>
-            <option>Teclado</option>
-            <option>Mouse</option>
-            <option>Accesorios</option>
-            <option>Ups</option>
-          </select>
-        </div>
-        <div class="invalid-feedback">
-          Por favor, seleccione un equipo.
-        </div>
-      </div>
+                    <button  class="btn btn-outline-success  btn-sm btn-block" type="button" id = "btMarca"><b>Agregar</b></button>
+            
 
-      <div class="col-md-6">
-        <button class="btn btn-outline-success" type="button" onclick="agregar();"><b>Agregar</b></button>
-        <button class="btn btn-outline-danger" type="reset"><b>Cancelar</b></button>
+<div class="card-body">
+    <table id="tablaMarca" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Marca</th>
+                <th>Estado</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while ($columna = mysqli_fetch_assoc($resultados)) { ?>
+                <tr>
+                    <td><?php echo $columna['id_marca']; ?></td>
+                    <td><?php echo $columna['marca_marca']; ?></td>
+                    <td>
+                        <?php if ($columna['status_marca'] == '0') { ?>
+                            Inactivo
+                        <?php } else { ?>
+                            Activo
+                        <?php } ?>
+                    </td>
+                    <td>
+                        <?php if ($columna['status_marca'] == '0') { ?>
+                            <button class="btn btn-success btn-sm" onclick="cambiarEstadoMarca(<?php echo $columna['id_marca']; ?>, '1')">Activar</button>
+                        <?php } else { ?>
+                            <button class="btn btn-danger btn-sm" onclick="cambiarEstadoMarca(<?php echo $columna['id_marca']; ?>, '0')">Desactivar</button>
+                        <?php } ?>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Codigo</th>
+                <th>Marca</th>
+                <th>Estado</th>
+                <th>Accion</th>
+            </tr>
+        </tfoot>
+    </table>
+
       </div>
-      <div id="message" style="display: none;" class="alert alert-success">
-         ¡Registro agregado exitosamente! </div>
     </form>
   </main>
 </div>
@@ -307,21 +287,8 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="">Alfred</a>.</strong>
-    <div class="float-right d-none d-sm-inline-block">
-    </div>
-  </footer>
+  
+  
 </div>
 <!-- ./wrapper -->
 
@@ -349,39 +316,34 @@
 <script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 
-<script src="../Controller/cancelar.js"></script>
-<script src="../Controller/agregarMarca.js"></script>
-
-
-
+<script src="../Assests/dist/js/formMarca.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-  // Código JavaScript adicional para validación del formulario
-  (function () {
-    'use strict';
-    window.addEventListener('load', function () {
-      var forms = document.getElementsByClassName('needs-validation');
-      var validation = Array.prototype.filter.call(forms, function (form) {
-        form.addEventListener('submit', function (event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
+function cambiarEstadoMarca(id_marca, nuevo_status) {
+    $.ajax({
+        url: '../Controller/updateStatusMarca.php',
+        type: 'POST',
+        data: {
+            id_marca: id_marca,
+            statuss: nuevo_status
+        },
+        dataType: 'json',
+        success: function(response) {
+            if (response.response === 'success') {
+                alert('Estado de la marca actualizado correctamente.');
+                location.reload(); // Recargar la página para reflejar los cambios
+            } else {
+                alert('Error al actualizar el estado de la marca.');
+            }
+        },
+        error: function() {
+            alert('Error de comunicación con el servidor.');
+        }
+    });
+}
 </script>
 
-
-<style>
-  hr {
-    height: 4px;
-    background-color: #cac3c3;
-    border: none;
-  }
-</style>
 
 </body>
 </html>

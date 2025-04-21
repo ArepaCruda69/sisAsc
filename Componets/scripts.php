@@ -2,8 +2,10 @@
 $form1 = " <script src='../Assests/plugins/jquery/jquery.min.js'></script>
           
           <script src='../Assests/plugins/bootstrap/js/bootstrap.bundle.min.js'></script>
+           <script src='../Assests/plugins/bootstrap/js/bootstrap.min.js'></script>
           
           <script src='../Assests/dist/js/adminlte.min.js'></script>
+          
 
           
           <script src='../Assests/plugins/datatables/jquery.dataTables.min.js'></script>
