@@ -1,3 +1,6 @@
+<?php include '../Model/consultas.php'?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,9 +12,13 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="../sisAsc/Assests/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../Assests/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../sisAsc/Assests/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../Assests/dist/css/adminlte.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../Assests/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../Assests/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../Assests/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -24,7 +31,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="../index.php" class="nav-link">Inicio</a>
       </li>
     </ul>
 
@@ -58,8 +65,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-danger elevation-4" style="background-color: #959a9b;">
     <!-- Brand Logo -->
-    <a href="index.php" class="brand-link">
-      <img src="../sisAsc/Assests/dist/img/images.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="../index.php" class="brand-link">
+      <img src="../Assests/dist/img/images.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Sistemas</span>
     </a>
 
@@ -98,7 +105,7 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="../index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inicio</p>
                 </a>
@@ -108,83 +115,41 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/impS.php" class="nav-link">
+                <a href="./impS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Impresora</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../sisAsc/Views/cpuS.php" class="nav-link">
+                <a href="./cpuS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CPUs</p>
                 </a>
               </li>
+            
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/acceS.php" class="nav-link">
+                <a href="./acceS.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accesorios</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="../Views/ups.php" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ups</p>
+                </a>
+              </li>
+
+
               
-              <li class="nav-item">
-                <a href="../sisAsc/Views/ups.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ups</p>
-                </a>
-              </li>
-
-
 
             </ul>
             
           </li>
 
 
-          <li class="nav-item menu-close">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Mantenimiento
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            
-           
-
-            <ul class="nav nav-treeview">
-
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantImp.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Impresora</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantCpu.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>CPUs</p>
-                </a>
-              </li>
-
-
-              <li class="nav-item">
-                <a href="../sisAsc/Views/mantAcc.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Accesorios</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../sisAsc/Views/ups.php" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ups</p>
-                </a>
-              </li>
-            </ul>
-            
-            
-          </li>
-         
           <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-file"></i>
@@ -197,42 +162,41 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" ../sisAsc/Views/catMarcas.php" class="nav-link">
+                <a href="./catMarcas.php " class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marcas</p>
                 </a>
               </li>
-
               <li class="nav-item">
-                <a href="../sisAsc/Views/catPuertos.php" class="nav-link">
+                <a href="../Views/catPuertos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Puertos</p>
                 </a>
               </li>
-              
+
               <li class="nav-item">
-                <a href="../sisAsc/Views/catActRePreventivo.php" class="nav-link">
+                <a href="#" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Actividad Realizada a Impresoras (Preventivo)</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/catActReCorrectivo.php" class="nav-link">
+                <a href="./catActReCorrectivo.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Actividad Realizada a Impresoras (Correctivo)</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/catMotivoPreventivo.php" class="nav-link">
+                <a href="./catMotivoPreventivo.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Motivo (Preventivo)</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="../sisAsc/Views/catMotivoCorrectivo.php" class="nav-link">
+                <a href="./catMotivoCorrectivo.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Motivo (Correctivo)</p>
                 </a>
@@ -252,9 +216,9 @@
                 </a>
               </li>
 
-              
             </ul>
 
+            
           </li>
          
         </ul>
@@ -281,49 +245,148 @@
     </div>
     <!-- /.content-header -->
 
+
+
     <!-- Main content -->
-      <div class="content">
+    <div class="content">
       <div class="container-fluid">
-        <div class="row">
-          
-          <img src="./Assests/dist/img/tecn.jpg" alt="" style="width: 100%; height: auto; max-width: 1024px; display: block; margin: 0 auto;">
+        <div class="col">
+
+          <div class="card text">
+            <div class="card-header">
+              <h2>Actividad Realizada a Impresora (Preventivo)</h2> 
+            </div>
+
+              <div class="card-body">
+              <main class="col">
+              <form id="marcaForm" class="row g-3 needs-validation" style="border-radius: 20px;" novalidate>
+              
+                    <div class="form-group col-6" >
+                        <label for=""> ID</label>
+                        <input type="" class="form-control" id="txtIdActvidadp" name="" disabled>
+                      
+                    </div>
+
+                  <div class="form-group col-6">
+                        <label for=""> Actividad</label>
+                        <input type="" class="form-control" id="txtActividadp" >
+                      
+                    </div>
+
+                    <button  class="btn btn-outline-success  btn-sm btn-block" type="button" id = "btActividadp"><b>Agregar</b></button>
+            
+
+<div class="card-body">
+    <table id="tablaActividadp" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Actividad</th>
+                <th>Estado</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while ($columna = mysqli_fetch_assoc($resultadosactp)) { ?>
+                <tr>
+                    <td><?php echo $columna['id_actividadp']; ?></td>
+                    <td><?php echo $columna['actividadp_actividadesp']; ?></td>
+                    <td>
+                        <?php if ($columna['status_actividadp'] == '0') { ?>
+                            Inactivo
+                        <?php } else { ?>
+                            Activo
+                        <?php } ?>
+                    </td>
+                    <td>
+                        <?php if ($columna['status_actividadp'] == '0') { ?>
+                            <button class="btn btn-success btn-sm" onclick="cambiarEstadoActividadp(<?php echo $columna['id_actividadp']; ?>, '1')">Activar</button>
+                        <?php } else { ?>
+                            <button class="btn btn-danger btn-sm" onclick="cambiarEstadoActividadp(<?php echo $columna['id_actividadp']; ?>, '0')">Desactivar</button>
+                        <?php } ?>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Codigo</th>
+                <th>Actividad</th>
+                <th>Estado</th>
+                <th>Accion</th>
+            </tr>
+        </tfoot>
+    </table>
+
+      </div>
+    </form>
+  </main>
+</div>
 
         </div>
-        <!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-    
     <!-- /.content -->
-
-
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="">Alfred</a>.</strong>
-    <div class="float-right d-none d-sm-inline-block">
-    </div>
-  </footer>
+  
+  
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="../sisAsc/Assests/plugins/jquery/jquery.min.js"></script>
+<script src="../Assests/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../sisAsc/Assests/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../Assests/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../sisAsc/Assests/dist/js/adminlte.min.js"></script>
+<script src="../Assests/dist/js/adminlte.min.js"></script>
 
+<!-- DataTables  & Plugins -->
+<script src="../Assests/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../Assests/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../Assests/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../Assests/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../Assests/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../Assests/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../Assests/plugins/jszip/jszip.min.js"></script>
+<script src="../Assests/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../Assests/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../Assests/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../Assests/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../Assests/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+
+<script src="../Assests/dist/js/formActividadP.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+function cambiarEstadoActividadp(id_actividadp, nuevo_status) {
+    $.ajax({
+        url: '../Controller/updateStatusActividadp.php',
+        type: 'POST',
+        data: {
+            id_actividadp: id_actividadp,
+            statusact: nuevo_status
+        },
+        dataType: 'json',
+        success: function(response) {
+            if (response.response === 'success') {
+                alert('Estado de la marca actualizado correctamente.');
+                location.reload(); // Recargar la página para reflejar los cambios
+            } else {
+                alert('Error al actualizar el estado de la marca.');
+            }
+        },
+        error: function() {
+            alert('Error de comunicación con el servidor.');
+        }
+    });
+}
+</script>
+
+
+</body>
 </html>

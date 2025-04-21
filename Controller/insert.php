@@ -245,4 +245,33 @@ if ($_POST['actionc'] == "btMotivoc") {
     }
 }
 
+
+if ($_POST['actionact'] == "btActividadp") {
+    $nombreActividadp = $_POST['txtactividadp'];
+
+    $insertclAct = $conexion->prepare("INSERT INTO actividad_preventivo (actividadp_actividadesp, status_actividadp) VALUES (?, '1')");
+    $insertclAct->bind_param("s", $nombreActividadp);
+    $result = $insertclAct->execute();
+
+    if ($result) {
+        echo 0; // Éxito
+    } else {
+        echo 1; // Error
+    }
+}
+
+if ($_POST['actionactc'] == "btActividadc") {
+    $nombreActividadc = $_POST['txtactividadc'];
+
+    $insertclActc = $conexion->prepare("INSERT INTO actividad_correctivo (actividadc_actividadesc, status_actividadc) VALUES (?, '1')");
+    $insertclActc->bind_param("s", $nombreActividadc);
+    $result = $insertclActc->execute();
+
+    if ($result) {
+        echo 0; // Éxito
+    } else {
+        echo 1; // Error
+    }
+}
+
 ?>

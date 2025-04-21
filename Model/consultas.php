@@ -15,4 +15,12 @@ $resultadosm = mysqli_query($conexion,$query);
 $query = "SELECT * FROM motivo_correctivo";
 $resultadosc = mysqli_query($conexion,$query);
 
+
+$query = "SELECT * FROM actividad_preventivo";
+$resultadosactp = mysqli_query($conexion,$query);
+
+
+$query = "SELECT * FROM actividad_correctivo";
+$resultadosactc = mysqli_query($conexion,$query);
+
 ?>  
