@@ -2,7 +2,7 @@
 
 if (!function_exists('conectarDB')) {
     function conectarDB($dbname) {
-        $conn = new mysqli("localhost", "root", "123456789", $dbname);
+        $conn = new mysqli("localhost", "root", "12345678", $dbname);
         if ($conn->connect_error) {
             die("Conexión fallida a $dbname: " . $conn->connect_error);
         }
@@ -16,7 +16,7 @@ if (!function_exists('conectarSegundaDB')) {
     }
 }
 
-$conexion = mysqli_connect("localhost", "root", "123456789", "bdd_sisasc");
+$conexion = mysqli_connect("localhost", "root", "12345678", "bdd_sisasc");
 ?>
 
 
